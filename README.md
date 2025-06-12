@@ -36,9 +36,9 @@
 * Added Unleashed Recomp (Sonic Unleashed Engine)
 # Installer/Menu via Terminal/SSH
 ```
-curl -L bit.ly/profork3 | bash
+curl -L bit.ly/profork0 | bash
 ```
-![image](https://github.com/user-attachments/assets/7d46f3dc-9fd8-4a3a-97f3-14406c89e7bf)
+
 
 
 
