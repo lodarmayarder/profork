@@ -1,0 +1,61 @@
+#!/bin/sh
+set -e
+
+SOURCE_DIR="$HOME/service/dir_ob"
+FULL_XML="${SOURCE_DIR}/full.xml"
+WIN_XML="${SOURCE_DIR}/window.xml"
+COMPOSITOR_SCRIPT="${SOURCE_DIR}/batocera-compositor"
+TARGET_FILE="/etc/openbox/rc.xml"
+
+log() {
+    printf "[%s] %s\n" "$(date '+%Y-%m-%d %H:%M:%S')" "$1"
+}
+
+reload_openbox() {
+    log "Reloading Openbox config..."
+    openbox --reconfigure || {
+        log "Openbox reload failed, restarting..."
+        pkill openbox
+        (sleep 1 && openbox &) &
+    }
+}
+
+stop() {
+    log "Stopping: copying full.xml to $TARGET_FILE"
+    cp "$FULL_XML" "$TARGET_FILE"
+
+    log "Stopping compositor..."
+    "$COMPOSITOR_SCRIPT" stop
+
+    log "Restarting Openbox cleanly to apply fullscreen layout..."
+    openbox --exit
+    sleep 1
+    DISPLAY=:0 openbox &
+
+    log "Stop actions completed (fullscreen mode)"
+}
+
+
+start() {
+    log "Starting: copying win.xml to $TARGET_FILE"
+    cp "$WIN_XML" "$TARGET_FILE"
+
+    log "Starting compositor..."
+    "$COMPOSITOR_SCRIPT" start
+
+    reload_openbox
+    log "Start actions completed (windowed mode)"
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    *)
+        echo "Usage: $0 {start|stop}"
+        exit 1
+        ;;
+esac
