@@ -125,7 +125,7 @@ case $CHOICE in
         ;;              
     6)
         echo "Flatpak Linux Games..."
-        curl -Ls https://raw.githubusercontent.com/trashbus99/profork/master/app/fpg.sh | bash
+        curl -Ls https://raw.githubusercontent.com/profork/profork/master/app/fpg.sh | bash
         ;;            
     7)
         echo "Other Linux & Windows/Wine Freeware..."
