@@ -1,6 +1,4 @@
 #!/bin/bash
-export PATH="/userdata/system/pro:$PATH"
-
 # === BUA Detection ===
 if [ -d "/userdata/system/add-ons" ]; then
     rm -f /userdata/roms/ports/Profork.sh
@@ -12,7 +10,7 @@ if [ -d "/userdata/system/add-ons" ]; then
     echo
     exit 0
 fi
-clear 
+clear
 
 # === Animated Title ===
 animate_title() {
@@ -104,11 +102,11 @@ apps=(
     ["ENDLESS-SKY/LINUX"]="curl -Ls https://github.com/profork/profork/raw/master/endlesssky/endlesssky.sh | bash"
     ["ROCKBOT/LINUX"]="curl -Ls https://github.com/profork/profork/raw/master/windows/rb.sh | bash"
     ["ROCKBOT2/LINUX"]="curl -Ls https://github.com/profork/profork/raw/master/windows/rb2.sh | bash"
-    ["CASTLEVANIA-2-SIMONS-QUEST-REVAMPED/WINDOWS"]="curl -Ls https://github.com/profork/profork/raw/master/windows/cv2.sh | bash"
-    ["CHIP-&-DALES-RESCUE-RANGERS-REMASTERED/WINDOWS"]="curl -Ls https://github.com/profork/profork/raw/master/windows/cdr.sh | bash"
-    ["FREEGEMAS/WINDOWS"]="curl -Ls https://github.com/profork/profork/raw/master/windows/fgem.sh | bash"
-    ["VALYRIA-TEAR/WINDOWS"]="curl -Ls https://github.com/profork/profork/raw/master/windows/vt.sh | bash"
-    
+    ["CASTLEVANIA-2-SIMONS-QUEST-REVAMPED"]="curl -Ls https://github.com/profork/profork/raw/master/windows/cv2.sh | bash"
+    ["CHIP-&-DALES-RESCUE-RANGERS-REMASTERED"]="curl -Ls https://github.com/profork/profork/raw/master/windows/cdr.sh | bash"
+    ["FREEGEMAS"]="curl -Ls https://github.com/profork/profork/raw/master/windows/fgem.sh | bash"
+    ["VALYRIA-TEAR"]="curl -Ls https://github.com/profork/profork/raw/master/windows/vt.sh | bash"
+
     # Linux pacman ports
     ["ABUSE/LINUX"]="pacman -S --noconfirm batocera/ports-abuse"
     ["C-DOGS/LINUX"]="pacman -S --noconfirm batocera/ports-cdogs"
@@ -239,13 +237,10 @@ for choice in $choices; do
         $install_cmd
         echo -e "\n$choice installed.\n"
     else
-        applink="$(echo "$install_cmd" | sed -n 's/.*curl -Ls *\([^|]*\) *|.*/\1/p')"
+        applink="$(echo "$install_cmd" | awk '{print $3}')"
         rm /tmp/.app 2>/dev/null
-        curl -sL "$applink" -o /tmp/.app
-
-
-        # wget --tries=10 --no-check-certificate --no-cache --no-cookies -q -O "/tmp/.app" "$applink"
-        if [[ -s "/tmp/.app" ]]; then 
+        wget --tries=10 --no-check-certificate --no-cache --no-cookies -q -O "/tmp/.app" "$applink"
+        if [[ -s "/tmp/.app" ]]; then
             dos2unix /tmp/.app 2>/dev/null
             chmod 777 /tmp/.app 2>/dev/null
             clear
@@ -254,7 +249,7 @@ for choice in $choices; do
             chmod +x /tmp/.app.fixed
             ( bash /tmp/.app.fixed )
             echo -e "\n$choice installed.\n"
-        else 
+        else
             echo "Error: couldn't download installer for ${apps[$choice]}"
         fi
     fi
