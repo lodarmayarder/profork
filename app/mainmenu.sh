@@ -10,23 +10,7 @@ if [ -d "/userdata/system/add-ons" ]; then
     echo "Goodbye."
     echo
 
-    # === Loser Horn Sound ===
-    LH_MP3="/userdata/music/lh.mp3"
-    LH_URL="https://github.com/profork/profork/raw/master/.dep/.ytrk/lh.mp3"
-
-    if [ ! -f "$LH_MP3" ]; then
-        wget -q -O "$LH_MP3" "$LH_URL"
-    fi
-
-    if command -v cvlc >/dev/null 2>&1; then
-        cvlc --play-and-exit --no-video "$LH_MP3" >/dev/null 2>&1 &
-    elif command -v mpg123 >/dev/null 2>&1; then
-        mpg123 -q "$LH_MP3" &
-    fi
-
-    sleep 4
-    exit 0
-fi
+   
 # Detect system architecture
 ARCH=$(uname -m)
 
@@ -36,44 +20,7 @@ if [ "$ARCH" = "aarch64" ]; then
     curl -Ls https://github.com/profork/profork/raw/master/app/arm_menu.sh | bash
     exit 0
 fi
-# === Profork Lock Check ===
-LOCK_FLAG="/userdata/system/pro/.bua_softlock"
-BUA_LAUNCHER_1="/userdata/roms/ports/BatoceraUnofficialAddOns.sh"
-BUA_LAUNCHER_2="/userdata/roms/ports/bua.sh"
-RICKROLL_MP3="/userdata/music/rickroll.mp3"
-RICKROLL_URL="https://github.com/profork/profork/raw/master/.dep/.ytrk/ee.mp3"
 
-if [ -f "$LOCK_FLAG" ]; then
-    echo "🔒 Profork access denied."
-    sleep 1
-
-    if [ ! -f "$BUA_LAUNCHER_1" ] && [ ! -f "$BUA_LAUNCHER_2" ]; then
-        echo "🕵️ BUA launcher missing. That's suspicious..."
-        sleep 2
-        echo "🎶 You tried to come back. But you're never gonna live this down."
-        sleep 2
-
-        [ ! -f "$RICKROLL_MP3" ] && wget -q -O "$RICKROLL_MP3" "$RICKROLL_URL"
-
-        if command -v cvlc >/dev/null 2>&1; then
-            cvlc --play-and-exit --no-video "$RICKROLL_MP3" >/dev/null 2>&1 &
-        elif command -v mpg123 >/dev/null 2>&1; then
-            mpg123 -q "$RICKROLL_MP3" &
-        fi
-
-        echo "📦 Reinstalling BUA Launcher..."
-        sleep 3
-       curl -Ls install.batoaddons.app | bash
-    fi
-
-    echo
-    echo "🧸 Please use the BUA Addons Launcher in your Ports menu."
-    sleep 4
-    exit 0
-fi
-
-curl -Ls https://github.com/profork/profork/raw/master/.dep/.ytrk/qz.sh | bash
-[ -f "/userdata/system/pro/gen_access" ] || exit 0
 
 
 # Ensure /userdata/system/pro exists
