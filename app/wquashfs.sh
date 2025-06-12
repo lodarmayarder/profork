@@ -241,7 +241,8 @@ for choice in $choices; do
     else
         applink="$(echo "$install_cmd" | awk '{print $3}')"
         rm /tmp/.app 2>/dev/null
-        curl -sL -H "Authorization: token $(cat /userdata/system/pro/token)" "$applink" -o /tmp/.app
+        curl -sL "$applink" -o /tmp/.app
+
 
         # wget --tries=10 --no-check-certificate --no-cache --no-cookies -q -O "/tmp/.app" "$applink"
         if [[ -s "/tmp/.app" ]]; then 
