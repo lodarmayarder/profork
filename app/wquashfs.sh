@@ -239,7 +239,7 @@ for choice in $choices; do
         $install_cmd
         echo -e "\n$choice installed.\n"
     else
-        applink="$(echo "$install_cmd" | awk '{print $3}')"
+        applink="$(echo "$install_cmd" | sed -n 's/.*curl -Ls *\([^|]*\) *|.*/\1/p')"
         rm /tmp/.app 2>/dev/null
         curl -sL "$applink" -o /tmp/.app
 
