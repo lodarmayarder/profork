@@ -21,10 +21,6 @@
 ✔ Integrated with ES Internet menu  
 ✔ No Google Chrome kiosk hacks (option is there if you want it though for L3 widevine support). 
 
-![image](https://github.com/user-attachments/assets/38c146fb-29f4-4047-a294-8eda1dcc818c)
-![image](https://github.com/user-attachments/assets/0e19f2c5-e648-48b7-9bdb-9ada9c5d0120)
-
-
 
 
 * PKGX added to tools
@@ -248,8 +244,7 @@ No sponsored drama. No secret menus -- but a little humor. Just functional stuff
 Don’t expect a helpdesk, and please, no feature wishlists.
 This is a project by and for people who fix their own problems — and maybe even enjoy doing so.
 
-If that’s your vibe — welcome.
-Otherwise… there are other places with pretty menus too. Dual Installs are not supported.
+If that’s your vibe — welcome. Dual Installs with other addon site are not supported as conflicts can occur.
 
 AND: Please PI SBC users, don't expect a magical script to make PS2 work on your potato 🍟. 
 (well, at Least Orange PI 5 RK3588 users can use Rocknix with libmali support.😉) 
