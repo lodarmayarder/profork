@@ -19,7 +19,7 @@ These may continue to be reused under GPLv3 so long as all license requirements 
 ✅ Modifications clearly marked
 
 ⚖️ Grandfathered “Friendly Forks” – Still Licensed
-Any forks or mirrors of uureel/batocera.pro or trashbus99/profork created before June 11, 2025, are grandfathered in under GPLv3 provided they:
+Any forks or mirrors of uureel/batocera.pro or trashbus99/profork created before June 12, 2025, are grandfathered in under GPLv3 provided they:
 
 Preserve original commit metadata, or
 
@@ -28,7 +28,7 @@ Include explicit visible attribution to Cliffy or trashbus99 in the README or fi
 These forks are not considered in violation as long as credit is preserved and no misrepresentation occurs.
 
 🚫 All New Forks or Rehosts Are Banned
-As of June 11, 2025, no new forks, mirrors, or derivative repositories are permitted without explicit written permission.
+As of June 12, 2025, no new forks, mirrors, or derivative repositories are permitted without explicit written permission.
 
 The following are now strictly prohibited, regardless of the GPLv3 terms:
 
@@ -43,7 +43,7 @@ All newly created forks, copies, or redistributions after this date automaticall
 ❌ GPLv3 Termination – No Attribution, No Rights
 The GPLv3 license is considered terminated for any script that was:
 
-✅ Authored or significantly modified solely by Cliffy
+✅ Authored solely by Cliffy
 
 ❌ Reused or distributed without proper attribution
 
@@ -62,9 +62,9 @@ You may read and execute them locally, but you may not:
 🛑 Explicit Violator Notice
 The following repositories and users are in direct violation of these terms due to unauthorized use of code authored solely by Cliffy, stripped of attribution:
 
-batocera-unofficial-addons
+batocera-unofficial-addons and related forks
 
-DTJW92 and related forks
+DTJW92 
 
 Any other rehosts or scripts falsely claiming authorship or omitting source attribution
 
@@ -86,9 +86,12 @@ From the FSF:
 "Even if no explicit copyright notice appears in the files, the original author still holds the copyright by default."
 — GNU GPL FAQ – Free Software Foundation
 
+
 🚫 Removing all traceable attribution — even from a single Bash script — constitutes a violation and automatically terminates your license under Section 8.
 
+
 🔒 Execution-Only Clause for All Users
+
 You may:
 
 ✅ Clone and execute these scripts for personal or private use
@@ -103,6 +106,18 @@ You may not:
 
 ❌ Integrate this code into overlays, distributions, or public forks
 
+# Disclaimer of Warranty and Liability
+
+The scripts, tools, and files provided in this repository are distributed **"as is"** and **without any warranty** of any kind, either express or implied.
+
+The entire risk as to the quality, performance, accuracy, and results of using these scripts lies solely with the user.
+
+By using this repository or any associated content, you acknowledge and agree that:
+
+- The author(s) shall **not be held liable** for any damages, data loss, corruption, misconfiguration, downtime, or unintended behavior resulting from use, misuse, or inability to use any part of this repository.
+- These materials are intended for **educational and personal use only**, and **no guarantees** are made regarding compatibility, fitness for a particular purpose, or continued availability.
+
+**Use at your own risk.**
 🧠 Summary
 This is free software — not attribution-free software.
 
