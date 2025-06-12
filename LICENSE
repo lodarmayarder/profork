@@ -6,7 +6,7 @@ The following remain fully licensed under the GNU General Public License version
 
 Scripts originally created or modified by uureel
 
-Jointly authored works where Cliffy was not the sole contributor
+Any other jointly authored works on batocera.pro where Cliffy was not the sole contributor
 
 Scripts where valid attribution metadata remains intact and clearly traceable
 
@@ -27,6 +27,8 @@ Include explicit visible attribution to Cliffy or trashbus99 in the README or fi
 
 These forks are not considered in violation as long as credit is preserved and no misrepresentation occurs.
 
+
+
 🚫 All New Forks or Rehosts Are Banned
 As of June 12, 2025, no new forks, mirrors, or derivative repositories are permitted without explicit written permission.
 
@@ -37,6 +39,7 @@ The following are now strictly prohibited, regardless of the GPLv3 terms:
 ❌ Repackaging or embedding this code into overlays or external tools
 
 ❌ Distributing modified versions in public without permission
+
 
 All newly created forks, copies, or redistributions after this date automatically forfeit any rights to reuse or distribute the affected scripts.
 
