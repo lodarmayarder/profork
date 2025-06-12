@@ -21,7 +21,7 @@ These may continue to be reused under GPLv3 so long as all license requirements 
 ⚖️ Grandfathered “Friendly Forks” – Still Licensed
 Any forks or mirrors of uureel/batocera.pro or trashbus99/profork created before June 12, 2025, are grandfathered in under GPLv3 provided they:
 
-Preserve original commit metadata, or
+Preserve original commit metadata (required attribution beyond github metadata is waived), or
 
 Include explicit visible attribution to Cliffy or trashbus99 in the README or file headers
 
