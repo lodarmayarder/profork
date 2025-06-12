@@ -9,7 +9,7 @@ if [ -d "/userdata/system/add-ons" ]; then
     echo "Dual installs not supported"
     echo "Goodbye."
     echo
-
+fi
    
 # Detect system architecture
 ARCH=$(uname -m)
