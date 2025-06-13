@@ -7,7 +7,7 @@ The following remain fully licensed under the GNU General Public License version
 
 Scripts originally created or modified by uureel
 
-Any other jointly authored works on batocera.pro where Cliffy was not the sole contributor
+Any other jointly authored works on batocera.pro where Cliffy/Trashbus99 was not the sole contributor
 
 Scripts where valid attribution metadata remains intact and clearly traceable
 
