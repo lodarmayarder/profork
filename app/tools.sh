@@ -115,6 +115,7 @@ apps=(
     ["ISO-TO-XISO"]="curl -Ls https://github.com/profork/profork/raw/master/scripts/xiso.sh | bash"
     ["ZENITY"]="curl -Ls  https://github.com/profork/profork/raw/master/.dep/.scripts/zenity.sh | bash"
     ["QEMU"]="curl -Ls https://github.com/profork/profork/raw/master/scripts/qemu.sh | bash"
+    ["SOAR"]="curl -Ls https://github.com/profork/profork/raw/master/scripts/soar.sh | bash"
 )
 
 # Prepare array for dialog command, sorted by app name
