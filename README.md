@@ -1,5 +1,6 @@
 🚀Recents:
 
+* Soar added to Tools menu
 * Added Emulators to Arch Container
 * Improved Windowed Mode in Arch Contatiner
 * Sunshine Services added to Arch Container
