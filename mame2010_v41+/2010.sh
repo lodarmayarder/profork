@@ -29,7 +29,7 @@ sleep 5
 # and ensures symlinks are managed via pro-custom.sh.
 
 # Define URLs for required files
-ES_CFG_URL="https://raw.githubusercontent.com/trashbus99/profork/master/mame2010_v41%2B/es_systems_mame0139.cfg"
+ES_CFG_URL="https://raw.githubusercontent.com/profork/profork/master/mame2010_v41%2B/es_systems_mame0139.cfg"
 INFO_FILE_URL="https://github.com/profork/profork/releases/download/r1/mame0139_libretro.info"
 CORE_FILE_URL="https://github.com/profork/profork/releases/download/r1/mame0139_libretro.so"
 CORE_FILE_2010_URL="https://github.com/profork/profork/releases/download/r1/mame2010_libretro.so"
