@@ -223,7 +223,6 @@ If you use this repo, **your Batocera version may display additional markers in 
 - **"U"** – If third-party EmulationStation add-on custom systems are installed.  
 - **"O"** – If the Overlay is modified.
 
- ![image](https://github.com/user-attachments/assets/16936973-a6a6-422c-b816-88174182e609)
 
 
 
