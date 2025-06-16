@@ -75,7 +75,7 @@ The following repositories and users continue to be in direct violation of these
 
 batocera-unofficial-addons and related forks
 
-DTJW92 (a.k.a. The Notorious F.O.X)
+DTJW92 (a.k.a. The Notorious F.O.X and likely pseuedonym "twisted-byte")
 
 Any other rehosts or scripts falsely claiming authorship or omitting source attribution
 
