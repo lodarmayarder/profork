@@ -10,7 +10,7 @@ appname=openrara # directory name in /userdata/system/pro/...
 AppName=$appname # App.AppImage name
 APPPATH=/userdata/system/pro/$appname/$appname.AppImage
 #APPLINK=http://PROFORK/app/$appname.AppImage
-APPLINK=APPLINK=$(curl -s https://api.github.com/repos/OpenRA/OpenRA/releases/latest | jq -r '.assets[] | select(.name | test("Red-Alert.*x86_64\\.AppImage$")) | .browser_download_url')
+APPLINK=$(curl -s https://api.github.com/repos/OpenRA/OpenRA/releases/latest | jq -r '.assets[] | select(.name | test("Red-Alert.*x86_64\\.AppImage$")) | .browser_download_url')
 
 ORIGIN="OPENRA.NET" # credit & info
 # --------------------------------------------------------------------
