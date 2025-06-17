@@ -2,7 +2,7 @@
 set -e
 
 # Variables
-ZIP_URL="https://sonicfangameshq.com/forums/dl-attach.php?uri=attachments/mega-man-x8-16-bit-zip.34634/"
+ZIP_URL="https://sonicfangameshq.com/forums/dl-attach.php?uri=attachments/mega-man-x8-16-bit-1-0-0-9-zip.35187/"
 TMP_DIR=$(mktemp -d)
 ZIP_FILE="$TMP_DIR/megaman.zip"
 DEST_DIR="/userdata/roms/windows/megamanx8.pc"
