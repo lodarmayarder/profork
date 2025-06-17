@@ -23,7 +23,7 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 # Declare an associative array mapping display names to their Flatpak App IDs.
 declare -A games
 games["0AD"]="app/com.play0ad.zeroad/x86_64/stable"
-games["AssaultCube"]="app/net.cubers.assault.AssaultCube/x86_64/stablee"
+games["AssaultCube"]="app/net.cubers.assault.AssaultCube/x86_64/stable"
 games["AstroMenace"]="Astromenace"
 games["BZFlag"]="BZFlag"
 games["Chromium-BSU"]="net.sourceforge.chromium-bsu"
@@ -187,7 +187,7 @@ flatpak run $APP_ID
 "
 EOF
 
-      chmod +x /userdata/ports/0AD.sh
+      chmod +x /userdata/roms/ports/0AD.sh
       echo "0 A.D. launcher created!"
     fi
 
