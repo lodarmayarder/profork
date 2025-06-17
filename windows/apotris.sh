@@ -1,34 +1,33 @@
 #!/bin/bash
 
-# Define your variables for easy customization
-URL="https://github.com/profork/profork/releases/download/r1/Apotris.wsquashfs"
-KEYS_URL="https://github.com/profork/profork/releases/download/r1/Apotris.wsquashfs.keys"  # Leave empty if no keys file is needed
-DEST_DIR="/userdata/roms/windows"
-MESSAGE="APOTRIS - Needs Enable DXVK in adv. settings before running"  # Leave empty if no message is needed
+# Set target variables
+PORT_DIR="/userdata/roms/ports/apotris"
+LAUNCHER="/userdata/roms/ports/Apotris.sh"
+ZIP_URL="https://apotrisstorage.blob.core.windows.net/binaries/Apotris-v4.1.0Linux-x64.zip"
+ZIP_PATH="/tmp/apotris.zip"
 
-# Ensure destination directory exists
-mkdir -p "$DEST_DIR"
+echo "📦 Creating Apotris port folder..."
+mkdir -p "$PORT_DIR"
 
-# Download the main .wsquashfs file
-wget -O "$DEST_DIR/$(basename "$URL")" "$URL"
-if [[ $? -ne 0 ]]; then
-  echo "Error downloading $URL"
-  exit 1
-fi
+echo "🌐 Downloading Apotris..."
+curl -L "$ZIP_URL" -o "$ZIP_PATH"
 
-# Download the keys file if KEYS_URL is provided and accessible
-if [[ -n "$KEYS_URL" ]]; then
-  if wget --spider "$KEYS_URL" 2>/dev/null; then
-    wget -O "$DEST_DIR/$(basename "$KEYS_URL")" "$KEYS_URL"
-  else
-    echo "No keys file found at $KEYS_URL. Skipping download."
-  fi
-fi
+echo "📂 Extracting..."
+unzip -o "$ZIP_PATH" -d "$PORT_DIR"
+chmod +x "$PORT_DIR/Apotris"
 
-# Show message using dialog if MESSAGE is set
-if [[ -n "$MESSAGE" ]]; then
-  dialog --msgbox "$MESSAGE" 6 50
-fi
+echo "🚀 Creating Apotris.sh launcher..."
+cat << 'EOF' > "$LAUNCHER"
+#!/bin/bash
+cd "/userdata/roms/ports/apotris"
+export HOME=/userdata/saves/apotris
+mkdir -p "$HOME"
+exec ./Apotris
+EOF
 
-# Clear dialog box after execution
-clear
+chmod +x "$LAUNCHER"
+
+echo "✅ Apotris installed!"
+echo "👉 Please update your game list in EmulationStation to see it under Ports."
+echo "⏳ Continuing or exiting in 8 seconds..."
+sleep 8
