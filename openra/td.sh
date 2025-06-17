@@ -10,7 +10,7 @@ appname=openratd # directory name in /userdata/system/pro/...
 AppName=$appname # App.AppImage name
 APPPATH=/userdata/system/pro/$appname/$appname.AppImage
 #APPLINK=http://PROFORK/app/$appname.AppImage
-APPLINK=https://github.com/OpenRA/OpenRA/releases/download/release-20231010/OpenRA-Tiberian-Dawn-x86_64.AppImage
+APPLINK=https://github.com/OpenRA/OpenRA/releases/download/release-20250330/OpenRA-Tiberian-Dawn-x86_64.AppImage
 ORIGIN="OPENRA.NET" # credit & info
 # --------------------------------------------------------------------
 # --------------------------------------------------------------------
