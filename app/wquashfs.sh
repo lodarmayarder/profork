@@ -67,7 +67,7 @@ apps=(
     ["Alleycat-Remeow-(Remake)/WINDOWS"]="curl -Ls https://github.com/profork/profork/raw/master/windows/ac.sh | bash"
     ["Celeste-Classic/WINDOWS"]="curl -Ls https://github.com/profork/profork/raw/master/windows/celeste.sh | bash"
     ["Celeste-64/LINUX"]="curl -Ls https://github.com/profork/profork/raw/master/celeste64/c64.sh | bash"
-    ["Apotris/WINDOWS"]="curl -Ls https://github.com/profork/profork/raw/master/windows/apotris.sh | bash"
+    ["Apotris/Linux"]="curl -Ls https://github.com/profork/profork/raw/master/windows/apotris.sh | bash"
     ["Maldita-Castilla/WINDOWS"]="curl -Ls https://github.com/profork/profork/raw/master/windows/maldita_castilla.sh | bash"
     ["Spelunky-Classic/WINDOWS"]="curl -Ls https://github.com/profork/profork/raw/master/windows/spelunky.sh | bash"
     ["Donkey-Kong-Advanced/WINDOWS"]="curl -Ls https://github.com/profork/profork/raw/master/windows/dka.sh | bash"
@@ -102,10 +102,10 @@ apps=(
     ["ENDLESS-SKY/LINUX"]="curl -Ls https://github.com/profork/profork/raw/master/endlesssky/endlesssky.sh | bash"
     ["ROCKBOT/LINUX"]="curl -Ls https://github.com/profork/profork/raw/master/windows/rb.sh | bash"
     ["ROCKBOT2/LINUX"]="curl -Ls https://github.com/profork/profork/raw/master/windows/rb2.sh | bash"
-    ["CASTLEVANIA-2-SIMONS-QUEST-REVAMPED"]="curl -Ls https://github.com/profork/profork/raw/master/windows/cv2.sh | bash"
-    ["CHIP-&-DALES-RESCUE-RANGERS-REMASTERED"]="curl -Ls https://github.com/profork/profork/raw/master/windows/cdr.sh | bash"
-    ["FREEGEMAS"]="curl -Ls https://github.com/profork/profork/raw/master/windows/fgem.sh | bash"
-    ["VALYRIA-TEAR"]="curl -Ls https://github.com/profork/profork/raw/master/windows/vt.sh | bash"
+    ["CASTLEVANIA-2-SIMONS-QUEST-REVAMPED/WINDOWS"]="curl -Ls https://github.com/profork/profork/raw/master/windows/cv2.sh | bash"
+    ["CHIP-&-DALES-RESCUE-RANGERS-REMASTERED/WINDOWS"]="curl -Ls https://github.com/profork/profork/raw/master/windows/cdr.sh | bash"
+    ["FREEGEMAS/WINDOWS"]="curl -Ls https://github.com/profork/profork/raw/master/windows/fgem.sh | bash"
+    ["VALYRIA-TEAR/WINDOWS"]="curl -Ls https://github.com/profork/profork/raw/master/windows/vt.sh | bash"
 
     # Linux pacman ports
     ["ABUSE/LINUX"]="pacman -S --noconfirm batocera/ports-abuse"
