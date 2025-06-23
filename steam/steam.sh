@@ -63,11 +63,7 @@ case $CHOICE in
         ;;
     4)  
         echo "Update EmulationStation Arch Container Launcher Shortcuts..."
-        rm /tmp/runner 2>/dev/null
-        wget -q --tries=30 --no-check-certificate --no-cache --no-cookies -O /tmp/runner https://github.com/profork/profork/raw/master/steam/update_shortcuts.sh
-        dos2unix /tmp/runner 2>/dev/null 
-        chmod 777 /tmp/runner 2>/dev/null
-        bash /tmp/runner
+        curl -Ls https://github.com/profork/profork/raw/master/steam/addon_ps4.sh | bash
         ;;    
      5)  
         echo "Installing Desktop/Windowed Mode..."
