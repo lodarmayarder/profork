@@ -67,7 +67,7 @@ case $CHOICE in
         ;;   
     3)
         echo "AetherSX2 Experimental..."
-        curl -Ls https://raw.githubusercontent.com/trashbus99/profork/refs/heads/master/aethersx2/aethersx2.sh | bash
+        curl -Ls https://raw.githubusercontent.com/profork/profork/refs/heads/master/aethersx2/aethersx2.sh | bash
         ;;    
     4)
         echo "Mame 0139 for v41+..."
