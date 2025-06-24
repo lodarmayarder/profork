@@ -55,7 +55,7 @@ mkdir $pro/$appname/extra 2>/dev/null
 # --------------------------------------------------------------------
 # -- prepare dependencies for this app and the installer: 
 mkdir -p ~/pro/.dep 2>/dev/null && cd ~/pro/.dep && wget --tries=10 --no-check-certificate --no-cache --no-cookies -q -O ~/pro/.dep/dep.zip https://github.com/profork/profork/raw/main/.dep/dep.zip && yes "y" | unzip -oq ~/pro/.dep/dep.zip && cd ~/
-wget --tries=10 --no-check-certificate --no-cache --no-cookies -q -O $pro/$appname/extra/icon.png https://github.com/profork/profork/raw/main/$appname/extra/icon.png; chmod a+x $dep/* 2>/dev/null; cd ~/
+wget --tries=10 --no-check-certificate --no-cache --no-cookies -q -O $pro/$appname/extra/icon.png hhttps://github.com/profork/profork/raw/master/cpux/extra/icon.png; chmod a+x $dep/* 2>/dev/null; cd ~/
 chmod 777 ~/pro/.dep/* && for file in /userdata/system/pro/.dep/lib*; do sudo ln -s "$file" "/usr/lib/$(basename $file)"; done
 # --------------------------------------------------------------------
 # // end of dependencies 
@@ -279,12 +279,12 @@ cp $launcher /userdata/system/pro/$appname/Launcher 2>/dev/null
 # --------------------------------------------------------------------
 # -- get padtokey profile
 rm "/userdata/roms/ports/$appname.sh.keys" 
-wget --tries=10 -q -O "/userdata/roms/ports/$appname.sh.keys" "https://github.com/profork/profork/raw/main/main/$appname/extra/$appname.sh.keys"
+wget --tries=10 -q -O "/userdata/roms/ports/$appname.sh.keys" "https://github.com/profork/profork/raw/master/cpux/extra/cpux.sh.keys"
 # --------------------------------------------------------------------
 # //
 # -- get icon for shortcut,
 icon=/userdata/system/pro/$appname/extra/icon.png
-wget -q -O $icon https://github.com/profork/profork/raw/main/$appname/extra/icon.png
+wget -q -O $icon https://github.com/profork/profork/raw/master/cpux/extra/icon.png
 # //
 # -- prepare f1 - applications - app shortcut, 
 shortcut=/userdata/system/pro/$appname/extra/$appname.desktop
