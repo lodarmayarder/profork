@@ -9,7 +9,7 @@ APPNAME=HARDINFO # for installer info
 appname=hardinfo # directory name in /userdata/system/pro/...
 AppName=$appname # App.AppImage name
 APPPATH=/userdata/system/pro/$appname/$appname.AppImage
-APPLINK=https://github.com/profork/profork/releases/download/r1/hardinfo.AppImage
+APPLINK=https://github.com/profork/profork/raw/master/hardinfo/hardinfo.AppImage
 ORIGIN="https://github.com/lpereira/hardinfo" # credit & info
 # --------------------------------------------------------------------
 # --------------------------------------------------------------------
