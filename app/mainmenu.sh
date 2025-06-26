@@ -78,9 +78,10 @@ OPTIONS=("1" "Arch Container (Steam, Heroic, Lutris & More apps)"
          "3" "Docker & Containers"
          "4" "Tools"
          "5" "Wine tools and Wine Custom Downloader for v40+"
-         "6" "Flatpak Linux Games"
-         "7" "Other Linux & Windows/Wine Freeware games"
-        # "8" "Install Portmaster"             
+         "6" "Flatpak Apps"
+         "7" "Flatpak Linux Games"
+         "8" "Other Linux & Windows/Wine Freeware games"
+        # "9" "Install Portmaster"             
          "99" "Exit")
 while true; do
 CHOICE=$(dialog --clear --backtitle "Profork Main Menu" \
@@ -124,17 +125,21 @@ case $CHOICE in
         curl -Ls https://github.com/profork/profork/raw/master/wine-custom/wine.sh | bash
         ;;              
     6)
+        echo "Flatpak Apps..."
+        curl -Ls https://raw.githubusercontent.com/profork/profork/master/app/fp1.sh | bash
+        ;;         
+    7)
         echo "Flatpak Linux Games..."
         curl -Ls https://raw.githubusercontent.com/profork/profork/master/app/fpg.sh | bash
         ;;            
-    7)
+    8)
         echo "Other Linux & Windows/Wine Freeware..."
         curl -Ls https://github.com/profork/profork/raw/master/app/wquashfs.sh | bash
         ;;             
-    8)
-        echo "Portmaster Installer..."
-        curl -Ls https://github.com/profork/profork/raw/master/portmaster/install.sh | bash
-        ;;
+    #9)
+    #    echo "Portmaster Installer..."
+    #    curl -Ls https://github.com/profork/profork/raw/master/portmaster/install.sh | bash
+    #    ;;
     9)
         echo "Ports Installer..."
         rm /tmp/runner 2>/dev/null
