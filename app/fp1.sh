@@ -90,6 +90,7 @@ dialog --clear --title "Flatpak App Installer" \
 --checklist "Select apps to install:" 20 100 15 \
 "${dialog_items[@]}" 2> "$tempfile"
 
+
 selected=$(<"$tempfile")
 rm -f "$tempfile"
 clear
@@ -97,8 +98,10 @@ clear
 
 created_launchers=0
 
-for app in $selected; do
-    app_name="${app//\"/}"
+# Properly parse quoted selection
+read -r -a selected_apps <<< "$selected"
+for app in "${selected_apps[@]}"; do
+    app_name="${app//\"/}"  # Strip quotes
     app_id="${apps[$app_name]}"
     sandbox="${needs_sandbox[$app_name]}"
 
@@ -118,8 +121,10 @@ for app in $selected; do
         echo "✅ Custom launcher created: ${launcher##*/}"
         created_launchers=1
     else
-        echo "ℹ️  No launcher needed for $app_name — Batocera will generate one automatically."
+        echo "ℹ️  Skipped launcher for $app_name — sandbox not required."
     fi
+done
+
 
 done
 
@@ -130,9 +135,11 @@ fi
 
 dialog --title "Update Flatpaks" \
 --yesno "Do you want to update your other Flatpak apps now?" 8 50
+update_choice=$?
 
-if [ $? -eq 0 ]; then
+if [ "$update_choice" -eq 0 ]; then
     flatpak update --system -y
 fi
+
 
 echo "Done! Refresh EmulationStation to see new entries."
