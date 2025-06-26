@@ -1,7 +1,7 @@
 #!/bin/bash
 # === BUA Detection ===
 if [ -d "/userdata/system/add-ons" ]; then
-    rm -f /userdata/roms/ports/ChromiumApps.sh
+    rm -f /userdata/roms/ports/FlatpakApps.sh
     clear
     echo "BUA detected. Dual installs not supported. Goodbye."
     exit 0
@@ -10,6 +10,7 @@ fi
 echo "Ensuring Flathub remote is added..."
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
+# Declare all apps, descriptions, and whether they need --no-sandbox
 declare -A apps
 apps["Chromium"]="org.chromium.Chromium"
 apps["Ungoogled-Chromium"]="com.github.Eloston.UngoogledChromium"
@@ -27,7 +28,12 @@ apps["Xcloud"]="io.github.mandruis7.xbox-cloud-gaming-electron"
 apps["XStreamingDesktop"]="io.github.Geocld.XStreamingDesktop"
 apps["Jellyfin-Media-Player"]="com.github.iwalton3.jellyfin-media-player"
 apps["Plex-Desktop"]="tv.plex.PlexDesktop"
+apps["Firefox"]="org.mozilla.firefox"
+apps["LibreWolf"]="io.gitlab.librewolf-community"
+apps["SteamLink"]="com.valvesoftware.SteamLink"
+apps["LibreOffice"]="org.libreoffice.LibreOffice"
 
+# Descriptions
 declare -A desc
 desc["Chromium"]="Vanilla Chromium browser"
 desc["Ungoogled-Chromium"]="Privacy-focused Chromium fork"
@@ -36,7 +42,7 @@ desc["Brave-Browser"]="Ad-blocking privacy browser"
 desc["Vivaldi"]="Power-user browser with tabs & tools"
 desc["Microsoft-Edge"]="Microsoft's Chromium-based browser"
 desc["Discord"]="Voice/text chat app (Electron)"
-desc["Greenlight (xCloud)"]="Xbox Cloud Gaming wrapper"
+desc["Greenlight-(xCloud)"]="Xbox Cloud Gaming wrapper"
 desc["GeForce-NOW-Electron"]="NVIDIA game streaming"
 desc["Heroic-Game-Launcher"]="Epic/GOG game launcher"
 desc["VacuumTube"]="YouTube Leanback wrapper (TV UI)"
@@ -45,7 +51,33 @@ desc["Xcloud"]="Xbox Xcloud electron client"
 desc["XStreamingDesktop"]="Greenlight fork with Gamepad menu navigation"
 desc["Jellyfin-Media-Player"]="Client for self-hosted Jellyfin media server"
 desc["Plex-Desktop"]="Desktop client for Plex streaming media"
+desc["Firefox"]="Native privacy-respecting browser"
+desc["LibreWolf"]="Hardened privacy fork of Firefox"
+desc["SteamLink"]="Game streaming from Steam PC"
+desc["LibreOffice"]="Full office suite"
 
+# Apps requiring --no-sandbox
+declare -A needs_sandbox
+needs_sandbox["Chromium"]=1
+needs_sandbox["Ungoogled-Chromium"]=1
+needs_sandbox["Google-Chrome"]=1
+needs_sandbox["Brave-Browser"]=1
+needs_sandbox["Vivaldi"]=1
+needs_sandbox["Microsoft-Edge"]=1
+needs_sandbox["Discord"]=1
+needs_sandbox["Greenlight-(xCloud)"]=1
+needs_sandbox["GeForce-NOW-Electron"]=1
+needs_sandbox["Heroic-Game-Launcher"]=1
+needs_sandbox["VacuumTube"]=1
+needs_sandbox["Parsec"]=1
+needs_sandbox["Xcloud"]=1
+needs_sandbox["XStreamingDesktop"]=1
+needs_sandbox["Jellyfin-Media-Player"]=1
+needs_sandbox["Plex-Desktop"]=1
+needs_sandbox["Firefox"]=0
+needs_sandbox["LibreWolf"]=0
+needs_sandbox["SteamLink"]=0
+needs_sandbox["LibreOffice"]=0
 
 # Build dialog UI
 dialog_items=()
@@ -54,38 +86,53 @@ for app in $(printf "%s\n" "${!apps[@]}" | sort); do
 done
 
 tempfile=$(mktemp)
-dialog --clear --title "Chromium-Based Flatpak Apps" \
---checklist "Select apps to install with --no-sandbox and extra filesystem access:" 20 100 12 \
+dialog --clear --title "Flatpak App Installer" \
+--checklist "Select apps to install:" 20 100 15 \
 "${dialog_items[@]}" 2> "$tempfile"
 
 selected=$(<"$tempfile")
 rm -f "$tempfile"
 clear
-
 [ -z "$selected" ] && { echo "No apps selected. Exiting."; exit 0; }
+
+created_launchers=0
 
 for app in $selected; do
     app_name="${app//\"/}"
     app_id="${apps[$app_name]}"
+    sandbox="${needs_sandbox[$app_name]}"
+
     echo "Installing $app_name ($app_id)..."
     flatpak install --system -y flathub "$app_id"
 
-    # Flatpak overrides for /userdata and /media access
     echo "Applying Flatpak overrides..."
-    flatpak override  "$app_id" --filesystem=/userdata
-    flatpak override  "$app_id" --filesystem=/media
+    flatpak override "$app_id" --filesystem=/userdata
+    flatpak override "$app_id" --filesystem=/media
 
-# Create launcher
-launcher="/userdata/roms/ports/${app_name// /_}.sh"
-cat > "$launcher" <<EOF
-#!/bin/bash
-export DISPLAY=:0.0
-flatpak run $app_id --no-sandbox
-EOF
+    if [ "$sandbox" == "1" ]; then
+        launcher="/userdata/roms/ports/${app_name// /_}.sh"
+        echo "#!/bin/bash" > "$launcher"
+        echo "export DISPLAY=:0.0" >> "$launcher"
+        echo "flatpak run $app_id --no-sandbox" >> "$launcher"
+        chmod +x "$launcher"
+        echo "✅ Custom launcher created: ${launcher##*/}"
+        created_launchers=1
+    else
+        echo "ℹ️  No launcher needed for $app_name — Batocera will generate one automatically."
+    fi
 
-    chmod +x "$launcher"
-    echo "✅ Created launcher: ${launcher##*/}"
 done
 
-echo "All done. Refresh EmulationStation to see new entries."
+if [ "$created_launchers" == "1" ]; then
+    dialog --title "Custom Launchers Created" \
+    --msgbox "One or more apps require the --no-sandbox flag. A custom launcher was created in /userdata/roms/ports.\n\nYou may see duplicate entries in EmulationStation. Consider hiding the auto-generated versions." 10 70
+fi
 
+dialog --title "Update Flatpaks" \
+--yesno "Do you want to update your other Flatpak apps now?" 8 50
+
+if [ $? -eq 0 ]; then
+    flatpak update --system -y
+fi
+
+echo "Done! Refresh EmulationStation to see new entries."
