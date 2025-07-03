@@ -39,7 +39,7 @@ Write-Host "$AppName installed to: $InstallPath" -ForegroundColor Green
 Write-Host "Shortcut created on Desktop."
 
 # --- Optional: Add to Start Menu ---
-# Copy-Item $ShortcutPath "$env:ProgramData\Microsoft\Windows\Start Menu\Programs\$AppName.lnk"
+ Copy-Item $ShortcutPath "$env:ProgramData\Microsoft\Windows\Start Menu\Programs\$AppName.lnk"
 
 # --- Optional: Add to Startup ---
 # Copy-Item $ShortcutPath "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\$AppName.lnk"
