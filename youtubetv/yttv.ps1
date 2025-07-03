@@ -25,6 +25,13 @@ New-Item -ItemType Directory -Force -Path $InstallPath | Out-Null
 # --- Download and extract ---
 Invoke-WebRequest -Uri $ZipURL -OutFile $ZipFile -UseBasicParsing
 Expand-Archive -Path $ZipFile -DestinationPath $InstallPath -Force
+# Flatten subfolder if zip unpacks into one
+$subfolder = Get-ChildItem -Path $InstallPath -Directory | Select-Object -First 1
+if ($subfolder) {
+    Move-Item -Path "$InstallPath\$($subfolder.Name)\*" -Destination $InstallPath -Force
+    Remove-Item "$InstallPath\$($subfolder.Name)" -Recurse -Force
+}
+
 Remove-Item $ZipFile
 
 # --- Create desktop shortcut ---
