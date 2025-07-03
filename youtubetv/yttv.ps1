@@ -1,9 +1,7 @@
 # PROFORK Windows YouTube TV Installer (Admin Required)
-# VERSION=r3
+# VERSION=r3a (ASCII Safe)
 
-# ---------------------------
-# Elevation check
-# ---------------------------
+# --- Check for admin rights ---
 If (-Not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole(`
     [Security.Principal.WindowsBuiltInRole] "Administrator")) {
     Write-Warning "Relaunching with admin rights..."
@@ -11,9 +9,7 @@ If (-Not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
     exit
 }
 
-# ---------------------------
-# Configuration
-# ---------------------------
+# --- Configuration ---
 $AppName     = "YouTube TV"
 $FolderName  = "yttv"
 $BaseDir     = "${env:ProgramFiles(x86)}\pro"
@@ -23,72 +19,47 @@ $ZipFile     = "$env:TEMP\$FolderName.zip"
 $ExeName     = "YouTube on TV.exe"
 $ShortcutPath= "$env:PUBLIC\Desktop\$AppName.lnk"
 
-# ---------------------------
-# Display install notice
-# ---------------------------
-function Show-InstallNotice {
-    $lines = @(
-        "╔════════════════════════════════════════════════════╗",
-        "║            PROFORK - YOUTUBE TV INSTALLER         ║",
-        "╠════════════════════════════════════════════════════╣",
-        "║  This will install 'YouTube TV' into:             ║",
-        "║     C:\Program Files (x86)\pro\yttv               ║",
-        "║                                                  ║",
-        "║  A desktop shortcut will be created.              ║",
-        "║  A Start Menu entry will also be added.           ║",
-        "║                                                  ║",
-        "║  Downloaded from:                                 ║",
-        "║   github.com/matthewruzzi/...                     ║",
-        "║   installer by github.com/profork/profork         ║",
-        "╚════════════════════════════════════════════════════╝"
-    )
+# --- Installation notice ---
+Write-Host "==================================================" -ForegroundColor Cyan
+Write-Host " PROFORK - YouTube TV Installer" -ForegroundColor Cyan
+Write-Host "==================================================" -ForegroundColor Cyan
+Write-Host "This will install YouTube TV to:" -ForegroundColor Gray
+Write-Host "  $InstallPath" -ForegroundColor Yellow
+Write-Host ""
+Write-Host "A shortcut will be added to the Desktop and Start Menu." -ForegroundColor Gray
+Write-Host "Downloading from:" -ForegroundColor Gray
+Write-Host "  $ZipURL" -ForegroundColor DarkGray
+Write-Host "Scripted by github.com/profork/profork" -ForegroundColor DarkGray
+Write-Host "==================================================" -ForegroundColor Cyan
+Write-Host ""
 
-    foreach ($line in $lines) {
-        Write-Host $line -ForegroundColor Cyan
-        Start-Sleep -Milliseconds 120
-    }
-
-    Write-Host ""
-    Start-Sleep -Seconds 1
-}
-Show-InstallNotice
-
-# ---------------------------
-# Show loading dots
-# ---------------------------
-Write-Host "`nPreparing environment..." -NoNewline
+# --- Show loading dots ---
+Write-Host "Preparing environment..." -NoNewline
 for ($i = 0; $i -lt 10; $i++) {
     Write-Host "." -NoNewline
     Start-Sleep -Milliseconds 100
 }
 Write-Host "`n"
 
-# ---------------------------
-# Create install directory
-# ---------------------------
+# --- Create install directory ---
 New-Item -ItemType Directory -Force -Path $InstallPath | Out-Null
 
-# ---------------------------
-# Download and extract ZIP
-# ---------------------------
-Write-Host "Downloading package..." -ForegroundColor Yellow
+# --- Download and extract ---
+Write-Host "Downloading ZIP..." -ForegroundColor Yellow
 Invoke-WebRequest -Uri $ZipURL -OutFile $ZipFile -UseBasicParsing
 
-Write-Host "Extracting to: $InstallPath" -ForegroundColor Yellow
+Write-Host "Extracting files..." -ForegroundColor Yellow
 Expand-Archive -Path $ZipFile -DestinationPath $InstallPath -Force
 
-# Flatten if ZIP unpacks into subfolder
+# --- Flatten subfolder if needed ---
 $subfolder = Get-ChildItem -Path $InstallPath -Directory | Select-Object -First 1
 if ($subfolder) {
     Move-Item -Path (Join-Path $subfolder.FullName '*') -Destination $InstallPath -Force
     Remove-Item "$($subfolder.FullName)" -Recurse -Force
 }
-
 Remove-Item $ZipFile -Force
 
-# ---------------------------
-# Create desktop shortcut
-# ---------------------------
+# --- Create desktop shortcut ---
 if (Test-Path $ShortcutPath) { Remove-Item $ShortcutPath -Force }
 $WshShell = New-Object -ComObject WScript.Shell
 $Shortcut = $WshShell.CreateShortcut($ShortcutPath)
@@ -97,15 +68,11 @@ $Shortcut.WorkingDirectory = "$InstallPath"
 $Shortcut.IconLocation = "$InstallPath\$ExeName"
 $Shortcut.Save()
 
-# ---------------------------
-# Optional: Add to Start Menu
-# ---------------------------
+# --- Add to Start Menu ---
 Copy-Item $ShortcutPath "$env:ProgramData\Microsoft\Windows\Start Menu\Programs\$AppName.lnk" -Force
 
-# ---------------------------
-# Finish
-# ---------------------------
-Write-Host "`n✅ $AppName installed successfully to:" -ForegroundColor Green
-Write-Host "   $InstallPath"
-Write-Host "`n📌 A shortcut has been added to the desktop and Start Menu."
-Write-Host "`nEnjoy!"
+# --- Finish ---
+Write-Host "`nYouTube TV has been installed to:" -ForegroundColor Green
+Write-Host "$InstallPath"
+Write-Host "`nShortcut added to Desktop and Start Menu." -ForegroundColor Green
+Write-Host "Done." -ForegroundColor Green
