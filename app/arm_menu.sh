@@ -43,8 +43,8 @@ OPTIONS=("1" "Install Portmaster"
          "10" "Xcloud (XWAYLAND)"
          "11" "Greenlight (XWAYLAND)"
          "12" "Chromium Web Browser (XWAYLAND)"
-         "13" "Flatpak Apps (for custom Builds)"
-         "14" "Flatpak Games (for custom builds)"
+#         "13" "Flatpak Apps (for custom Builds)"
+#         "14" "Flatpak Games (for custom builds)"
          "99" "Exit")
          
 # Display the dialog and get the user choice
