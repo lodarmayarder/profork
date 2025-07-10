@@ -118,7 +118,6 @@ function autostart() {
 autostart
 
 dialog --msgbox "✅ Citron installed.
-dialog --msgbox "✅ Citron installed.
 
 🕹️ Run the +UPDATE-SWITCH-SHORTCUTS parser from the Switch menu to generate per-game launchers.
 
