@@ -43,6 +43,8 @@ OPTIONS=("1" "Install Portmaster"
          "10" "Xcloud (XWAYLAND)"
          "11" "Greenlight (XWAYLAND)"
          "12" "Chromium Web Browser (XWAYLAND)"
+         "13" "Flatpak Apps (for custom Builds)"
+         "14" "Flatpak Games (for custom builds"
          "99" "Exit")
          
 # Display the dialog and get the user choice
@@ -106,6 +108,13 @@ case $CHOICE in
         curl -Ls https://github.com/profork/profork/raw/master/chromium/chromium-arm64.sh | bash 
         ;;
   
+   13) echo "Flatpak Apps..."
+        curl -Ls https://github.com/profork/profork/raw/master/app/fp1a.sh | bash 
+        ;;
+  
+   14) echo "Flatpak Games..."
+        curl -Ls https://github.com/profork/profork/raw/master/app/fpga.sh | bash 
+        ;;     
    99)
         echo "Exiting..."
            exit
