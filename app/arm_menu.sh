@@ -113,7 +113,7 @@ case $CHOICE in
         ;;
   
    14) echo "Flatpak Games..."
-        curl -Ls https://github.com/profork/profork/raw/master/app/fpga.sh | bash 
+        curl -Ls https://github.com/profork/profork/raw/master/app/fpg1.sh | bash 
         ;;     
    99)
         echo "Exiting..."
