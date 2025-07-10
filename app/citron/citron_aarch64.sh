@@ -36,7 +36,7 @@ mkdir -p $pro/$appname/extra/downloads
 mkdir -p ~/pro/.dep && cd ~/pro/.dep
 wget -q -O dep.zip https://github.com/profork/profork/raw/master/.dep/dep_arm64.zip
 unzip -oq dep.zip && chmod 777 *
-for file in ~/pro/.dep/lib*; do sudo ln -sf "$file" "/usr/lib/$(basename $file)"; done
+for file in ~/pro/.dep/lib*; do ln -sf "$file" "/usr/lib/$(basename $file)"; done
 
 # Kill existing processes
 killall -9 $AppName wget curl 2>/dev/null
@@ -51,7 +51,7 @@ chmod +x "$APPPATH"
 ES_CONFIG_DIR="/userdata/system/configs/emulationstation"
 mkdir -p "$ES_CONFIG_DIR"
 curl -s -o "$ES_CONFIG_DIR/es_features_citron.cfg" https://raw.githubusercontent.com/profork/profork/master/app/citron/es_features_citron.cfg
-curl -s -o "$ES_CONFIG_DIR/es_system_citron.cfg" https://raw.githubusercontent.com/profork/profork/master/app/citron/es_system_citron.cfg
+curl -s -o "$ES_CONFIG_DIR/es_systems_citron.cfg" https://raw.githubusercontent.com/profork/profork/master/app/citron/es_system_citron.cfg
 
 # Download parser script for Switch shortcuts
 dlpath="/userdata/roms/switch"
