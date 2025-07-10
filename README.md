@@ -1,7 +1,6 @@
 🚀Recents:
 
-* Enabled Flatpak menus for Custom Arm builds (some apps like chromium may need launch command tweaking like `--no-gpu` in ports launch scripts depending on device)
-* Added Custom Batocera ARM builds with flatpak  and other features enabled in https://github.com/profork/Batocera-Custom-Arm-Builds 
+
 * Switched Apotris install to Linux for x86_64 (aarch64 can get it in portmaster)
 * Soar added to Tools menu
 * Added Emulators to Arch Container
