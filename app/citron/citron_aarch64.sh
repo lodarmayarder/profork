@@ -31,6 +31,7 @@ ORIGIN="github.com/profork/profork"
 cd ~/
 pro=/userdata/system/pro
 mkdir -p $pro/$appname/extra/downloads
+mkdir -p /userdata/roms/switch
 
 # Dependency setup (optional for Flatpak integration)
 mkdir -p ~/pro/.dep && cd ~/pro/.dep
@@ -116,6 +117,24 @@ function autostart() {
 }
 autostart
 
-dialog --msgbox "✅ Citron installed.\n\n🕹️ Run the +UPDATE-SWITCH-SHORTCUTS parser from the Switch menu to generate per-game launchers." 15 50
+dialog --msgbox "✅ Citron installed.
+dialog --msgbox "✅ Citron installed.
+
+🕹️ Run the +UPDATE-SWITCH-SHORTCUTS parser from the Switch menu to generate per-game launchers.
+
+🔑 Place your keys in:
+/userdata/system/.local/share/citron/keys
+
+📁 Place firmware files in:
+/userdata/system/.local/share/citron/nand/system/Contents/registered
+
+🎮 Place your ROMs in:
+/userdata/roms/switch
+
+⚙️ You will need to configure your gamepad and other settings from the Citron GUI.
+
+🚀 You can launch Citron GUI from the Ports menu or manually via F1 > pcmanfm." 20 65
+
+
 
 exit 0
