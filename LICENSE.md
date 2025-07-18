@@ -77,6 +77,8 @@ batocera-unofficial-addons and related forks
 
 DTJW92 (a.k.a. The Notorious F.O.X and likely pseuedonym "twisted-byte")
 
+- DRLEdition19  — Forked the repository at https://github.com/DRLEdition19/profork after the license lock date (June 12, 2025) without written permission. Also previously affiliated with projects that violated attribution requirements (e.g., batocera-unofficial-addons). This user is explicitly barred from distributing or modifying this code under execution-only terms.
+
 Any other rehosts or scripts falsely claiming authorship or omitting source attribution
 
 These parties have no valid license to use, modify, or distribute affected code and are required to cease distribution immediately.
