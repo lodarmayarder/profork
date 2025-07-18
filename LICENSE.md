@@ -141,5 +141,12 @@ By using this repository or any associated content, you acknowledge and agree th
 🧠 Summary
 This is free software — not attribution-free software.
 
+
+This project is currently distributed under a custom license that revokes GPLv3 rights for certain identified violators due to unauthorized use and removal of attribution.
+
+Once all current license violations have been fully corrected, acknowledged, and remediated by the named parties, the project may consider reverting to the standard GPLv3 license to encourage healthy, collaborative open-source development.
+
+Until then, this license serves both as protection of the author’s rights and a clear notice to the community regarding authorized use.
+
 🚫 If you erase the author, you erase your license.
 Respect the code. Respect the terms. Respect the source.
