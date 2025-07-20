@@ -43,9 +43,11 @@ OPTIONS=("1" "Install Portmaster"
          "10" "Xcloud (XWAYLAND)"
          "11" "Greenlight (XWAYLAND)"
          "12" "Chromium Web Browser (XWAYLAND)"
-#         "13" "Flatpak Apps (for custom Builds)"
-#         "14" "Flatpak Games (for custom builds)"
-         "99" "Exit")
+         "13" "PKGX cli tools"
+         "14" "Soar cli tools and apps"
+        "15" "Flatpak Apps (for custom Builds)"
+        "16" "Flatpak Games (for custom builds)"
+        "99" "Exit")
          
 # Display the dialog and get the user choice
 while true; do
@@ -107,12 +109,18 @@ case $CHOICE in
    12) echo "Chromium..."
         curl -Ls https://github.com/profork/profork/raw/master/chromium/chromium-arm64.sh | bash 
         ;;
-  
-   13) echo "Flatpak Apps..."
+
+   13) echo "Pkg-X..."
+        curl -Ls https://github.com/profork/profork/raw/master/scripts/pkgx-arm.sh | bash 
+        ;;
+   14) echo "Soar..."
+        curl -Ls https://github.com/profork/profork/raw/master/scripts/soar-arm64.sh | bash 
+        ;;   
+   15) echo "Flatpak Apps..."
         curl -Ls https://github.com/profork/profork/raw/master/app/fp1a.sh | bash 
         ;;
   
-   14) echo "Flatpak Games..."
+   16) echo "Flatpak Games..."
         curl -Ls https://github.com/profork/profork/raw/master/app/fpg1.sh | bash 
         ;;     
    99)
