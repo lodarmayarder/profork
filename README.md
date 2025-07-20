@@ -1,6 +1,7 @@
 🚀Recents:
 
-
+* Flatpak Game/Apps menu added for ARM64 custom builds (see separate repo https://github.com/profork/Batocera-Custom-Arm-Builds)
+* Soar and pkgx added to ARM64 (aarch64)
 * Switched Apotris install to Linux for x86_64 (aarch64 can get it in portmaster)
 * Soar added to Tools menu
 * Added Emulators to Arch Container
