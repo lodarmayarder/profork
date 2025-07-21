@@ -7,37 +7,7 @@
 * Added Emulators to Arch Container
 * Improved Windowed Mode in Arch Contatiner
 * Sunshine Services added to Arch Container
-* Chromium ARM64 (aarch64) added
-* Greenlight ARM64 (aarch64) added
-* Amazon-Luna and Xcloud added to ARM64 (aarch64)
-* Easy Reboot to a different OS from ports via EFIBOOT menu added to tools
-* Added QEMU Docker Linux-ARM64 VMs
-* Fixed/Added back QEMU Docker Linux VMs
-* Added Handbrake to Standalone apps
-* Added PS3 trophy sound for RPCS3 in Tools/PS3
-* Added System game start splash videos  (e.g. start ps3 get ps3 gameboot, xbox360 splash, etc) in tools.
- The .mp4s are located in /userdata/loadingscreens matching system name (e.g. ps3.mp4)
 
-🛠️ Webapps added back/fixed in Arch Container--easily create your own electron/nativefier apps for ES web menu 
-
-✔ Create custom web app from *any* site: discord, spotify, luna, twitch, etc.   
-✔ Pick your preferred user-agent  (chrome, firefox, xbox, google tv etc)
-✔ Integrated with ES Internet menu  
-✔ No Google Chrome kiosk hacks (option is there if you want it though for L3 widevine support). 
-
-
-
-* PKGX added to tools
-* Added PS3 Squash/Unsquash .ps3 folders & updated .psn file auto generator for pkg files -- tools menu
-* 0AD flatpak added with custom launcher fix
-* Added Linux Desktops via web option (in addition to RDP option)
-* Fixed Sublime-Text Installer
-* More Windows/Wine tools added: Easy autorun.cmd, Easy Winetricks, Convert .pc to .wine. Easy compress .wine to wsquashfs/tgz. More ~/wine/exe options.
-* Some more games added
-* Added GIMP to standalone apps
-* Flatpak Game Menu Added
-* ISO to XISO converter added to tools - Converts ISOs in xbox rom folder to XISO format for xemu
-* Added Unleashed Recomp (Sonic Unleashed Engine)
 # Installer/Menu via Terminal/SSH
 ```
 curl -L bit.ly/profork0 | bash
