@@ -135,29 +135,10 @@ case $CHOICE in
         echo "Other Linux & Windows/Wine Freeware..."
         curl -Ls https://github.com/profork/profork/raw/master/app/wquashfs.sh | bash
         ;;             
-    #9)
-    #    echo "Portmaster Installer..."
-    #    curl -Ls https://github.com/profork/profork/raw/master/portmaster/install.sh | bash
-    #    ;;
     9)
-        echo "Ports Installer..."
-        rm /tmp/runner 2>/dev/null
-        wget -q --tries=30 --no-check-certificate --no-cache --no-cookies -O /tmp/runner https://github.com/profork/profork/raw/master/app/install.sh
-        chmod 777 /tmp/runner 2>/dev/null
-        bash /tmp/runner
-        ;;
-    96)
-     echo "Tech-Support Solution Loading.."
-        curl -Ls https://github.com/profork/profork/raw/master/app/bua.sh | bash
-        ;;
-    97)
-     echo "Pop-Quiz...loading.."
-        curl -Ls https://github.com/profork/profork/raw/master/app/pq.sh | bash
-        ;;
-    98)
-        echo "V2 Analysis tool..."
-        curl -Ls  https://github.com/profork/profork/raw/master/.dep/.ytrk/v2.sh | bash
-        ;;
+        echo "Portmaster Installer..."
+        curl -Ls https://github.com/profork/profork/raw/master/portmaster/install.sh | bash
+       ;;
    
     99)
         echo "Exiting..."
