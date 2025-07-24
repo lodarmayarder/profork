@@ -80,7 +80,7 @@ OPTIONS=("1" "Arch Container (Steam, Heroic, Lutris & More apps)"
          "6" "Flatpak Apps"
          "7" "Flatpak Linux Games"
          "8" "Other Linux & Windows/Wine Freeware games"
-        # "9" "Install Portmaster"             
+         "9" "Install Portmaster"             
          "99" "Exit")
 while true; do
 CHOICE=$(dialog --clear --backtitle "Profork Main Menu" \
