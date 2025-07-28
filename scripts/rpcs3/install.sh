@@ -9,7 +9,7 @@ clear
 
 # Step 2: Download the file and announce the download
 echo "Downloading batocera-rpcs3-sync script to /userdata/system..."
-wget https://raw.githubusercontent.com/trashbus99/profork/master/scripts/rpcs3/batocera-rpcs3-sync -O ~/batocera-rpcs3-sync
+wget https://raw.githubusercontent.com/profork/profork/master/scripts/rpcs3/batocera-rpcs3-sync -O ~/batocera-rpcs3-sync
 # Step 3: Make the script executable
 chmod +x ~/batocera-rpcs3-sync
 echo "The script has been downloaded and made executable."
