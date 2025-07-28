@@ -86,7 +86,6 @@ display_controls
 declare -A apps
 apps=(
     # ... (populate with your apps as shown before)
-    ["ARCH-CONTAINER"]="curl -Ls https://github.com/profork/profork/raw/master/steam/steam.sh | bash"
     ["ANDROID/BLISS-OS/DOCKER/QEMU"]="curl -Ls https://github.com/profork/profork/raw/master/docker/bliss_install.sh | bash" 
     ["CASAOS/DOCKER/RECOMMENDED-VERSION"]="curl -Ls https://github.com/profork/profork/raw/master/docker/casa2.sh | bash"
     ["CASAOS/FULL-CONTAINER/DEBIAN/XFCE"]="curl -Ls https://github.com/profork/profork/raw/master/docker/casa.sh | bash"
