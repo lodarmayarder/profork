@@ -2,7 +2,7 @@
 
 
 BASE_DIR="/userdata/roms/ps3"
-SCRIPT_URL="https://raw.githubusercontent.com/trashbus99/profork/master/scripts/rpcs3/batocera-rpcs3-sync"
+SCRIPT_URL="https://raw.githubusercontent.com/profork/profork/master/scripts/rpcs3/batocera-rpcs3-sync"
 SCRIPT_PATH="/userdata/system/batocera-rpcs3-sync"
 TROPHY_URL="https://github.com/profork/profork/raw/master/scripts/snd_trophy.wav"
 TROPHY_DIR="/userdata/system/configs/rpcs3/sounds"
