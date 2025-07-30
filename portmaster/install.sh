@@ -3,6 +3,7 @@
 dialog --msgbox "Portmaster will be installed to ports. It will usually launch on the second launch attempt.\n\nGame compatibility varies." 10 60
 cd /userdata/system
 rm -f Install.Full.PortMaster.sh
+rm -f Install.Pormaster.sh
 wget https://github.com/PortsMaster/PortMaster-GUI/releases/download/2024.12.12-0833/Install.PortMaster.sh
 chmod +x Install.PortMaster.sh
 (./Install.PortMaster.sh)
