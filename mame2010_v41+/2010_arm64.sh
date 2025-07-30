@@ -6,7 +6,7 @@ echo "A separate MAME 0139 system will be added adjacent to MAME"
 sleep 5
 
 # Define URLs for required files
-ES_CFG_URL="https://raw.githubusercontent.com/trashbus99/profork/master/mame2010_v41%2B/es_systems_mame0139.cfg"
+ES_CFG_URL="https://raw.githubusercontent.com/profork/profork/master/mame2010_v41%2B/es_systems_mame0139.cfg"
 INFO_FILE_URL="https://github.com/profork/profork/releases/download/r1/mame0139_libretro.info"
 CORE_DEST_URL="https://github.com/profork/profork/releases/download/r1/mame0139_libretro.so.aarch64"
 
