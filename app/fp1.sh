@@ -33,6 +33,7 @@ apps["LibreWolf"]="io.gitlab.librewolf-community"
 apps["SteamLink"]="com.valvesoftware.SteamLink"
 apps["LibreOffice"]="org.libreoffice.LibreOffice"
 apps["PeaZip"]="io.github.peazip.PeaZip"
+apps["Remmina"]="org.remmina.Remmina"
 
 # Descriptions
 declare -A desc
@@ -56,7 +57,8 @@ desc["Firefox"]="Native privacy-respecting browser"
 desc["LibreWolf"]="Hardened privacy fork of Firefox"
 desc["SteamLink"]="Game streaming from Steam PC"
 desc["LibreOffice"]="Full office suite"
-desc["PeaZip"]="Compression Utility
+desc["PeaZip"]="Compression Utility"
+desc["Remmina"]="RDP CLient"
 
 # Apps requiring --no-sandbox
 declare -A needs_sandbox
@@ -81,6 +83,7 @@ needs_sandbox["LibreWolf"]=0
 needs_sandbox["SteamLink"]=0
 needs_sandbox["LibreOffice"]=0
 needs_sandbox["PeaZip"]=0
+needs_sandbox["Remmina"]=0
 
 # Build dialog UI
 dialog_items=()
