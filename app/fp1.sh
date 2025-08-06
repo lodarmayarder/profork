@@ -1,9 +1,5 @@
 #!/bin/bash
-# === BUA Detection ===
-if [ -d "/userdata/system/add-ons" ]; then
-        echo "BUA detected. Dual installs not supported. Goodbye."
-    exit 0
-fi
+
 
 echo "Ensuring Flathub remote is added..."
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
