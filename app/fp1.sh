@@ -31,6 +31,7 @@ apps["Remmina"]="org.remmina.Remmina"
 apps["Lutris"]="net.lutris.Lutris"
 apps["Jdownloader2"]="org.jdownloader.JDownloader"
 apps["Steam"]="com.valvesoftware.Steam"
+apps["Chiaki"]="io.github.streetpea.Chiaki4deck"
 
 # Descriptions
 declare -A desc
@@ -59,6 +60,7 @@ desc["Remmina"]="RDP CLient"
 desc["Lutris"]="Game launcher for Wine, emulators, etc."
 desc["Jdownloader2"]="Downloader and Management tool."
 desc["Steam"]="Valve's Gaming Platform"
+desc["Chiaki"]="PS4/PS5 Gamestreaming Client"
 
 # Apps requiring --no-sandbox
 declare -A needs_sandbox
@@ -86,7 +88,9 @@ needs_sandbox["PeaZip"]=0
 needs_sandbox["Remmina"]=0
 needs_sandbox["Lutris"]=0
 needs_sandbox["Jdownloader2"]=0
-need_ssandbox["Steam"]=0
+needs_sandbox["Steam"]=0
+needs_sandbox["Chiaki"]=0
+
 
 # Build dialog UI
 dialog_items=()
