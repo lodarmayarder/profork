@@ -35,7 +35,8 @@ apps["LibreOffice"]="org.libreoffice.LibreOffice"
 apps["PeaZip"]="io.github.peazip.PeaZip"
 apps["Remmina"]="org.remmina.Remmina"
 apps["Lutris"]="net.lutris.Lutris"
-
+apps["Jdownloader2"]="org.jdownloader.JDownloader"
+apps["Steam"]="com.valvesoftware.Steam"
 
 # Descriptions
 declare -A desc
@@ -62,7 +63,8 @@ desc["LibreOffice"]="Full office suite"
 desc["PeaZip"]="Compression Utility"
 desc["Remmina"]="RDP CLient"
 desc["Lutris"]="Game launcher for Wine, emulators, etc."
-
+desc["Jdownloader2"]="Downloader and Management tool."
+desc["Steam"]="Valve's Gaming Platform"
 
 # Apps requiring --no-sandbox
 declare -A needs_sandbox
@@ -88,7 +90,9 @@ needs_sandbox["SteamLink"]=0
 needs_sandbox["LibreOffice"]=0
 needs_sandbox["PeaZip"]=0
 needs_sandbox["Remmina"]=0
-needs_sandbox["Lutris"]=1
+needs_sandbox["Lutris"]=0
+needs_sandbox["Jdownloader2"]=0
+need_ssandbox["Steam"]=0
 
 # Build dialog UI
 dialog_items=()
