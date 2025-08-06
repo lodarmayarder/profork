@@ -34,6 +34,8 @@ apps["SteamLink"]="com.valvesoftware.SteamLink"
 apps["LibreOffice"]="org.libreoffice.LibreOffice"
 apps["PeaZip"]="io.github.peazip.PeaZip"
 apps["Remmina"]="org.remmina.Remmina"
+apps["Lutris"]="net.lutris.Lutris"
+
 
 # Descriptions
 declare -A desc
@@ -59,6 +61,8 @@ desc["SteamLink"]="Game streaming from Steam PC"
 desc["LibreOffice"]="Full office suite"
 desc["PeaZip"]="Compression Utility"
 desc["Remmina"]="RDP CLient"
+desc["Lutris"]="Game launcher for Wine, emulators, etc."
+
 
 # Apps requiring --no-sandbox
 declare -A needs_sandbox
@@ -84,6 +88,7 @@ needs_sandbox["SteamLink"]=0
 needs_sandbox["LibreOffice"]=0
 needs_sandbox["PeaZip"]=0
 needs_sandbox["Remmina"]=0
+needs_sandbox["Lutris"]=1
 
 # Build dialog UI
 dialog_items=()
@@ -113,7 +118,27 @@ for app in "${selected_apps[@]}"; do
 
     echo "Installing $app_name ($app_id)..."
     flatpak install --system -y flathub "$app_id"
+# Special patch for Lutris: bypass root check
+if [ "$app_id" == "net.lutris.Lutris" ]; then
+    echo "Patching Lutris to allow running as root..."
+    bootstrap_dir=$(find /userdata/saves/flatpak/binaries/app.net.lutris.Lutris*/ -type d -name "files" | head -n 1)
+    if [ -n "$bootstrap_dir" ]; then
+        app_py="${bootstrap_dir}/lib/python3.11/site-packages/lutris/gui/application.py"
+        if [ -f "$app_py" ]; then
+            sed -i 's,os.geteuid() == 0,os.geteuid() == 888,g' "$app_py" 2>/dev/null
+            echo "✅ Lutris patched successfully."
+            sleep 5
+        else
+            echo "⚠️ Lutris application.py not found; patch skipped."
+            sleep 5
+        fi
+    else
+        echo "⚠️ Lutris install path not found; patch skipped."
+        sleep 5
+    fi
+fi
 
+    
     echo "Applying Flatpak overrides..."
     flatpak override "$app_id" --filesystem=/userdata
     flatpak override "$app_id" --filesystem=/media
@@ -132,7 +157,7 @@ for app in "${selected_apps[@]}"; do
 done
 
 
-done
+
 
 if [ "$created_launchers" == "1" ]; then
     dialog --title "Custom Launchers Created" \
