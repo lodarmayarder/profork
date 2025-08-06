@@ -93,7 +93,7 @@ needs_sandbox["Remmina"]=0
 needs_sandbox["Lutris"]=0
 needs_sandbox["Jdownloader2"]=0
 needs_sandbox["Steam"]=0
-needs_sandbox["Chiaki"]=0
+needs_sandbox["Chiaki"]=1
 needs_sandbox["Bottles"]=0
 needs_sandbox["Moonlight-Qt"]=0
 
