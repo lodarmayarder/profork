@@ -185,7 +185,7 @@ fi
 
 URL="https://github.com/Korkman/macemu-appimage-builder/releases/download/continuous/SheepShaver-x86_64.AppImage"
 
-echo "⬇️  Downloading sheepshaver from: $URL"
+echo "⬇️  Downloading Sheepshaver from: $URL"
 install -Dm755 <(curl -fsSL --retry 5 "$URL") /usr/bin/sheepshaver
 echo "✅  sheepshaver installed to /usr/bin/sheepshaver"
 
@@ -202,7 +202,7 @@ fi
 
 URL="https://github.com/Korkman/macemu-appimage-builder/releases/download/continuous/BasiliskII-x86_64.AppImage"
 
-echo "⬇️  Downloading sheepshaver from: $URL"
+echo "⬇️  Downloading Basilisk II from: $URL"
 install -Dm755 <(curl -fsSL --retry 5 "$URL") /usr/bin/basillisk2
 echo "✅  Basilisk II installed to /usr/bin/basillisk2"
 
