@@ -1,9 +1,7 @@
 #!/bin/bash
 # === BUA Detection ===
 if [ -d "/userdata/system/add-ons" ]; then
-    rm -f /userdata/roms/ports/FlatpakApps.sh
-    clear
-    echo "BUA detected. Dual installs not supported. Goodbye."
+        echo "BUA detected. Dual installs not supported. Goodbye."
     exit 0
 fi
 
