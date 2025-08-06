@@ -121,7 +121,7 @@ for app in "${selected_apps[@]}"; do
 # Special patch for Lutris: bypass root check
 if [ "$app_id" == "net.lutris.Lutris" ]; then
     echo "Patching Lutris to allow running as root..."
-    bootstrap_dir=$(find /userdata/saves/flatpak/binaries/app.net.lutris.Lutris*/ -type d -name "files" | head -n 1)
+    bootstrap_dir=$(find /userdata/saves/flatpak/binaries/app/net.lutris.Lutris*/ -type d -name "files" | head -n 1)
     if [ -n "$bootstrap_dir" ]; then
         app_py="${bootstrap_dir}/lib/python3.11/site-packages/lutris/gui/application.py"
         if [ -f "$app_py" ]; then
