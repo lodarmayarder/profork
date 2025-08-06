@@ -1,7 +1,7 @@
 🚀Recents:
 
 * Fixed Chiaki Standlone
-* Added more Flatpak app including Lutris with "no root user" bypass patch
+* Added more Flatpak apps including Lutris with "no root user" bypass patch
 * Flatpak Game/Apps menu added for ARM64 custom builds (see separate repo https://github.com/profork/Batocera-Custom-Arm-Builds)
 * Soar and pkgx added to ARM64 (aarch64)
 * Switched Apotris install to Linux for x86_64 (aarch64 can get it in portmaster)
