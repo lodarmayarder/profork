@@ -159,8 +159,8 @@ sleep 0.33
 echo -e "${X}THIS WILL INSTALL $APPNAME FOR BATOCERA"
 echo -e "${X}USING $ORIGIN"
 echo
-echo -e "${X}$APPNAME WILL BE AVAILABLE IN PORTS"
-echo -e "${X}AND ALSO IN THE F1->APPLICATIONS MENU"
+echo -e "${X}$APPNAME WILL BE AVAILABLE"
+echo -e "${X}         IN THE F1->APPLICATIONS MENU"
 echo -e "${X}AND INSTALLED IN /USERDATA/SYSTEM/PRO/$APPNAME"
 echo
 echo -e "${R}CHECK CHIAKI PROJECT FOR INSTRUCTIONS"
@@ -355,8 +355,8 @@ echo 'QT_SCALE_FACTOR="1" GDK_SCALE="1" \' >> $port
 echo 'LD_LIBRARY_PATH="/userdata/system/pro/.dep:${LD_LIBRARY_PATH}" DISPLAY=:0.0 /userdata/system/pro/'$appname'/'$appname'.AppImage --appimage-extract-and-run' >> $port
 dos2unix $port
 chmod a+x $port
-ports=/userdata/roms/ports
-cp $port "$ports/Chiaki.sh" 
+#ports=/userdata/roms/ports
+#cp $port "$ports/Chiaki.sh" 
 # --------------------------------------------------------------------
 # -- prepare prelauncher to avoid overlay,
 pre=/userdata/system/pro/$appname/extra/startup
