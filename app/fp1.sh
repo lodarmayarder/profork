@@ -33,6 +33,7 @@ apps["Jdownloader2"]="org.jdownloader.JDownloader"
 apps["Steam"]="com.valvesoftware.Steam"
 apps["Chiaki"]="io.github.streetpea.Chiaki4deck"
 apps["Bottles"]="com.usebottles.bottles"
+apps["Moonlight-Qt"]="com.moonlight_stream.Moonlight"
 
 # Descriptions
 declare -A desc
@@ -43,7 +44,7 @@ desc["Brave-Browser"]="Ad-blocking privacy browser"
 desc["Vivaldi"]="Power-user browser with tabs & tools"
 desc["Microsoft-Edge"]="Microsoft's Chromium-based browser"
 desc["Discord"]="Voice/text chat app (Electron)"
-desc["Greenlight-(xCloud)"]="Xbox Cloud Gaming wrapper"
+desc["Greenlight-(xCloud)"]="Xbox Remote Gaming and Xcloud Gaming client"
 desc["GeForce-NOW-Electron"]="NVIDIA game streaming"
 desc["Heroic-Game-Launcher"]="Epic/GOG game launcher"
 desc["VacuumTube"]="YouTube Leanback wrapper (TV UI)"
@@ -63,6 +64,7 @@ desc["Jdownloader2"]="Downloader and Management tool."
 desc["Steam"]="Valve's Gaming Platform"
 desc["Chiaki"]="PS4/PS5 Gamestreaming Client"
 desc["Bottles"]="Wine Installer and Manager"
+desc["Moonlight-Qt"]="Streaming Client for Geforce Now and Sunshine"
 
 # Apps requiring --no-sandbox
 declare -A needs_sandbox
@@ -93,7 +95,7 @@ needs_sandbox["Jdownloader2"]=0
 needs_sandbox["Steam"]=0
 needs_sandbox["Chiaki"]=0
 needs_sandbox["Bottles"]=0
-
+needs_sandbox["Moonlight-Qt"]=0
 
 # Build dialog UI
 dialog_items=()
