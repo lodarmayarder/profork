@@ -54,7 +54,7 @@ bottles bauh flatseal rebuild-detector ccache axel breeze xorg-xdpyinfo dua-cli 
 handbrake tigervnc remmina  kitty terminator xorg-xkill media-downloader file  noto-fonts ttf-ubuntu-font-family ttf-droid \
 docker docker-compose portainer-bin unzip gthumb nmon thunar nemo umu-launcher gtk-engines gtk-engine-murrine  \
 gdk-pixbuf-xlib gdk-pixbuf2 xarchiver mc vifm fd deckctl steam-tweaks deck-pref-gui ffmpeg handbrake   \
-steam-boilr-gui btrfs-assistant protontricks-git lib32-sdl12-compat sdl12-compat appimagepool-appimage  kmod pciutils xrdp x11vnc tigervnc onboard remmina vinagre freerdp sunshine btrfs-progs tre \
+steam-boilr-gui btrfs-assistant protontricks-git lib32-sdl12-compat sdl12-compat appimagepool-appimage  kmod pciutils xrdp x11vnc tigervnc onboard remmina vinagre freerdp btrfs-progs tre \
 podman distrobox cheese filezilla dos2unix wmctrl xorg-xprop fzf scc yarn sdl2 sdl2_image squashfs-tools \
 btrfs-heatmap meld lynx yq xorg xorg-server-xvfb nodejs npm cairo-dock imagemagick strace sdl2_mixer python-pysdl2 \
 tint2 plank lxde mate mate-extra dialog xterm compsize antimicrox lutris-git chiaki procs sdl2_ttf minecraft-launcher jdownloader2 insync \
@@ -66,7 +66,7 @@ libretro-retrodream libretro-yabause pcsx2-git cemu-git citron-git ryujinx shadp
 screenfetch glances discord jre8-openjdk gcc13 python-pip xfce4 xfce4-goodies obs-studio-git lua53 youtube-music-bin"
 # If you want to install AUR packages, specify them in this variable
 export aur_packagelist="geforcenow-electron mcpelauncher-appimage parsec-bin protonup-qt azahar-appimage rpcs3-bin 86box-roms 86box-manager-bin sgdboop-bin winegui-bin  icu66-bin  \
- zoom"
+ zoom sunshine"
 
 # ALHP is a repository containing packages from the official Arch Linux
 # repos recompiled with -O3, LTO and optimizations for modern CPUs for
