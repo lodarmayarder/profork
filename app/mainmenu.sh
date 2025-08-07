@@ -137,7 +137,7 @@ case $CHOICE in
         ;;             
     9)
         echo "Portmaster Installer..."
-        curl -Ls https://github.com/profork/profork/raw/master/portmaster/portmaster_x64.sh
+        curl -Ls https://github.com/profork/profork/raw/master/portmaster/portmaster_x64.sh | bash
        ;;
    
     99)
