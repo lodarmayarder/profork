@@ -18,7 +18,7 @@
 APPNAME="BALENA-ETCHER"
 appname=balena
 # 
-APPLINK=$(curl -s https://api.github.com/repos/balena-io/etcher/releases/latest | jq -r ".assets[] | select(.name | endswith(\".AppImage\")) | .browser_download_url" | grep AppImage)
+APPLINK=https://github.com/balena-io/etcher/releases/download/v2.0.0/balenaEtcher-2.0.0-x64.AppImage
 APPHOME="github.com/uureel/batocera-apps"
 #---------------------------------------------------------------------
 # DEFINE LAUNCHER COMMAND >> 
