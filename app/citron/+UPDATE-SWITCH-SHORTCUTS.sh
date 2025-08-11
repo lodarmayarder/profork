@@ -34,7 +34,7 @@ find "$roms_dir" -type f \( -iname "*.nsp" -o -iname "*.xci" -o -iname "*.ncz" -
   cat << EOF > "$script_path"
 #!/bin/bash
 batocera-mouse show
-DISPLAY=:0.0 /userdata/system/pro/citron/citron.AppImage --appimage-extract-and-run -f -g "$file_path"
+DISPLAY=:0.0 /userdata/system/pro/eden/eden.AppImage --appimage-extract-and-run -f -g "$file_path"
 batocera-mouse hide
 EOF
 
