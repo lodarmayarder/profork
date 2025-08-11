@@ -24,7 +24,7 @@ APPNAME=Eden
 appname=Eden
 AppName=$appname
 APPPATH=/userdata/system/pro/$appname/$appname.AppImage
-APPLINK="https://github.com/eden-emulator/Releases/releases/download/v0.0.3-rc2/Eden-Linux-v0.0.3-rc2-armv9.AppImage"
+APPLINK="https://github.com/eden-emulator/Releases/releases/download/v0.0.3-rc2/Eden-Linux-v0.0.3-rc2-aarch64.AppImage"
 ORIGIN="github.com/profork/profork"
 
 # Prepare directories
