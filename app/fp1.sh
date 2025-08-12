@@ -219,7 +219,7 @@ fi
 
 # ALWAYS ask about updates, even if nothing was installed
 dialog --title "Update Flatpaks" --defaultno \
-  --yesno "Do you want to update your Flatpak apps now?" 8 50
+  --yesno "Do you want to update your other Flatpak apps now?" 8 50
 update_choice=$?
 
 if [ "$update_choice" -eq 0 ]; then
