@@ -186,9 +186,8 @@ descriptions=(
     ["CHIP-&-DALES-RESCUE-RANGERS-REMASTERED/WINDOWS"]="NES classic remastered with smoother gameplay and visuals."
     ["FREEGEMAS/WINDOWS"]="Simple match-3 puzzle game with colorful gem swapping."
     ["VALYRIA-TEAR/WINDOWS"]="Open-source 2D RPG with turn-based battles and story."
-    ["STARGROVE-SCRAMBLE/WINDOWS"]="A cute 2D platformer with some Yoshi's Island similarities"
-    ["OUT-OF-AMMO/WINDOWS"]="A Fun little Arkanoid/Breakout with some fun twists"
-     
+    ["STARGROVE-SCRAMBLE/WINDOWS"]="A cute 2D platformer with some Yoshis Island similarities"
+    ["OUT-OF-AMMO/WINDOWS"]="A Fun little Arkanoid/Breakout with some fun twists"     
 )
 
 # === Animated Header ===
