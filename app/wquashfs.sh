@@ -107,7 +107,7 @@ apps=(
     ["FREEGEMAS/WINDOWS"]="curl -Ls https://github.com/profork/profork/raw/master/windows/fgem.sh | bash"
     ["VALYRIA-TEAR/WINDOWS"]="curl -Ls https://github.com/profork/profork/raw/master/windows/vt.sh | bash"
     ["STARGROVE-SCRAMBLE/WINDOWS"]="curl -Ls https://github.com/profork/profork/raw/master/windows/sgs.sh | bash"
-    ["OUT-OF-AMMO/WINDOWS"]="curl -Ls https://github.com/profork/profork/raw/master/windows/ooa.sh | bash
+    ["OUT-OF-AMMO/WINDOWS"]="curl -Ls https://github.com/profork/profork/raw/master/windows/ooa.sh | bash"
     
     # Linux pacman ports
     ["ABUSE/LINUX"]="pacman -S --noconfirm batocera/ports-abuse"
