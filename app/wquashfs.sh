@@ -106,7 +106,9 @@ apps=(
     ["CHIP-&-DALES-RESCUE-RANGERS-REMASTERED/WINDOWS"]="curl -Ls https://github.com/profork/profork/raw/master/windows/cdr.sh | bash"
     ["FREEGEMAS/WINDOWS"]="curl -Ls https://github.com/profork/profork/raw/master/windows/fgem.sh | bash"
     ["VALYRIA-TEAR/WINDOWS"]="curl -Ls https://github.com/profork/profork/raw/master/windows/vt.sh | bash"
-
+    ["STARGROVE-SCRAMBLE/WINDOWS"]="curl -Ls https://github.com/profork/profork/raw/master/windows/sgs.sh | bash"
+    ["OUT-OF-AMMO/WINDOWS"]="curl -Ls https://github.com/profork/profork/raw/master/windows/ooa.sh | bash
+    
     # Linux pacman ports
     ["ABUSE/LINUX"]="pacman -S --noconfirm batocera/ports-abuse"
     ["C-DOGS/LINUX"]="pacman -S --noconfirm batocera/ports-cdogs"
@@ -184,6 +186,9 @@ descriptions=(
     ["CHIP-&-DALES-RESCUE-RANGERS-REMASTERED/WINDOWS"]="NES classic remastered with smoother gameplay and visuals."
     ["FREEGEMAS/WINDOWS"]="Simple match-3 puzzle game with colorful gem swapping."
     ["VALYRIA-TEAR/WINDOWS"]="Open-source 2D RPG with turn-based battles and story."
+    ["STARGROVE-SCRAMBLE/WINDOWS"]="A cute 2D platformer with some Yoshi's Island similarities"
+    ["OUT-OF-AMMO/WINDOWS"]="A Fun little Arkanoid/Breakout with some fun twists"
+     
 )
 
 # === Animated Header ===
