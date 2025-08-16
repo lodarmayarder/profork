@@ -1,75 +1,99 @@
 #!/bin/bash
+set -o pipefail
 
-# API endpoint for GitHub releases
+# ===== Settings =====
 REPO_URL="https://api.github.com/repos/Kron4ek/Wine-Builds/releases?per_page=300"
-
-# Directory to store custom Wine versions
 INSTALL_DIR="/userdata/system/wine/custom/"
 mkdir -p "$INSTALL_DIR"
 
-# Fetch release data from GitHub
-echo "Fetching release information..."
-release_data=$(curl -s $REPO_URL)
-
-# Check if curl succeeded
-if [[ $? -ne 0 ]]; then
-    echo "Failed to fetch release data."
+# ===== Prereqs =====
+for cmd in jq dialog wget curl tar xz; do
+  if ! command -v "$cmd" >/dev/null 2>&1; then
+    echo "Error: '$cmd' is required but not installed."
     exit 1
+  fi
+done
+
+# ===== Fetch releases =====
+echo "Fetching release information..."
+release_data="$(curl -fsSL "$REPO_URL")" || { echo "Failed to fetch release data."; exit 1; }
+
+# ===== Build filtered list without regex (jq compiled w/o Oniguruma) =====
+# Keep ONLY assets whose name contains 'staging-tkg' AND endswith amd64/x86_64 tar.xz
+matches="$(echo "$release_data" | jq -c '
+  [.[] as $r
+   | $r.assets[]?
+   | select(.name | contains("staging-tkg"))
+   | select((.name | endswith("amd64.tar.xz")) or (.name | endswith("x86_64.tar.xz")))
+   | {tag: $r.tag_name, name: .name, url: .browser_download_url}
+  ]')"
+
+count="$(echo "$matches" | jq 'length')"
+if [[ "$count" -eq 0 ]]; then
+  echo "No staging-tkg amd64/x86_64 tarballs found."
+  exit 0
 fi
 
-# Prepare the selection menu using dialog
-cmd=(dialog --separate-output --checklist "Select Wine tkg-staging versions to download:" 22 76 16)
+# ===== Build dialog options from filtered list =====
+cmd=(dialog --separate-output --checklist "Select Wine staging-tkg builds to download:" 22 90 16)
 options=()
-i=1
+for ((i=0; i<count; i++)); do
+  name="$(echo "$matches" | jq -r ".[$i].name")"
+  tag="$(echo "$matches"  | jq -r ".[$i].tag")"
+  idx=$((i+1))  # dialog uses 1-based indices
+  options+=("$idx" "$name  (tag: $tag)" off)
+done
 
-# Parse JSON and build options array, filter only tkg-staging builds
-while IFS= read -r line; do
-    name=$(echo "$line" | jq -r '.name')
-    tag=$(echo "$line" | jq -r '.tag_name')
-    description="${name} - ${tag}"
-    tkg_staging_assets=$(echo "$line" | jq -c '.assets[] | select(.name | contains("staging-tkg"))')
-    if [ -n "$tkg_staging_assets" ]; then
-        options+=($i "$description" off)
-        ((i++))
-    fi
-done < <(echo "$release_data" | jq -c '.[]')
-
-# Show dialog, capture selections
-choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
-
-# Clear up the dialog artifacts
+choices="$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)"
 clear
 
-# Process selections
-for choice in $choices
-do
-    version=$(echo "$release_data" | jq -r ".[$choice-1].tag_name")
-    url=$(echo "$release_data" | jq -r ".[$choice-1].assets[] | select(.name | contains(\"staging-tkg\") and endswith(\"amd64.tar.xz\")).browser_download_url" | head -n1)
-    
-    # Define output folder
-    output_folder="${INSTALL_DIR}wine-${version}-staging-tkg"
-    
-    # Create directory for the selected version
-    mkdir -p "$output_folder"
-    cd "$output_folder"
+if [[ -z "$choices" ]]; then
+  echo "No selections made."
+  exit 0
+fi
 
-    # Download the selected version
-    echo "Downloading wine ${version} from $url"
-    wget -q --tries=10 --no-check-certificate --no-cache --no-cookies --show-progress -O "${output_folder}/wine-${version}-staging-tkg.tar.xz" "$url"
+# ===== Process selections (using SAME filtered list) =====
+for choice in $choices; do
+  i=$((choice-1))
 
-    # Check if the download was successful
-    if [ -f "${output_folder}/wine-${version}-staging-tkg.tar.xz" ]; then
-        echo "Unpacking Wine ${version}..."
-        cd "$output_folder"
-        tar --strip-components=1 -xf "${output_folder}/wine-${version}-staging-tkg.tar.xz"
-        rm "wine-${version}-staging-tkg.tar.xz"
-        echo "Installation of Wine ${version} complete."
-    else
-        echo "Failed to download Wine ${version}."
-    fi
+  url="$(echo "$matches"  | jq -r ".[$i].url // empty")"
+  fname="$(echo "$matches" | jq -r ".[$i].name // empty")"
 
-    # Return to the initial directory
-    cd -
+  if [[ -z "$url" || -z "$fname" ]]; then
+    echo "Skipping selection #$choice: missing asset URL or name."
+    continue
+  fi
+
+  outdir="${INSTALL_DIR}${fname%.tar.xz}"
+  mkdir -p "$outdir" || { echo "mkdir failed: $outdir"; continue; }
+  cd "$outdir" || { echo "cd failed: $outdir"; continue; }
+
+  echo "Downloading $fname from"
+  echo "  $url"
+  if ! wget -nv --tries=10 --no-check-certificate --no-cache --no-cookies -O "$fname" "$url"; then
+    echo "Download failed: $fname"
+    cd - >/dev/null
+    continue
+  fi
+
+  if [[ ! -s "$fname" ]]; then
+    echo "Downloaded file is empty: $fname"
+    rm -f "$fname"
+    cd - >/dev/null
+    continue
+  fi
+
+  echo "Unpacking $fname..."
+  if ! tar --strip-components=1 -xf "$fname"; then
+    echo "Extraction failed: $fname"
+    # keep the archive for debugging
+    cd - >/dev/null
+    continue
+  fi
+
+  rm -f "$fname"
+  echo "Installation of $(basename "$outdir") complete."
+  cd - >/dev/null
 done
 
 echo "All selected versions have been processed."
