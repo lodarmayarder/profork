@@ -72,7 +72,7 @@ echo -e "${NC}"
 sleep 4
 
 # Define the options
-OPTIONS=("1" "Arch Container (Desktop Modem Steam, Heroic, Lutris & More apps)"
+OPTIONS=("1" "Arch Container (Desktop Mode, Steam, Heroic, Lutris & More apps)"
          "2" "Standalone Apps (mostly appimages)"
          "3" "Docker & Containers"
          "4" "Tools"
