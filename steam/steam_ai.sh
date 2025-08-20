@@ -1,6 +1,6 @@
 #!/usr/bin/env bash 
 ######################################################################
-# PROFORK/CHROME INSTALLER
+# PROFORK/STEAM INSTALLER
 ######################################################################
 # --------------------------------------------------------------------
 # --------------------------------------------------------------------
@@ -351,7 +351,7 @@ export -f batocera-pro-installer 2>/dev/null
 # |
   batocera-pro-installer "$APPNAME" "$appname" "$AppName" "$APPPATH" "$APPLINK" "$ORIGIN"
 # --------------------------------------------------------------------
-# PROFORK/CHROME INSTALLER //
+# PROFORK/STEAM INSTALLER //
 #################################
 function autostart() {
   csh="/userdata/system/custom.sh"
