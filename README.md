@@ -140,7 +140,7 @@ No Mods to the overlay!
 | **SHEEPSHAVER**                       | PowerPC Mac emulator                                       |
 | **SMPLAYER**                          | Media player with built-in codecs                          |
 | **STARSHIP**                          | Open Source port of Starfox 64 Engine
-| **STEAM/AMD-INTEL-GPUS-ONLY**         | Popular gaming platform                                    |
+| **STEAM**                             | Valve's Popular gaming platform                            |
 | **STRAWBERRY-MUSIC-PLAYER**           | Music player with support for large libraries              |
 | **SUBLIME-TEXT**                      | Text editor for code, markup, and prose                    |
 | **SUNSHINE**                          | Open-source game streaming software                        |
