@@ -1,6 +1,6 @@
 🚀Recents:
 
-
+* Switched Standalone Steam Installer to Ivan-HC's build
 * Fixed Chiaki Standalone
 * Added more Flatpak apps including Lutris with "no root user" bypass patch
 * Flatpak Game/Apps menu added for ARM64 custom builds (see separate repo https://github.com/profork/Batocera-Custom-Arm-Builds)
