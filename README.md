@@ -82,6 +82,7 @@ No Mods to the overlay!
 | **ANTIMICROX**                        | Gamepad mapping and customization tool                       |
 | **APPLEWIN/WINE**                     | Apple II emulator                                            |
 | **ARCADE-MANAGER**                    | ROM management Tool                                          |
+| **ARCH-XFCE-DESKTOP-MODE**            | Full Arch container in Runimage -- Launches from Ports       |
 | **ATOM**                              | Hackable text editor for developers                          |
 | **BALENA-ETCHER**                     | Flash OS images to USB drives and SD cards                   |
 | **BLENDER**                           | Open-source 3D modeling and animation tool                   |
