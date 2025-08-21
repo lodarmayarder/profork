@@ -57,7 +57,7 @@ INFO_TEXT=$'RunImage Desktop installed!\n\n\
   (Chaotic-AUR usually has prebuilt binaries.)\n\n\
 • Chromium-based apps (like Google Chrome) launched as root require:\n\
     --no-sandbox\n\
-  Example:  google-chrome --no-sandbox\n\n\
+  Example:  google-chrome-stable --no-sandbox\n\n\
 Tip: Your changes persist via OverlayFS. To reset, remove the overlay id:\n\
   /userdata/system/runimage/runimage rim-ofsrm ally-xfce\n'
 
@@ -82,3 +82,5 @@ echo "Launcher: ${LAUNCHER}"
 echo "README:   ${README}"
 echo "Launch via EmulationStation: Ports → “RunImage Desktop” after updating gamelist"
 echo "First Launch can take some time to download desktop files in background"
+
+Sleep 8
