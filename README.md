@@ -1,6 +1,8 @@
 🚀Recents:
 
-* Arch XFCE desktop (runimage) -- Launches from ports -- Added to Standalone apps (x86_64 and aarch64)
+* Arch XFCE desktop (runimage) -- Launches from ports -- Added to Standalone apps (x86_64 and aarch64) -- Pacman, Chaotic-AUR work fine inside
+            
+* <img width="1916" height="1048" alt="image" src="https://github.com/user-attachments/assets/045079b1-bc09-4c95-ab8f-e4beab0c67bc" />
 * Switched Standalone Steam Installer to Ivan-HC's build
 * Fixed Chiaki Standalone
 * Added more Flatpak apps including Lutris with "no root user" bypass patch
