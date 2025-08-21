@@ -1,4 +1,14 @@
 #!/bin/bash
+# Check if Xwayland is running
+if ! pgrep -x "Xwayland" > /dev/null; then
+    echo "❌ Xwayland is not running. Exiting."
+    sleep 4
+    exit 1
+fi
+
+echo "✅ Xwayland detected. Continuing..."
+sleep 2
+
 # runimage_install_and_port_launcher.sh
 # Installs RunImage (correct arch), sets up a Ports launcher,
 # enables overlay when FUSE is available, and auto-falls back
