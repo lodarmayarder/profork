@@ -1,6 +1,6 @@
 🚀Recents:
 
-* Arch XFCE desktop (runimage) -- Launches from ports -- Added to Standalone apps
+* Arch XFCE desktop (runimage) -- Launches from ports -- Added to Standalone apps (x86_64 and aarch64)
 * Switched Standalone Steam Installer to Ivan-HC's build
 * Fixed Chiaki Standalone
 * Added more Flatpak apps including Lutris with "no root user" bypass patch
@@ -82,7 +82,7 @@ No Mods to the overlay!
 | **ANTIMICROX**                        | Gamepad mapping and customization tool                       |
 | **APPLEWIN/WINE**                     | Apple II emulator                                            |
 | **ARCADE-MANAGER**                    | ROM management Tool                                          |
-| **ARCH-XFCE-DESKTOP-MODE**            | Full Arch container in Runimage -- Launches from Ports       |
+| **ARCH-XFCE-DESKTOP-MODE**            | Full Arch container in Runimage -- Launches from Ports (ARM64 Available)    |
 | **ATOM**                              | Hackable text editor for developers                          |
 | **BALENA-ETCHER**                     | Flash OS images to USB drives and SD cards                   |
 | **BLENDER**                           | Open-source 3D modeling and animation tool                   |
