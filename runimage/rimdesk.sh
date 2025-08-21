@@ -2,6 +2,10 @@
 # runimage_install_and_port_launcher.sh
 # Installs runimage and adds a Batocera Ports launcher for a persistent desktop.
 set -euo pipefail
+clear
+echo "THANKS TO VHSGUNZO FOR RUNIMAGE!"
+sleep 6
+clear
 
 # --- Config ---
 BIN_URL="https://github.com/VHSgunzo/runimage/releases/download/continuous/runimage-x86_64"
