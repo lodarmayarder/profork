@@ -70,7 +70,7 @@ No Mods to the overlay!
 
 
 # Standalone Apps*
-*(Note: NVIDIA users can Use multiapp arch container for Steam, Lutris, Bottles, Minecraft-Bedrock)
+*(Note: NVIDIA users can Use multiapp arch container for Lutris, Bottles, Minecraft-Bedrock)
 
 | Application                           | Description                                                   |
 |---------------------------------------|---------------------------------------------------------------|
