@@ -8,7 +8,10 @@ fi
 
 echo "✅ Xwayland detected. Continuing..."
 sleep 2
-
+clear
+echo "THANKS TO VHSGUNZO FOR RUNIMAGE!"
+sleep 6
+clear
 # runimage_install_and_port_launcher.sh
 # Installs RunImage (correct arch), sets up a Ports launcher,
 # enables overlay when FUSE is available, and auto-falls back
