@@ -1,5 +1,6 @@
 🚀Recents:
 
+* Arch XFCE desktop (runimage) -- Lauches from ports -- Added to Standalone apps
 * Switched Standalone Steam Installer to Ivan-HC's build
 * Fixed Chiaki Standalone
 * Added more Flatpak apps including Lutris with "no root user" bypass patch
