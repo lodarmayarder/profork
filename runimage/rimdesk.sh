@@ -50,16 +50,16 @@ EOF
 chmod +x "${LAUNCHER}"
 
 # --- Info text ---
-INFO_TEXT=$'RunImage Desktop installed!\n\n\
-• Pacman, AUR, and Chaotic-AUR are already set up inside the desktop.\n\
-• GUI package managers you can install:\n\
-    pacman -Syu pamac-aur\n\
+INFO_TEXT=$'RunImage Desktop installed!\n\n
+• Pacman, AUR, and Chaotic-AUR are already set up inside the desktop.\n
+• GUI package managers you can install:\n
+    pacman -Syu bauh\n
   (Chaotic-AUR usually has prebuilt binaries.)\n\n\
-• Chromium-based apps (like Google Chrome) launched as root require:\n\
-    --no-sandbox\n\
-  Example:  google-chrome-stable --no-sandbox\n\n\
-Tip: Your changes persist via OverlayFS. To reset, remove the overlay id:\n\
-  /userdata/system/runimage/runimage rim-ofsrm ally-xfce\n'
+• Chromium-based apps (like Google Chrome) launched as root require:\n
+    --no-sandbox\n
+  Example:  google-chrome-stable --no-sandbox\n\n
+Tip: Your changes persist via OverlayFS. To reset, remove the overlay id:\n
+  /userdata/system/runimage/runimage rim-ofsrm ally-xfce\n
 
 printf "%s" "${INFO_TEXT}" > "${README}"
 
