@@ -83,4 +83,4 @@ echo "README:   ${README}"
 echo "Launch via EmulationStation: Ports → “RunImage Desktop” after updating gamelist"
 echo "First Launch can take some time to download desktop files in background"
 
-Sleep 8
+sleep 8
