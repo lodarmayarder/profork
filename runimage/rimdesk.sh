@@ -78,6 +78,8 @@ else
   echo
 fi
 
+clear
+
 echo "[✓] Done."
 echo "Binary:   ${BIN_PATH}"
 echo "Overlay:  ${OVERLAY_DIR}"
