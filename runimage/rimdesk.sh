@@ -44,22 +44,22 @@ RIM_UNSHARE_HOME=1 \
 RIM_BIND="/userdata:/userdata,/media:/media" \
 RIM_OVERFSDIR="${OVERLAY_DIR}" \
 RIM_CACHEDIR="${CACHE_DIR}" \
-RIM_ALLOW_ROOT=1 DISPLAY="${DISPLAY_VAR}" \
+RIM_ALLOW_ROOT=1 RIM_SYS_NVLIBS=1 DISPLAY="${DISPLAY_VAR}" \
 "${BIN_PATH}" rim-desktop
 EOF
 chmod +x "${LAUNCHER}"
 
 # --- Info text ---
-INFO_TEXT=$'RunImage Desktop installed!\n\n
-• Pacman, AUR, and Chaotic-AUR are already set up inside the desktop.\n
-• GUI package managers you can install:\n
-    pacman -Syu bauh\n
+INFO_TEXT=$'RunImage Desktop installed!\n\n\
+• Pacman, AUR, and Chaotic-AUR are already set up inside the desktop.\n\
+• GUI package managers you can install:\n\
+    pacman -Syu bauh\n\
   (Chaotic-AUR usually has prebuilt binaries.)\n\n\
-• Chromium-based apps (like Google Chrome) launched as root require:\n
-    --no-sandbox\n
-  Example:  google-chrome-stable --no-sandbox\n\n
-Tip: Your changes persist via OverlayFS. To reset, remove the overlay id:\n
-  /userdata/system/runimage/runimage rim-ofsrm ally-xfce\n
+• Chromium-based apps (like Google Chrome) launched as root require:\n\
+    --no-sandbox\n\
+  Example:  google-chrome --no-sandbox\n\n\
+Tip: Your changes persist via OverlayFS. To reset, remove the overlay id:\n\
+  /userdata/system/runimage/runimage rim-ofsrm ally-xfce\n'
 
 printf "%s" "${INFO_TEXT}" > "${README}"
 
@@ -80,6 +80,5 @@ echo "Overlay:  ${OVERLAY_DIR}"
 echo "Cache:    ${CACHE_DIR}"
 echo "Launcher: ${LAUNCHER}"
 echo "README:   ${README}"
-echo "Launch via EmulationStation: Ports → “RunImage Desktop”."
-echo "Update Gamelist to see in Ports."
-sleep 4
+echo "Launch via EmulationStation: Ports → “RunImage Desktop” after updating gamelist"
+echo "First Launch can take some time to download desktop files in background"
