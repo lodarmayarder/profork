@@ -184,7 +184,7 @@ No Mods to the overlay!
 | **UMBRELOS/DOCKER**                        | UmbrelOS (Docker App GUI Front-End installer) in Docker|
 
 
-Webapps. Add your own websites full screen launchers (electron/nativefier) to main menu via arch container. Spotify, retrogame sites, xcloud, you name it!
+
 
 
 # How to Remove:  
