@@ -65,7 +65,7 @@ curl -L bit.ly/profork0 | bash
 
 
 
-# Demo ofmulti-app arch container Desktop Mode by Arcadematicas
+# Demo of multi-app arch container Desktop Mode by Arcadematicas
 https://www.youtube.com/watch?v=C_-Ij5ADUPw
 No Mods to the overlay!  
 
