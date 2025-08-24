@@ -295,7 +295,7 @@ mkdir -p "$PS2_ROM_DIR"
 
 # Download ES config files with progress bar
 echo -e "${G}⬇️ Downloading EmulationStation configuration files...${X}"
-curl -# -o "$ES_CONFIG_DIR/es_features_aethersx2.cfg" "https://raw.githubusercontent.com/pprofork/profork/master/aethersx2/es_features_aethersx2.cfg"
+curl -# -o "$ES_CONFIG_DIR/es_features_aethersx2.cfg" "https://raw.githubusercontent.com/profork/profork/master/aethersx2/es_features_aethersx2.cfg"
 echo -e "${GREEN}✅ Downloaded: es_features_aethersx2.cfg${X}"
 
 curl -# -o "$ES_CONFIG_DIR/es_systems_aethersx2.cfg" "https://raw.githubusercontent.com/profork/profork/master/aethersx2/es_systems_aethersx2.cfg"
