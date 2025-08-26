@@ -47,7 +47,8 @@ OPTIONS=("1" "Install Portmaster"
          "14" "Soar cli tools and apps"
         "15" "Flatpak Apps (for custom Builds)"
         "16" "Flatpak Games (for custom builds)"
-        "17" "ARCH XFCE DESKTOP MODE - RUNIMAGE (XWAYLAND)"
+        "17" "Emudeck Store and Reg-Linux Homebrew ROMS"
+        "18" "ARCH XFCE DESKTOP MODE - RUNIMAGE (XWAYLAND)"
         "99" "Exit")
          
 # Display the dialog and get the user choice
@@ -124,7 +125,11 @@ case $CHOICE in
    16) echo "Flatpak Games..."
         curl -Ls https://github.com/profork/profork/raw/master/app/fpg1.sh | bash 
         ;;     
-   17) echo "Arch Desktop XFCE conatiner..."
+   17)  
+       echo "Emudeck/Reg-linux Homebrew Games..."
+       curl -Ls https://github.com/profork/profork/raw/master/emudeck/homebrew.sh | bash
+       ;;
+  18) echo "Arch Desktop XFCE conatiner..."
         curl -Ls  https://github.com/profork/profork/raw/master/runimage/ri-desk-aarch64.sh | bash 
         ;;         
   
