@@ -134,7 +134,7 @@ case $CHOICE in
         ;;            
     8)  
        echo "Emudeck/Reg-linux Homebrew Games..."
-       curl -Ls https://github.com/profork/profork/raw/master/emudeck/homebrew.sh | bash
+       curl -L https://github.com/profork/profork/raw/master/emudeck/homebrew.sh | bash
        ;;
     9)
         echo "Other Linux & Windows/Wine Freeware..."
