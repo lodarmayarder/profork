@@ -78,9 +78,10 @@ OPTIONS=("1" "Multi-App Arch Container"
          "4" "Tools"
          "5" "Wine tools and Wine Custom Downloader for v40+"
          "6" "Flatpak Apps"
-         "7" "Flatpak Linux Games"
-         "8" "Other Linux & Windows/Wine Freeware games"
-         "9" "Install Portmaster"             
+         "7" "Flatpak Linux Games" 
+         "8" "Emudeck-Store and Reg-Linux Homebrew Roms"
+         "9" "Other Linux & Windows/Wine Freeware games"
+         "10" "Install Portmaster"             
          "99" "Exit")
 while true; do
 CHOICE=$(dialog --clear --backtitle "Profork Main Menu" \
@@ -131,11 +132,15 @@ case $CHOICE in
         echo "Flatpak Linux Games..."
         curl -Ls https://raw.githubusercontent.com/profork/profork/master/app/fpg.sh | bash
         ;;            
-    8)
+    8)  
+       echo "Emudeck/Reg-linux Homebrew Games..."
+       curl -Ls https://github.com/profork/profork/raw/master/emudeck/homebrew.sh | bash
+       ;;
+    9)
         echo "Other Linux & Windows/Wine Freeware..."
         curl -Ls https://github.com/profork/profork/raw/master/app/wquashfs.sh | bash
         ;;             
-    9)
+    10)
         echo "Portmaster Installer..."
         curl -Ls https://github.com/profork/profork/raw/master/portmaster/portmaster_x64.sh | bash
        ;;
