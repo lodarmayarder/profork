@@ -136,6 +136,6 @@ if [[ "$EMUDECK" == "1" ]]; then
   done < <(find "$ROOT_EXPANDED" -maxdepth 1 -mindepth 1 -type d -print0)
 fi
 
-echo"Done."
+echo "Done."
 echo "Update gamelist to see roms"
 sleep 5
