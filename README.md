@@ -11,7 +11,6 @@
 * Switched Apotris install to Linux for x86_64 (aarch64 can get it in portmaster)
 * Soar added to Tools menu
 * Added Emulators to Arch Container
-* Improved Windowed Mode in Arch Contatiner
 * Sunshine Services added to Arch Container
 
 # Installer/Menu via Terminal/SSH
@@ -68,7 +67,7 @@ curl -L bit.ly/profork0 | bash
 
 # Demo of multi-app arch container Desktop Mode by Arcadematicas
 https://www.youtube.com/watch?v=C_-Ij5ADUPw
-No Mods to the overlay!  
+ 
 
 
 # Standalone Apps*
