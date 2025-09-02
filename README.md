@@ -117,7 +117,7 @@ https://www.youtube.com/watch?v=C_-Ij5ADUPw
 | **LUDUSAVI**                          | Save game manager and backup tool                           |
 | **LUTRIS/AMD-INTEL-GPUS-ONLY**        | Open-source gaming platform                                  |
 | **MEDIAELCH**                         | Media manager for movies and TV shows                       |
-| **MINECRAFT-BEDROCK-EDITION**         | Cross-platform version of Minecraft                         |
+| **MINECRAFT-BEDROCK-EDITION**         | **USE Multiapp Arch container**                              |
 | **MINECRAFT-JAVA-EDITION**            | Java-based version of Minecraft                             |
 | **MOONLIGHT**                         | Open-source game streaming client for Sunshine/Geforce streaming  |
 | **MPV**                               | Lightweight media player                                     |
