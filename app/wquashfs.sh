@@ -1,16 +1,16 @@
 #!/bin/bash
 # === BUA Detection ===
-if [ -d "/userdata/system/add-ons" ]; then
-    rm -f /userdata/roms/ports/Profork.sh
-    rm -r /userdata/roms/ports/Profork.sh.keys
-    clear
-    echo "BUA detected."
-    echo "Dual installs not supported"
-    echo "Goodbye."
-    echo
-    exit 0
-fi
-clear
+#if [ -d "/userdata/system/add-ons" ]; then
+#    rm -f /userdata/roms/ports/Profork.sh
+#    rm -r /userdata/roms/ports/Profork.sh.keys
+##    clear
+#    echo "BUA detected."
+#    echo "Dual installs not supported"
+#    echo "Goodbye."
+#    echo
+#    exit 0
+#fi
+#clear
 
 # === Animated Title ===
 animate_title() {
