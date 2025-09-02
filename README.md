@@ -223,7 +223,7 @@ No sponsored drama. No secret menus -- but a little humor. Just functional stuff
 Don’t expect a helpdesk, and please, no feature wishlists.
 This is a project by and for people who fix their own problems — and maybe even enjoy doing so.
 
-If that’s your vibe — welcome. Dual Installs with the other addon site are not supported as conflicts can occur.
+If that’s your vibe — welcome. Dual Installs with the other addon site are not recommended as conflicts can occur.
 
 AND: Please PI SBC users, don't expect a magical script to make PS2 work on your potato 🍟. 
 (well, at Least Orange PI 5 RK3588 users can use Rocknix with libmali support.😉) 
