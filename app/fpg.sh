@@ -5,10 +5,8 @@ if [ -d "/userdata/system/add-ons" ]; then
     rm -r /userdata/roms/ports/Profork.sh.keys
     clear
     echo "BUA detected."
-    echo "Dual installs not supported"
-    echo "Goodbye."
-    echo
-    exit 0
+    echo "Dual installs not recommended"
+    sleep 5
 fi
 # This script uses DIALOG to display an alphabetically sorted checklist of Flatpak games.
 # Each entry includes a description. When you select games and confirm, the script installs
