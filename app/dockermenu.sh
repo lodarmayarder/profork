@@ -16,10 +16,8 @@ if [ -d "/userdata/system/add-ons" ]; then
     rm -r /userdata/roms/ports/Profork.sh.keys
     clear
     echo "BUA detected."
-    echo "Dual installs not supported"
-    echo "Goodbye."
-    echo
-    exit 0
+    echo "Dual installs not recommended"
+    sleep 5
 fi
 # Function to display animated title with colors
 animate_title() {
