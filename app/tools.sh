@@ -1,8 +1,8 @@
 
 # === BUA Detection ===
 if [ -d "/userdata/system/add-ons" ]; then
-    rm -f /userdata/roms/ports/Profork.sh
-    rm -r /userdata/roms/ports/Profork.sh.keys
+#    rm -f /userdata/roms/ports/Profork.sh
+#    rm -r /userdata/roms/ports/Profork.sh.keys
     clear
     echo "BUA detected."
     echo "Dual installs not recommended"
