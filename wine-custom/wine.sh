@@ -6,7 +6,7 @@ OPTIONS=(
   "2" "Download Wine-TKG-Staging builds"
   "3" "Download Wine-GE Custom builds"
   "4" "Download GE-Proton builds"
-  "5" "Prepare VC+/DX9/Steamy-AIO Wine Dependency Installer next for next windows app run"
+  "5" "Prepare VC+/DX9/Steamy-AIO Wine Dep. Install for next windows app run"
   "6" "Easy Batocera Wine Tricks"
   "7" "Easy autorun.cmd creator"
   "8" "Convert .pc folder to .wine folder"
