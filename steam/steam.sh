@@ -24,6 +24,7 @@ OPTIONS=("1" "Install/Update Arch Container "
          "9" "Addon: Sunshine Service via Arch Container"
          "10" "Addon: Emudeck"
          "11" "Addon: Webapps"
+         "12" "Addon: Geforce NOW 4k / AMD GPUS only (Thanks Titoo7)"
          "99" "Exit")
 while true; do
 # Display the dialog and get the user choice
@@ -117,6 +118,16 @@ case $CHOICE in
         chmod 777 /tmp/runner 2>/dev/null
         bash /tmp/runner
         ;;
+    
+ 12)    echo "GFN 4k Installer..."
+        clear
+        echo "This is a third party addon is maintained by Titoo7"
+        echo "https://github.com/titooo7/gfn-installer-linux-amd"
+        sleep 7
+        clear
+        curl -sL https://raw.githubusercontent.com/titooo7/gfn-installer-linux-amd/main/batocera/run-gfn-installer-for-batocera.sh | bash
+        ;;
+    
      99)
         echo "Exiting..."
         exit
