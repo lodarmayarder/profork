@@ -24,7 +24,7 @@ OPTIONS=("1" "Install/Update Arch Container "
          "9" "Addon: Sunshine Service via Arch Container"
          "10" "Addon: Emudeck"
          "11" "Addon: Webapps"
-         "12" "Addon: Geforce NOW 4k / AMD GPUS only (Thanks Titoo7)"
+         "12" "Addon: Geforce NOW 4k / AMD GPUS only"
          "99" "Exit")
 while true; do
 # Display the dialog and get the user choice
@@ -121,7 +121,7 @@ case $CHOICE in
     
  12)    echo "GFN 4k Installer..."
         clear
-        echo "This is a third party addon maintained by Titoo7"
+        echo "This is a third party addon maintained by"
         echo "https://github.com/titooo7/gfn-installer-linux-amd"
         sleep 7
         clear
