@@ -121,7 +121,7 @@ case $CHOICE in
     
  12)    echo "GFN 4k Installer..."
         clear
-        echo "This is a third party addon is maintained by Titoo7"
+        echo "This is a third party addon maintained by Titoo7"
         echo "https://github.com/titooo7/gfn-installer-linux-amd"
         sleep 7
         clear
