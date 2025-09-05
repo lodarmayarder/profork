@@ -69,7 +69,7 @@ animate_text "${YELLOW}Support is not available. Use at your own risk.${NC}"
 
 
 echo -e "${NC}"
-sleep 4
+sleep 7
 
 # Define the options
 OPTIONS=("1" "Multi-App Arch Container"
