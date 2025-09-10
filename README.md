@@ -147,7 +147,7 @@ https://www.youtube.com/watch?v=C_-Ij5ADUPw
 | **STEAM**                             | Valve's Popular gaming platform                            |
 | **STRAWBERRY-MUSIC-PLAYER**           | Music player with support for large libraries              |
 | **SUBLIME-TEXT**                      | Text editor for code, markup, and prose                    |
-| **SUNSHINE**                          | Open-source game streaming software                        |
+| **SUNSHINE** (flatpak ver in tools menu)      | Open-source game streaming software                        |
 | **TABBY**                             | Modern, highly configurable terminal emulator              |
 | **TELEGRAM**                          | Messaging app                                              |
 | **TOTAL-COMMANDER**                   | File manager with advanced features                        |
