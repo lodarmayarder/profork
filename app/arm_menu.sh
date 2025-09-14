@@ -49,7 +49,7 @@ OPTIONS=("1" "Install Portmaster"
         "16" "Flatpak Games (for custom builds)"
         "17" "Emudeck Store and Reg-Linux Homebrew ROMS"
         "18" "ARCH XFCE DESKTOP MODE - RUNIMAGE (XWAYLAND)"
-        "19" "Docker Menu (Jellyfin, Plex server, Emby, Nextcloud, CasaOs Umbrel, etc"
+        "19" "Docker Menu (Jellyfin, Plex server, Emby, Nextcloud, CasaOs Umbrel, etc)"
         "99" "Exit")
          
 # Display the dialog and get the user choice
