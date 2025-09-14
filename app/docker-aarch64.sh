@@ -21,7 +21,7 @@ if [ -d "/userdata/system/add-ons" ]; then
 fi
 # Function to display animated title with colors
 animate_title() {
-    local text="DOCKER, PODMAN, & CONTAINERS (h/t UUREEL)"
+    local text="DOCKER & CONTAINERS (h/t UUREEL)"
     local delay=0.03
     local length=${#text}
 
