@@ -1,5 +1,6 @@
 🚀Recents:
 
+* Added Docker+Containers for aarch64
 * Added 4K Geforce Now installer to Multi-app container as addon (AMD Only)
 * Added Emudeck Store Homebrew and Reg-Linux Homebrew Rom installer (x86_64 and aarch64)
 * Arch XFCE desktop (runimage) -- Launches from ports -- Added to Standalone apps (x86_64 and aarch64) -- Pacman, Chaotic-AUR work fine inside. No Overlay mods. Not a vnc/remote docker session.
