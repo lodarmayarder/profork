@@ -23,7 +23,9 @@ if ! command -v docker &> /dev/null || ! docker info &> /dev/null; then
     else
         # default (x86_64 etc.)
         curl -L https://github.com/profork/profork/raw/master/docker/install.sh | bash
-    fi
+   fi
+   
+fi
 
 # Get network interface
 INTERFACE=$(dialog --stdout --inputbox "Enter the network interface (e.g., eth0, wlan0):" 8 45 "$(ip route | awk '/default/ { print $5 }')") || exit
