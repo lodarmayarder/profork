@@ -21,7 +21,16 @@ fi
 if ! command -v docker &> /dev/null || ! docker info &> /dev/null; then
     dialog --title "Docker Installation" --infobox "Docker is not installed or the service is not running. Installing Docker..." 10 50
     sleep 2 # Gives user time to read the message
-    curl -L https://github.com/profork/profork/raw/master/docker/install.sh | bash
+
+    arch=$(uname -m)
+    if [[ "$arch" == "aarch64" ]]; then
+        # aarch64 install
+        curl -L https://github.com/profork/profork/raw/master/docker/install-aarch64.sh | bash
+    else
+        # default (x86_64 etc.)
+        curl -L https://github.com/profork/profork/raw/master/docker/install.sh | bash
+    fi
+
     # Verify Docker installation and service
     if ! command -v docker &> /dev/null || ! docker info &> /dev/null; then
         dialog --title "Docker Installation Error" --msgbox "Docker installation failed or the service did not start. Please install and configure Docker manually." 10 50
@@ -29,6 +38,7 @@ if ! command -v docker &> /dev/null || ! docker info &> /dev/null; then
         exit 1
     fi
 fi
+
 
 # Directories for Jellyfin
 jellyfin_base_dir="$HOME/jellyfin"
