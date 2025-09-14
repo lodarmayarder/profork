@@ -14,6 +14,13 @@ if ! command -v docker &> /dev/null || ! docker info &> /dev/null; then
         curl -L https://github.com/profork/profork/raw/master/docker/install.sh | bash
     fi
 
+    # Verify Docker installation and service
+    if ! command -v docker &> /dev/null || ! docker info &> /dev/null; then
+        dialog --title "Docker Installation Error" --msgbox "Docker installation failed or the service did not start. Please install and configure Docker manually." 10 50
+        clear
+        exit 1
+    fi
+fi
 # Function to check if port 443 is in use
 is_port_in_use() {
     netstat -tuln | grep ":$1 " > /dev/null
