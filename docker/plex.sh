@@ -13,7 +13,7 @@ if ! command -v docker &> /dev/null || ! docker info &> /dev/null; then
         # default (x86_64 etc.)
         curl -L https://github.com/profork/profork/raw/master/docker/install.sh | bash
     fi
-
+fi
 
 
 # Setup Plex directories
