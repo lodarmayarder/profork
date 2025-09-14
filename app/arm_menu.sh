@@ -49,6 +49,7 @@ OPTIONS=("1" "Install Portmaster"
         "16" "Flatpak Games (for custom builds)"
         "17" "Emudeck Store and Reg-Linux Homebrew ROMS"
         "18" "ARCH XFCE DESKTOP MODE - RUNIMAGE (XWAYLAND)"
+        "19" "Docker Menu (Jellyfin, Plex server, Emby, Nextcloud, CasaOs Umbrel, etc"
         "99" "Exit")
          
 # Display the dialog and get the user choice
@@ -132,8 +133,10 @@ case $CHOICE in
   18) echo "Arch Desktop XFCE conatiner..."
         curl -Ls  https://github.com/profork/profork/raw/master/runimage/ri-desk-aarch64.sh | bash 
         ;;         
-  
-   99)
+  19) echo "Docker Menu"
+      curl -L https://github.com/profork/profork/raw/master/app/docker-aarch64.sh | bash
+       ;; 
+  99)
         echo "Exiting..."
            exit
         ;;
