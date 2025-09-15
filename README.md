@@ -1,5 +1,6 @@
 🚀Recents:
 
+* Firefox added for aarch64
 * Added Docker+Containers for aarch64
 * Added 4K Geforce Now installer to Multi-app container as addon (AMD Only)
 * Added Emudeck Store Homebrew and Reg-Linux Homebrew Rom installer (x86_64 and aarch64)
