@@ -1,9 +1,28 @@
 #!/bin/bash
+
+
 # install-steam-runimage.sh — Batocera (ZIP split version; uses unzip)
 # - Downloads split ZIP parts
 # - Extracts a single file named "runimage"
 # - Installs to /userdata/roms/ports/steam/runimage
 # - Creates ensure_fuse.sh + Steam.sh launcher (overlay first, unpack fallback)
+# Check if Xwayland is running
+if ! pgrep -x "Xwayland" > /dev/null; then
+    echo "❌ Xwayland is not running. Exiting."
+    sleep 4
+    exit 1
+fi
+
+echo "✅ Xwayland detected. Continuing..."
+sleep 2
+
+clear
+echo "Installing Steam RunImage from profork repo..."
+sleep 3
+clear
+echo "Thanks to VHSgunzo for Runimage!"
+echo "Thanks to Mash0star for Making the Steam Runimage!"
+sleep 5
 
 set -euo pipefail
 
@@ -207,4 +226,4 @@ echo "   • ensure_fuse: ${ENSURE_FUSE}"
 echo "   • Launcher: ${LAUNCHER}"
 echo ""
 echo "🎮 In EmulationStation, refresh the Ports list to see 'Steam'."
-echo "ℹ️ Uses unzip; no 7z required. Handles both split-unzip and concat fallback."
+echo "First Startup can take a long time..be patient"
