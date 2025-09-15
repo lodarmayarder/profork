@@ -23,7 +23,7 @@ appname=brave # directory name in /userdata/system/pro/...
 AppName=$appname # App.AppImage name
 APPPATH=/userdata/system/pro/$appname/$appname.AppImage
 #APPLINK=http://PROFORK/app/$appname.AppImage
-APPLINK=$(curl -s https://api.github.com/repos/ivan-hc/Brave-appimage/releases/tags/continuous | jq -r '.assets[] | select(.name | endswith("aarch64.AppImage") and contains("stable")) | .browser_download_url')
+APPLINK=https://github.com/ivan-hc/Brave-appimage/releases/download/continuous-stable/Brave-Web-Browser-stable-1.82.166-aarch64.AppImage
 ORIGIN="github.com/ivan-hc/Brave-appimage"  # credit & info where it fetches the build
 
 # --------------------------------------------------------------------
