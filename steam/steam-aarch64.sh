@@ -227,3 +227,4 @@ echo "   • Launcher: ${LAUNCHER}"
 echo ""
 echo "🎮 In EmulationStation, refresh the Ports list to see 'Steam'."
 echo "First Startup can take a long time..be patient"
+sleep 7
