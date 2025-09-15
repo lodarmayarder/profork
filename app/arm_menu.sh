@@ -43,13 +43,14 @@ OPTIONS=("1" "Install Portmaster"
          "10" "Xcloud (XWAYLAND)"
          "11" "Greenlight (XWAYLAND)"
          "12" "Chromium Web Browser (XWAYLAND)"
-         "13" "PKGX cli tools"
-         "14" "Soar cli tools and apps"
-        "15" "Flatpak Apps (for custom Builds)"
-        "16" "Flatpak Games (for custom builds)"
-        "17" "Emudeck Store and Reg-Linux Homebrew ROMS"
-        "18" "ARCH XFCE DESKTOP MODE - RUNIMAGE (XWAYLAND)"
-        "19" "Docker Menu (Jellyfin, Plex server, Emby, Nextcloud, CasaOs Umbrel, etc)"
+         "13" "Firefox"
+         "14" "PKGX cli tools"
+         "15" "Soar cli tools and apps"
+        "16" "Flatpak Apps (for custom Builds)"
+        "17" "Flatpak Games (for custom builds)"
+        "18" "Emudeck Store and Reg-Linux Homebrew ROMS"
+        "19" "ARCH XFCE DESKTOP MODE - RUNIMAGE (XWAYLAND)"
+        "20" "Docker Menu (Jellyfin, Plex server, Emby, Nextcloud, CasaOs Umbrel, etc)"
         "99" "Exit")
          
 # Display the dialog and get the user choice
@@ -112,28 +113,30 @@ case $CHOICE in
    12) echo "Chromium..."
         curl -Ls https://github.com/profork/profork/raw/master/chromium/chromium-arm64.sh | bash 
         ;;
-
-   13) echo "Pkg-X..."
+   13) echo "Firefox..."
+        curl -Ls https://github.com/profork/profork/raw/master/firefox/firefox-aarch64.sh | bash 
+        ;;
+   14) echo "Pkg-X..."
         curl -Ls https://github.com/profork/profork/raw/master/scripts/pkgx-arm.sh | bash 
         ;;
-   14) echo "Soar..."
+   15) echo "Soar..."
         curl -Ls https://github.com/profork/profork/raw/master/scripts/soar-arm64.sh | bash 
         ;;   
-   15) echo "Flatpak Apps..."
+   16) echo "Flatpak Apps..."
         curl -Ls https://github.com/profork/profork/raw/master/app/fp1a.sh | bash 
         ;;
   
-   16) echo "Flatpak Games..."
+   17) echo "Flatpak Games..."
         curl -Ls https://github.com/profork/profork/raw/master/app/fpg1.sh | bash 
         ;;     
-   17)  
+   18)  
        echo "Emudeck/Reg-linux Homebrew Games..."
        curl -Ls https://github.com/profork/profork/raw/master/emudeck/homebrew.sh | bash
        ;;
-  18) echo "Arch Desktop XFCE conatiner..."
+  19) echo "Arch Desktop XFCE conatiner..."
         curl -Ls  https://github.com/profork/profork/raw/master/runimage/ri-desk-aarch64.sh | bash 
         ;;         
-  19) echo "Docker Menu"
+  20) echo "Docker Menu"
       curl -L https://github.com/profork/profork/raw/master/app/docker-aarch64.sh | bash
        ;; 
   99)
