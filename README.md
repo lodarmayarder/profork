@@ -102,7 +102,7 @@ https://www.youtube.com/watch?v=C_-Ij5ADUPw
 | **ENDLESS-SKY**                       | Free open-world space exploration game                       |
 | **FERDIUM**                           | Messaging app with support for multiple platforms            |
 | **FILEZILLA**                         | FTP, FTPS, and SFTP client                                   |
-| **FIREFOX**                           | Open-source web browser                                      |
+| **FIREFOX**                           | Open-source web browser (ARM64 available)                    |
 | **FOOBAR2000**                        | Lightweight and customizable audio player                    |
 | **GEFORCENOW**                        | Nvidia's cloud gaming service                                |
 | **GIMP**                              | GNU Image editor                                             |
