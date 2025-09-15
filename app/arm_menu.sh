@@ -51,6 +51,7 @@ OPTIONS=("1" "Install Portmaster"
         "18" "Emudeck Store and Reg-Linux Homebrew ROMS"
         "19" "ARCH XFCE DESKTOP MODE - RUNIMAGE (XWAYLAND)"
         "20" "Docker Menu (Jellyfin, Plex server, Emby, Nextcloud, CasaOs Umbrel, etc)"
+        "21" "Steam [RunImage/Experimental/XWayland/8GB ram recommended]"
         "99" "Exit")
          
 # Display the dialog and get the user choice
@@ -139,6 +140,9 @@ case $CHOICE in
   20) echo "Docker Menu"
       curl -L https://github.com/profork/profork/raw/master/app/docker-aarch64.sh | bash
        ;; 
+  21) echo "Steam Runimage"
+      curl -L https://github.com/profork/profork/raw/master/app/docker-aarch64.sh | bash
+       ;;      
   99)
         echo "Exiting..."
            exit
