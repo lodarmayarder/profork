@@ -141,7 +141,7 @@ case $CHOICE in
       curl -L https://github.com/profork/profork/raw/master/app/docker-aarch64.sh | bash
        ;; 
   21) echo "Steam Runimage"
-      curl -L https://github.com/profork/profork/raw/master/app/docker-aarch64.sh | bash
+      curl -L https://github.com/profork/profork/raw/master/steam/steam-aarch64.sh | bash
        ;;      
   99)
         echo "Exiting..."
