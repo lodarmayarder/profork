@@ -1,34 +1,39 @@
 #!/bin/bash
-
-
-# install-steam-runimage.sh — Batocera (ZIP split version; uses unzip)
-# - Downloads split ZIP parts
-# - Extracts a single file named "runimage"
+# install-steam-runimage.sh — Batocera (concatenate split parts; no unzip/7z)
+# - Downloads split parts (e.g., runimage-aa, runimage-ab OR .001, .002, …)
+# - Concatenates into a single file named "runimage"
 # - Installs to /userdata/roms/ports/steam/runimage
 # - Creates ensure_fuse.sh + Steam.sh launcher (overlay first, unpack fallback)
-# Check if Xwayland is running
-if ! pgrep -x "Xwayland" > /dev/null; then
-    echo "❌ Xwayland is not running. Exiting."
-    sleep 4
-    exit 1
+
+# ===== Early check: Xwayland =====
+if ! pgrep -x "Xwayland" >/dev/null; then
+  echo "❌ Xwayland is not running. Exiting."
+  sleep 4
+  exit 1
 fi
-
 echo "✅ Xwayland detected. Continuing..."
-sleep 2
-
-clear
-echo "Installing Steam RunImage from profork repo..."
-sleep 3
-clear
-echo "Thanks to VHSgunzo for Runimage!"
-echo "Thanks to Mash0star for Making the Steam Runimage!"
-sleep 5
+sleep 1
 
 set -euo pipefail
 
+clear
+echo "Installing Steam RunImage (concatenated split parts)…"
+sleep 1
+echo "Using Batocera paths under /userdata"
+sleep 1
+
 # ===== Config =====
-PART1_URL="https://github.com/profork/profork/releases/download/r1/runimage-steam.zip.001"
-PART2_URL="https://github.com/profork/profork/releases/download/r1/runimage-steam.zip.002"
+# Provide your split part URLs here (aa/ab style shown). You can also list .001, .002, etc.
+PART_URLS=(
+  "https://github.com/profork/profork/releases/download/r1/runimage-aa"
+  "https://github.com/profork/profork/releases/download/r1/runimage-ab"
+)
+
+# If you still want to support old .zip.001/.zip.002 files, uncomment and replace PART_URLS above.
+# PART_URLS=(
+#   "https://github.com/profork/profork/releases/download/r1/runimage-steam.zip.001"
+#   "https://github.com/profork/profork/releases/download/r1/runimage-steam.zip.002"
+# )
 
 PORTS_DIR="/userdata/roms/ports"
 STEAM_DIR="${PORTS_DIR}/steam"
@@ -41,19 +46,11 @@ LAUNCHER="${PORTS_DIR}/Steam.sh"
 ENSURE_FUSE="${DEST_BASE}/ensure_fuse.sh"
 
 TMPDIR="/userdata/system/tmp/install-steam-runimage.$$"
-ZIPBASE="runimage-steAM"  # temp base name to avoid collisions (case mix to dodge odd matchers)
-
-# ===== UX =====
-clear
-echo "Installing Steam RunImage (ZIP split) ..."
-sleep 1
-echo "Using Batocera paths under /userdata"
-sleep 1
 
 # ===== Helpers =====
 fetch() {
   # fetch <url> <outfile>
-  if command -v curl >/dev/null 2>&1; then
+  if command -v curl >/devnull 2>&1; then
     curl -L --retry 3 -o "$2" "$1"
   elif command -v wget >/dev/null 2>&1; then
     wget -O "$2" "$1"
@@ -63,23 +60,6 @@ fetch() {
   fi
 }
 
-have_unzip() { command -v unzip >/dev/null 2>&1; }
-
-try_unzip_split() {
-  # Try standard split layout expected by Info-ZIP:
-  #   <base>.z01, <base>.z02, ..., <base>.zip  (last part is .zip)
-  local dir="$1" base="$2"
-  if ! have_unzip; then return 1; fi
-  ( cd "$dir" && unzip -o "${base}.zip" >/dev/null )
-}
-
-concat_zip_and_unzip() {
-  local dir="$1" out="$2" ; shift 2
-  # Concatenate parts to a full .zip then unzip
-  cat "$@" > "${dir}/${out}"
-  ( cd "$dir" && unzip -o "$out" >/dev/null )
-}
-
 # ===== Prep =====
 echo "➤ Preparing folders…"
 mkdir -p "${STEAM_DIR}" "${DEST_BASE}" "${OVERLAY_DIR}" "${CACHE_DIR}" "${RUNTIME_DIR}" "${TMPDIR}"
@@ -87,56 +67,30 @@ mkdir -p "${STEAM_DIR}" "${DEST_BASE}" "${OVERLAY_DIR}" "${CACHE_DIR}" "${RUNTIM
 cleanup() { rm -rf "${TMPDIR}" || true; }
 trap cleanup EXIT
 
-# ===== Check unzip =====
-if ! have_unzip; then
-  echo "ERROR: 'unzip' is not available on this Batocera build." >&2
-  echo "Please add an 'unzip' binary into PATH (e.g., /userdata/system/bin) and rerun." >&2
-  exit 1
-fi
-
-# ===== Download =====
-echo "➤ Downloading Steam RunImage ZIP parts…"
-P1="${TMPDIR}/${ZIPBASE}.zip.001"
-P2="${TMPDIR}/${ZIPBASE}.zip.002"
-fetch "${PART1_URL}" "${P1}"
-fetch "${PART2_URL}" "${P2}"
-
-# ===== Extract =====
-echo "➤ Extracting…"
-
-# Approach A: rename to Info-ZIP split scheme and use unzip
-#   001 -> .z01, 002 -> .zip
-Z01="${TMPDIR}/${ZIPBASE}.z01"
-ZLAST="${TMPDIR}/${ZIPBASE}.zip"
-cp -f "${P1}" "${Z01}"
-cp -f "${P2}" "${ZLAST}"
-
-set +e
-if try_unzip_split "${TMPDIR}" "${ZIPBASE}"; then
-  ok=1
-else
-  ok=0
-fi
-set -e
-
-# Approach B: if A failed (some BusyBox variants), concat then unzip
-if [ "$ok" -ne 1 ]; then
-  echo "   …split-unzip failed; trying concatenation fallback"
-  FULL="${TMPDIR}/${ZIPBASE}-full.zip"
-  concat_zip_and_unzip "${TMPDIR}" "$(basename "$FULL")" "${P1}" "${P2}"
-fi
-
-# Expect a single file named 'runimage' after extraction
-if [ ! -f "${TMPDIR}/runimage" ]; then
-  # Some creators store inside a folder; try to find it
-  CAND="$(busybox find "${TMPDIR}" -maxdepth 2 -type f -name runimage 2>/dev/null | head -n1 || true)"
-  if [ -n "${CAND}" ]; then
-    mv -f "${CAND}" "${TMPDIR}/runimage"
+# ===== Download parts =====
+echo "➤ Downloading split parts…"
+PART_FILES=()
+idx=0
+for url in "${PART_URLS[@]}"; do
+  part="${TMPDIR}/part.$(printf '%03d' "$idx")"
+  fetch "$url" "$part"
+  if [ ! -s "$part" ]; then
+    echo "ERROR: Downloaded part is empty: $url" >&2
+    exit 1
   fi
-fi
+  PART_FILES+=("$part")
+  idx=$((idx+1))
+done
 
-if [ ! -f "${TMPDIR}/runimage" ]; then
-  echo "ERROR: Extraction did not produce 'runimage'." >&2
+# ===== Concatenate (version-sort to be safe for .001/.002/…/.010) =====
+echo "➤ Concatenating parts…"
+# shellcheck disable=SC2207
+SORTED_PARTS=($(printf "%s\n" "${PART_FILES[@]}" | sort -V))
+cat "${SORTED_PARTS[@]}" > "${TMPDIR}/runimage"
+
+# quick sanity: must be non-zero and executable-ish (we just chmod it)
+if [ ! -s "${TMPDIR}/runimage" ]; then
+  echo "ERROR: Concatenation produced an empty 'runimage'." >&2
   exit 2
 fi
 
@@ -220,11 +174,11 @@ EOF
 chmod +x "${LAUNCHER}"
 
 echo ""
-echo "✅ Steam RunImage installed for Batocera (ZIP split)."
+echo "✅ Steam RunImage installed for Batocera (concatenated)."
 echo "   • RunImage: ${BIN_PATH}"
 echo "   • ensure_fuse: ${ENSURE_FUSE}"
 echo "   • Launcher: ${LAUNCHER}"
 echo ""
 echo "🎮 In EmulationStation, refresh the Ports list to see 'Steam'."
-echo "First Startup can take a long time..be patient"
+echo "ℹ️ First launch can take a while."
 sleep 7
