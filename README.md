@@ -1,5 +1,6 @@
 🚀Recents:
 
+* Added Steam aarch64/ARM64 runimage (6-8gb recommended minimum)
 * Firefox added for aarch64
 * Added Docker+Containers for aarch64
 * Added 4K Geforce Now installer to Multi-app container as addon (AMD Only)
