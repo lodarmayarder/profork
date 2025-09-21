@@ -9,12 +9,101 @@ fi
 #--------------------------------------------------------------------- 
 #       DEFINE APP INFO >> 
 APPNAME=youtube-music 
-APPHOME="github.com/th-ch/youtube-music"
+APPHOME="github.com# === Pick ONE AppImage URL for arm64 (aarch64) without regex ===
+API="https://api.github.com/repos/ytmd-devs/ytmd/releases/latest"
+
+# 1) Prefer explicit arm64 AppImage
+APPLINK=$(curl -fsSL "$API" \
+  | jq -r '.assets[] | select(.name | endswith("arm64.AppImage")) | .browser_download_url' \
+  | head -n1)
+
+# 2) Fallback: generic AppImage (no arch suffix at all)
+if [ -z "$APPLINK" ] || [ "$APPLINK" = "null" ]; then
+  APPLINK=$(curl -fsSL "$API" \
+    | jq -r '.assets[] | select(.name | (endswith(".AppImage")
+        and (contains("x86_64")|not)
+        and (contains("armv7l")|not)
+        and (contains("ia32")|not))) | .browser_download_url' \
+    | head -n1)
+fi
+
+# 3) Fallback: any AppImage (last resort)
+if [ -z "$APPLINK" ] || [ "$APPLINK" = "null" ]; then
+  APPLINK=$(curl -fsSL "$API" \
+    | jq -r '.assets[] | select(.name | endswith(".AppImage")) | .browser_download_url' \
+    | head -n1)
+fi
+
+# Sanity check
+if [ -z "$APPLINK" ] || [ "$APPLINK" = "null" ]; then
+  echo "Failed to find a suitable AppImage in latest release."
+  exit 1
+fi
+"
 #---------------------------------------------------------------------
 
 #Download URL from GitHub
 
-APPLINK=$(curl -s https://api.github.com/repos/th-ch/youtube-music/releases/latest | jq -r '.assets[] | select(.name | endswith("arm64.AppImage")) | .browser_download_url')
+# === Pick ONE AppImage URL for arm64 (aarch64) without regex ===
+API="https://api.github.com/repos/# === Pick ONE AppImage URL for arm64 (aarch64) without regex ===
+API="https://api.github.com/repos/ytmd-devs/ytmd/releases/latest"
+
+# 1) Prefer explicit arm64 AppImage
+APPLINK=$(curl -fsSL "$API" \
+  | jq -r '.assets[] | select(.name | endswith("arm64.AppImage")) | .browser_download_url' \
+  | head -n1)
+
+# 2) Fallback: generic AppImage (no arch suffix at all)
+if [ -z "$APPLINK" ] || [ "$APPLINK" = "null" ]; then
+  APPLINK=$(curl -fsSL "$API" \
+    | jq -r '.assets[] | select(.name | (endswith(".AppImage")
+        and (contains("x86_64")|not)
+        and (contains("armv7l")|not)
+        and (contains("ia32")|not))) | .browser_download_url' \
+    | head -n1)
+fi
+
+# 3) Fallback: any AppImage (last resort)
+if [ -z "$APPLINK" ] || [ "$APPLINK" = "null" ]; then
+  APPLINK=$(curl -fsSL "$API" \
+    | jq -r '.assets[] | select(.name | endswith(".AppImage")) | .browser_download_url' \
+    | head -n1)
+fi
+
+# Sanity check
+if [ -z "$APPLINK" ] || [ "$APPLINK" = "null" ]; then
+  echo "Failed to find a suitable AppImage in latest release."
+  exit 1
+fi
+/releases/latest"
+
+# 1) Prefer explicit arm64 AppImage
+APPLINK=$(curl -fsSL "$API" \
+  | jq -r '.assets[] | select(.name | endswith("arm64.AppImage")) | .browser_download_url' \
+  | head -n1)
+
+# 2) Fallback: generic AppImage (no arch suffix at all)
+if [ -z "$APPLINK" ] || [ "$APPLINK" = "null" ]; then
+  APPLINK=$(curl -fsSL "$API" \
+    | jq -r '.assets[] | select(.name | (endswith(".AppImage")
+        and (contains("x86_64")|not)
+        and (contains("armv7l")|not)
+        and (contains("ia32")|not))) | .browser_download_url' \
+    | head -n1)
+fi
+
+# 3) Fallback: any AppImage (last resort)
+if [ -z "$APPLINK" ] || [ "$APPLINK" = "null" ]; then
+  APPLINK=$(curl -fsSL "$API" \
+    | jq -r '.assets[] | select(.name | endswith(".AppImage")) | .browser_download_url' \
+    | head -n1)
+fi
+
+# Sanity check
+if [ -z "$APPLINK" ] || [ "$APPLINK" = "null" ]; then
+  echo "Failed to find a suitable AppImage in latest release."
+  exit 1
+fi
 
 echo "Downloading from: $APPLINK"
 curl -L -o /userdata/system/pro/youtube-music/YouTube-Music-arm64.AppImage "$APPLINK"
