@@ -35,7 +35,7 @@ OPTIONS=("1" "Install Portmaster"
          "2" "Install Librewolf Web Browser (XWAYLAND)"
          "3" "Install Aethersx2 (For Qualcomm SoCs -- RK3588 like OPI5 should Use Rocknix)"
          "4" "Restore Mame .0139 to v41+"         
-         "5" "Youtube TV UI (XWAYLAND)"
+         "5" "Vacuumtube Youtube Leanback TV UI (XWAYLAND)"
          "6" "Youtube Music (XWAYLAND)"
          "7" "X-Minecraft Launcher (XWAYLAND - EXPERIMENTAL)"
          "8" "Chiaki-NG (XWAYLAND)"
@@ -84,7 +84,7 @@ case $CHOICE in
         ;;                
     5)
         echo "Youtube on TV..."
-        curl -Ls  https://github.com/profork/profork/raw/master/youtubetv/yttv-arm64.sh | bash
+        curl -Ls  https://github.com/profork/profork/raw/master/youtubetv/vt-aarch64.sh | bash
         ;;   
     6)
         echo "Youtube Music..."
