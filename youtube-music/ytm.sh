@@ -4,12 +4,13 @@
 #--------------------------------------------------------------------- 
 #       DEFINE APP INFO >> 
 APPNAME=youtube-music 
-APPHOME="github.com/th-ch/youtube-music"
+APPHOME="github.com/ytmd-devs/ytmd"
 #---------------------------------------------------------------------
 
 #Download URL from GitHub
-APPLINK=$(curl -s https://api.github.com/repos/th-ch/youtube-music/releases/latest | \
-jq -r '.assets[] | select(.name | endswith(".AppImage") and (contains("armv7l")|not) and (contains("arm64")|not)) | .browser_download_url')
+APPLINK=$(curl -s https://api.github.com/repos/ytmd-devs/ytmd/releases/latest \
+  | jq -r '.assets[] | select(.name | endswith(".AppImage")) | .browser_download_url')
+
 
 
 
