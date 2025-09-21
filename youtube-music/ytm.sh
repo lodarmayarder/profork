@@ -7,10 +7,47 @@ APPNAME=youtube-music
 APPHOME="github.com/ytmd-devs/ytmd"
 #---------------------------------------------------------------------
 
-#Download URL from GitHub
-APPLINK=$(curl -s https://api.github.com/repos/ytmd-devs/ytmd/releases/latest \
-  | jq -r '.assets[] | select(.name | endswith(".AppImage")) | .browser_download_url')
+# === Pick ONE AppImage URL for x86_64 without regex ===
+API="https://api.github.com/repos/ytmd-devs/ytmd/releases/latest"
 
+# 1) Prefer explicit x86_64 AppImage
+APPLINK=$(curl -fsSL "$API" \
+  | jq -r '.assets[] | select(.name | endswith("x86_64.AppImage")) | .browser_download_url' \
+  | head -n1)
+
+# 2) Fallback: generic AppImage (no arch in name)
+if [ -z "$APPLINK" ] || [ "$APPLINK" = "null" ]; then
+  APPLINK=$(curl -fsSL "$API" \
+    | jq -r '.assets[] | select(.name | (endswith(".AppImage")
+        and (contains("arm64")|not)
+        and (contains("armv7l")|not)
+        and (contains("aarch")|not)
+        and (contains("x86_64")|not))) | .browser_download_url' \
+    | head -n1)
+fi
+
+# 3) Fallback: any non-ARM AppImage (still exclude arm/arm64/armv7l/aarch)
+if [ -z "$APPLINK" ] || [ "$APPLINK" = "null" ]; then
+  APPLINK=$(curl -fsSL "$API" \
+    | jq -r '.assets[] | select(.name | (endswith(".AppImage")
+        and (contains("arm64")|not)
+        and (contains("armv7l")|not)
+        and (contains("aarch")|not))) | .browser_download_url' \
+    | head -n1)
+fi
+
+# 4) Last resort: any AppImage
+if [ -z "$APPLINK" ] || [ "$APPLINK" = "null" ]; then
+  APPLINK=$(curl -fsSL "$API" \
+    | jq -r '.assets[] | select(.name | endswith(".AppImage")) | .browser_download_url' \
+    | head -n1)
+fi
+
+# Sanity check
+if [ -z "$APPLINK" ] || [ "$APPLINK" = "null" ]; then
+  echo "Failed to find a suitable AppImage in latest release."
+  exit 1
+fi
 
 
 
