@@ -177,7 +177,7 @@ apps=(
     ["WPS-OFFICE"]="curl -Ls https://github.com/profork/profork/raw/master/wps-office/wps.sh | bash"
     ["YARG"]="curl -Ls https://github.com/profork/profork/raw/master/yarg/yarg.sh | bash"
     ["YOUTUBE-MUSIC"]="curl -Ls https://github.com/profork/profork/raw/master/youtube-music/ytm.sh | bash"
-    ["YOUTUBE-TV"]="curl -Ls https://github.com/profork/profork/raw/master/youtubetv/yttv.sh | bash"
+    ["YOUTUBE-TV-VACUUMTUBE"]="curl -Ls https://github.com/profork/profork/raw/master/youtubetv/vt.sh | bash"
 )
 
 # Define an associative array for app descriptions (generated from your table)
