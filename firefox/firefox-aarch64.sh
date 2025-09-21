@@ -2,6 +2,20 @@
 ######################################################################
 # PROFORK INSTALLER — FIREFOX (Batocera, aarch64, official .tar.xz)
 ######################################################################
+# Check if Xwayland is running
+if ! pgrep -x "Xwayland" > /dev/null; then
+    echo "❌ Xwayland is not running. Exiting."
+    sleep 5
+    exit 1
+fi
+
+echo "✅ Xwayland detected. Continuing..."
+sleep 2
+
+echo "Compatibiltiy may vary depending on device..."
+sleep 5
+
+
 APPNAME="FIREFOX"
 appname=firefox
 AppName=firefox
