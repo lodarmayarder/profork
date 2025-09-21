@@ -5,6 +5,20 @@
 # --------------------------------------------------------------------
 # --------------------------------------------------------------------
 # --------------------------------------------------------------------
+# Check if Xwayland is running
+if ! pgrep -x "Xwayland" > /dev/null; then
+    echo "❌ Xwayland is not running. Exiting."
+    sleep 5
+    exit 1
+fi
+
+echo "✅ Xwayland detected. Continuing..."
+sleep 2
+
+echo "Compatibiltiy may vary depending on device..."
+sleep 5
+
+
 APPNAME=VACUUMTUBE # for installer info
 appname=vacuumtube # directory name in /userdata/system/pro/...
 AppName=$appname # App.AppImage name
