@@ -272,7 +272,7 @@ app_desc=(
     ["WPS-OFFICE"]="Office suite"
     ["YARG"]="Yet Another Rhythm Game"
     ["YOUTUBE-MUSIC"]="Streaming app for YouTube Music"
-    ["YOUTUBE-TV"]="Streaming app for Youtube with TV UI"
+    ["YOUTUBE-TV-VACUUMTUBE"]="Youtube Leanback Wrapper with TV UI"
 )
 
 # Prepare array for dialog command, sorted by app name
