@@ -1,5 +1,7 @@
 🚀Recents:
 
+* Changed Youtube-TV to Vacuumtube (Adblock+more options - x86-64/aarch64)
+* Fixed/Changed Youtube Music to new URL (x86-64/aarch64)
 * Added Steam aarch64/ARM64 runimage (6-8gb recommended minimum)
 * Firefox added for aarch64
 * Added Docker+Containers for aarch64
