@@ -1,6 +1,6 @@
 🚀Recents:
 
-* Viber standlone removed -- newest version crashes (users can add manually using flatpak with su - batocera -c "flatpak run.." + permissions workaround
+* Viber standlone removed -- newest version crashes (users who need can add manually using flatpak with su - batocera -c "flatpak run.." + permissions workaround
 * Yarc Removed (Newest version crashes)
 * Super Mario Bros. Remastered added (x86_64) to standalone section
 * Spaghettikart Installer added to x86_64 Standalone app section (aarch64 can use portmaster)
