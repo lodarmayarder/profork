@@ -142,6 +142,7 @@ https://www.youtube.com/watch?v=C_-Ij5ADUPw
 | **SHIP-OF-HARKINIAN**                 | Open-source port of Ocarina of Time Engine                 |
 | **SHEEPSHAVER**                       | PowerPC Mac emulator                                       |
 | **SMPLAYER**                          | Media player with built-in codecs                          |
+| **SPAGHETTIKART**                     | Open source prot of Mario Kart 64 Engine                   |
 | **STARSHIP**                          | Open Source port of Starfox 64 Engine
 | **STEAM**                             | Valve's Popular gaming platform                            |
 | **STRAWBERRY-MUSIC-PLAYER**           | Music player with support for large libraries              |
