@@ -30,12 +30,10 @@ WINDOWED_SVC="${SERVICES_DIR}/windowed"
 # Helpers
 # -----------------------------
 crlf_fix() {
-  # Use dos2unix if available, otherwise strip CRs with sed
-  local f="$1"
   if command -v dos2unix >/dev/null 2>&1; then
-    dos2unix "$f" >/dev/null 2>&1 || true
+    dos2unix "$1" >/dev/null 2>&1 || true
   else
-    sed -i 's/\r$//' "$f" || true
+    sed -i 's/\r$//' "$1" || true
   fi
 }
 
@@ -53,10 +51,10 @@ mv -f "${ZIP_PATH}.part" "${ZIP_PATH}"
 msg "Extracting"
 unzip -o "${ZIP_PATH}" -d "${APP_DIR}" >/dev/null
 
-# Find executable and normalize to SMB1R.x86_64
+# Normalize binary to SMB1R.x86_64
 found_exec="$(ls "${APP_DIR}"/*x86_64 2>/dev/null | head -n1 || true)"
 if [[ -z "${found_exec}" ]]; then
-  echo "ERROR: Could not find the SMB Remastered executable (*x86_64) in ${APP_DIR}"
+  echo "ERROR: SMB Remastered binary not found."
   exit 1
 fi
 if [[ "${found_exec}" != "${APP_DIR}/SMB1R.x86_64" ]]; then
@@ -82,7 +80,7 @@ cat > "${LAUNCH_SH}" <<'EOF'
 set -euo pipefail
 export DISPLAY=:0.0
 
-# Show mouse in F1 to make drag/drop easier
+# Show mouse in F1 for drag/drop
 if command -v batocera-mouse >/dev/null 2>&1; then
   batocera-mouse show || true
 fi
@@ -91,18 +89,17 @@ DIR="/userdata/roms/ports/smbr"
 cd "${DIR}"
 chmod +x "./SMB1R.x86_64"
 
-# First run: the game opens a window; drag your SMB (NES) ROM into it to verify.
+# First run: drag your SMB (NES) ROM into the window to verify
 exec ./SMB1R.x86_64
 EOF
 chmod +x "${LAUNCH_SH}"
 
 # -----------------------------
-# MINIMAL WINDOWED MODE SERVICE
+# WINDOWED MODE SERVICE
 # -----------------------------
 mkdir -p "${DIR_OB}" "${SERVICES_DIR}"
 
-msg "Installing minimal Windowed Mode service files"
-# Core compositor + profiles
+msg "Installing Windowed Mode service"
 wget -q -O "${DIR_OB}/batocera-compositor" "${URL_COMPOSITOR}"
 wget -q -O "${DIR_OB}/full.xml"             "${URL_FULLXML}"
 wget -q -O "${DIR_OB}/window.xml"           "${URL_WINXML}"
@@ -110,41 +107,31 @@ chmod +x "${DIR_OB}/batocera-compositor"
 crlf_fix "${DIR_OB}/full.xml"
 crlf_fix "${DIR_OB}/window.xml"
 
-# Service toggle script
 curl -Ls -o "${WINDOWED_SVC}" "${URL_WINDOWED_SVC}"
 chmod +x "${WINDOWED_SVC}"
 crlf_fix "${WINDOWED_SVC}"
 
 # -----------------------------
-# DONE + INSTRUCTIONS
+# DONE + DIALOG MESSAGE
 # -----------------------------
-cat <<'MSG'
+if command -v dialog >/dev/null 2>&1; then
+  dialog --title "SMB Remastered Installed" --msgbox "\
+✅ Super Mario Bros. Remastered is ready.
 
-✅ Super Mario Bros. Remastered installed.
+Game folder:   /userdata/roms/ports/smbr
+Executable:    /userdata/roms/ports/smbr/SMB1R.x86_64
+Config:        /userdata/system/.local/share/SMB1R/settings.cfg
+Launcher:      /userdata/roms/ports/SMBR.sh
 
-Folders / files:
-• Game folder:   /userdata/roms/ports/smbr
-• Executable:     /userdata/roms/ports/smbr/SMB1R.x86_64
-• Config:         /userdata/system/.local/share/SMB1R/settings.cfg
-• Launcher:       /userdata/roms/ports/SMBR.sh
-• Windowed svc:   ~/services/windowed  (toggle via EmulationStation Services)
-
-
-NEXT STEPS (for first-time verification via drag-drop):
-
-1) In EmulationStation: Main Menu → System Settings → Services → set **windowed = ON**,
-   then press **Back** to save.
+NEXT STEPS:
+1) In EmulationStation → Main Menu → System Settings → Services → set 'windowed = ON'. Press Back to save.
 2) Reboot Batocera.
-3) Press **F1** to open the file manager (PCManFM).
-4) Launch the game from Ports → **SMBR**, then **drag your Super Mario Bros. (NES) ROM**
-   into the SMBR game window to verify.
-5) After it’s verified, go back to Services, set **windowed = OFF**, and reboot.
+3) Press F1 → open PCManFM → run SMBR (Ports). Drag your SMB (NES) ROM into the game window.
+4) After it verifies, set 'windowed = OFF' in Services and reboot.
+5) Refresh your gamelist in EmulationStation so 'SMBR' appears in Ports.
 
-ℹ️ Tip: You can also keep your ROM inside /userdata/roms/ports/smbr for convenience.
-
-👉 IMPORTANT: In EmulationStation, **Refresh Gamelist** so the "SMBR" port and (WINDOWED MODE* service appears.
-
-Enjoy!
-MSG
-echo "this message will close in 30 seconds"
-sleep 30
+Press OK to finish." 20 80
+  clear
+else
+  echo "✅ SMBR installed. Please enable 'windowed' service, reboot, drag your NES ROM, then disable service + reboot. Refresh gamelist in ES."
+fi
