@@ -1,5 +1,6 @@
 🚀Recents:
 
+* Super Mario Bros. Remastered added (x86_64) to standalone section
 * Spaghettikart Installer added to x86_64 Standalone app section (aarch64 can use portmaster)
 * Changed Youtube-TV to Vacuumtube (Adblock+more options - x86-64/aarch64)
 * Fixed/Changed Youtube Music to new URL (x86-64/aarch64)
@@ -149,6 +150,7 @@ https://www.youtube.com/watch?v=C_-Ij5ADUPw
 | **SUBLIME-TEXT**                      | Text editor for code, markup, and prose                    |
 | **SUNSHINE** (flatpak ver in tools menu)      | Open-source game streaming software                        |
 | **TABBY**                             | Modern, highly configurable terminal emulator              |
+| **SUPER MARIO BROS. REMASTERED        | Open source Remastered version of SMB                      |
 | **TELEGRAM**                          | Messaging app                                              |
 | **TOTAL-COMMANDER**                   | File manager with advanced features                        |
 | **UNLEASHED-RECOMP**                  | Sonic Unleashed engine for PC                               |
