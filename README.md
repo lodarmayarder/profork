@@ -1,5 +1,6 @@
 🚀Recents:
 
+* Spaghettikart Installer added to x86_64 Standalone app section (aarch64 can use portmaster)
 * Changed Youtube-TV to Vacuumtube (Adblock+more options - x86-64/aarch64)
 * Fixed/Changed Youtube Music to new URL (x86-64/aarch64)
 * Added Steam aarch64/ARM64 runimage (6-8gb recommended minimum)
