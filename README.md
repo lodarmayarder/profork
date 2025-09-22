@@ -11,14 +11,7 @@
 * Arch XFCE desktop (runimage) -- Launches from ports -- Added to Standalone apps (x86_64 and aarch64) -- Pacman, Chaotic-AUR work fine inside. No Overlay mods. Not a vnc/remote docker session.
    <img width="1916" height="1048" alt="image" src="https://github.com/user-attachments/assets/045079b1-bc09-4c95-ab8f-e4beab0c67bc" />
 * Switched Standalone Steam Installer to Ivan-HC's build
-* Fixed Chiaki Standalone
-* Added more Flatpak apps including Lutris with "no root user" bypass patch
-* Flatpak Game/Apps menu added for ARM64 custom builds (see separate repo https://github.com/profork/Batocera-Custom-Arm-Builds)
-* Soar and pkgx added to ARM64 (aarch64)
-* Switched Apotris install to Linux for x86_64 (aarch64 can get it in portmaster)
-* Soar added to Tools menu
-* Added Emulators to Arch Container
-* Sunshine Services added to Arch Container
+
 
 # Installer/Menu via Terminal/SSH
 ```
