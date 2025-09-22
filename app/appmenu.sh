@@ -177,7 +177,7 @@ apps=(
     ["WIIUPLUS"]="curl -Ls https://github.com/uureel/batocera.pro/raw/main/wiiuplus/installer.sh | bash"
     ["XCLOUD"]="curl -Ls https://github.com/profork/profork/raw/master/xcloud/xcloud.sh | bash"
     ["WPS-OFFICE"]="curl -Ls https://github.com/profork/profork/raw/master/wps-office/wps.sh | bash"
-    ["YARG"]="curl -Ls https://github.com/profork/profork/raw/master/yarg/yarg.sh | bash"
+#    ["YARG"]="curl -Ls https://github.com/profork/profork/raw/master/yarg/yarg.sh | bash"
     ["YOUTUBE-MUSIC"]="curl -Ls https://github.com/profork/profork/raw/master/youtube-music/ytm.sh | bash"
     ["YOUTUBE-TV-VACUUMTUBE"]="curl -Ls https://github.com/profork/profork/raw/master/youtubetv/vt.sh | bash"
 )
@@ -274,7 +274,7 @@ app_desc=(
     ["WIIUPLUS"]="Newest CEMU build of Wii U emulator"
     ["XCLOUD"]="Electron based Xcloud client (Gamepad Navigatable)"
     ["WPS-OFFICE"]="Office suite"
-    ["YARG"]="Yet Another Rhythm Game"
+ #   ["YARG"]="Yet Another Rhythm Game"
     ["YOUTUBE-MUSIC"]="Streaming app for YouTube Music"
     ["YOUTUBE-TV-VACUUMTUBE"]="Youtube Leanback Wrapper with TV UI"
 )
