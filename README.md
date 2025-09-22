@@ -1,4 +1,5 @@
-https://github.com/profork/profork🚀Recents:
+
+🚀Recents:
 
 * Minor Bugfix
 * Viber standlone removed -- newest version crashes (users who need can add manually using flatpak with su - batocera -c "flatpak run.." + permissions workaround
