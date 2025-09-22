@@ -76,3 +76,5 @@ port entry appears.
 
 Launch from EmulationStation: Ports → Spaghettikart
 MSG
+echo "Exiting in 20 seconds"
+sleep 20
