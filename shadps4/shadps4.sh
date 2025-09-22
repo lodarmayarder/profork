@@ -86,7 +86,7 @@ echo -e "${GREEN}ShadPS4 installed and AppImage marked executable.${RESET}"
 # Create Desktop Entry & Launcher Script
 # -----------------------------------------------------------------------------
 echo -e "${CYAN}Downloading icon...${RESET}"
-curl - -L -o "$ICON_PATH" "https://raw.githubusercontent.com/trashbus99/profork/master/shadps4/extra/shadps4.png"
+curl - -L -o "$ICON_PATH" "https://raw.githubusercontent.com/profork/profork/master/shadps4/extra/shadps4.png"
 
 cat << EOF > "$LAUNCHER_SCRIPT"
 #!/bin/bash
