@@ -1,5 +1,6 @@
 🚀Recents:
 
+* Yarc Removed (Newest version crashes)
 * Super Mario Bros. Remastered added (x86_64) to standalone section
 * Spaghettikart Installer added to x86_64 Standalone app section (aarch64 can use portmaster)
 * Changed Youtube-TV to Vacuumtube (Adblock+more options - x86-64/aarch64)
@@ -162,7 +163,6 @@ https://www.youtube.com/watch?v=C_-Ij5ADUPw
 | **XCLOUD**                            | Electron based Xcloud client (Gamepad Navigatable) (ARM64 Available  |
 | **X-MINECRAFT-LAUNCHER**              | Minecraft Launcher (EXPERIMENTAL/ARM64)                   |
 | **WPS-OFFICE**                        | Office suite                                              |
-| **YARG**                              | Yet Another Rhythm Game                                   |
 | **YOUTUBE-MUSIC**                     | Streaming app for YouTube Music (ARM64 also available)     |
 | **YOUTUBE-TV**                        | Streaming app for Youtube with TV UI (ARM64 also available)  |
 
