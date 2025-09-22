@@ -10,7 +10,7 @@ appname=yarg # directory name in /userdata/system/pro/...
 AppName=yarg # App.AppImage name
 APPPATH=/userdata/system/pro/$appname/batocera-$appname.AppImage
 APPLINK=https://github.com/YARC-Official/YARC-Launcher/releases/download/v1.2.0/YARC.Launcher_1.2.0_amd64.AppImage
-ORIGIN=@github.com/YARC-Official/YARC-Launcher # credit & info
+ORIGIN=github.com/YARC-Official/YARC-Launcher # credit & info
 # --------------------------------------------------------------------
 # --------------------------------------------------------------------
 # --------------------------------------------------------------------
