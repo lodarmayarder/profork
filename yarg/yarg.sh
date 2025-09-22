@@ -10,7 +10,7 @@ appname=yarg # directory name in /userdata/system/pro/...
 AppName=yarg # App.AppImage name
 APPPATH=/userdata/system/pro/$appname/batocera-$appname.AppImage
 APPLINK=https://github.com/YARC-Official/YARC-Launcher/releases/download/v1.2.0/YARC.Launcher_1.2.0_amd64.AppImage
-ORIGIN=PROFORK@github.com/YARC-Official/YARG # credit & info
+ORIGIN=@github.com/YARC-Official/YARC-Launcher # credit & info
 # --------------------------------------------------------------------
 # --------------------------------------------------------------------
 # --------------------------------------------------------------------
@@ -283,23 +283,23 @@ chmod a+x $launcher 2>/dev/null
 launcher=/userdata/system/pro/$appname/yarc
 rm -rf $launcher
 echo '#!/bin/bash ' >> $launcher
-echo 'DISPLAY=:0.0 /userdata/system/pro/yarg/batocera-yarg.AppImage launcher "$@"' >> $launcher
+echo 'DISPLAY=:0.0 /userdata/system/pro/yarg/batocera-yarg.AppImage  "$@"' >> $launcher
 dos2unix $launcher 2>/dev/null
 chmod a+x $launcher 2>/dev/null
 # //
 # -- prepare f1 - applications - YARG shortcut, 
-shortcut=/userdata/system/pro/$appname/extra/YARG.desktop
-rm -rf $shortcut 2>/dev/null
-echo "[Desktop Entry]" >> $shortcut
-echo "Version=1.0" >> $shortcut
-echo "Icon=/userdata/system/pro/$appname/extra/icon.png" >> $shortcut
-echo "Exec=/userdata/system/pro/$appname/yarg %F" >> $shortcut
-echo "Terminal=false" >> $shortcut
-echo "Type=Application" >> $shortcut
-echo "Categories=Game;batocera.linux;" >> $shortcut
-echo "Name=YARG" >> $shortcut
-f1shortcut=/usr/share/applications/YARG.desktop
-cp $shortcut $f1shortcut 2>/dev/null
+#shortcut=/userdata/system/pro/$appname/extra/YARG.desktop
+#rm -rf $shortcut 2>/dev/null
+#echo "[Desktop Entry]" >> $shortcut
+#echo "Version=1.0" >> $shortcut
+#echo "Icon=/userdata/system/pro/$appname/extra/icon.png" >> $shortcut
+#echo "Exec=/userdata/system/pro/$appname/yarg %F" >> $shortcut
+#echo "Terminal=false" >> $shortcut
+#echo "Type=Application" >> $shortcut
+####echo "Categories=Game;batocera.linux;" >> $shortcut
+#echo "Name=YARG" >> $shortcut
+#f1shortcut=/usr/share/applications/YARG.desktop
+#cp $shortcut $f1shortcut 2>/dev/null
 # //
 # -- prepare f1 - applications - YARC Launcher shortcut, 
 shortcut=/userdata/system/pro/$appname/extra/YARC.desktop
@@ -316,18 +316,18 @@ f1shortcut=/usr/share/applications/YARC.desktop
 cp $shortcut $f1shortcut 2>/dev/null
 # //
 # -- prepare ports - YARG shortcut, 
-shortcut=/userdata/roms/ports/YARG.sh
-rm -rf $shortcut 2>/dev/null
-echo 'export DISPLAY=:0.0' >> $shortcut
-echo '#unclutter-remote -s' >> $shortcut
-echo 'DISPLAY=:0.0 /userdata/system/pro/yarg/batocera-yarg.AppImage start "${@}"' >> $shortcut
-chmod 777 $shortcut 2>/dev/null
+#shortcut=/userdata/roms/ports/YARG.sh
+#rm -rf $shortcut 2>/dev/null
+#echo 'export DISPLAY=:0.0' >> $shortcut
+#echo '#unclutter-remote -s' >> $shortcut
+#echo 'DISPLAY=:0.0 /userdata/system/pro/yarg/batocera-yarg.AppImage start "${@}"' >> $shortcut
+#chmod 777 $shortcut 2>/dev/null
 # -- prepare ports - YARC Launcher shortcut, 
 shortcut="/userdata/roms/ports/YARC-Launcher.sh"
 rm -rf $shortcut 2>/dev/null
 echo 'export DISPLAY=:0.0' >> $shortcut
-echo 'unclutter-remote -s' >> $shortcut
-echo 'DISPLAY=:0.0 /userdata/system/pro/yarg/batocera-yarg.AppImage launcher "${@}"' >> $shortcut
+echo 'batocera-show mouse' >> $shortcut
+echo 'DISPLAY=:0.0 /userdata/system/pro/yarg/batocera-yarg.AppImage  "${@}"' >> $shortcut
 echo 'unclutter-remote -h' >> $shortcut
 chmod 777 $shortcut 2>/dev/null
 # //
@@ -336,7 +336,7 @@ chmod 777 $shortcut 2>/dev/null
 pre=/userdata/system/pro/$appname/extra/startup
 rm -rf $pre 2>/dev/null
 echo "#!/usr/bin/env bash" >> $pre
-echo "cp /userdata/system/pro/$appname/extra/YARG.desktop /usr/share/applications/ 2>/dev/null" >> $pre
+#echo "cp /userdata/system/pro/$appname/extra/YARG.desktop /usr/share/applications/ 2>/dev/null" >> $pre
 echo "cp /userdata/system/pro/$appname/extra/YARC.desktop /usr/share/applications/ 2>/dev/null" >> $pre
 dos2unix $pre
 chmod a+x $pre
