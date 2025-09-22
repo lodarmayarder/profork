@@ -126,9 +126,8 @@ Launcher:      /userdata/roms/ports/SMBR.sh
 NEXT STEPS:
 1) In EmulationStation → Main Menu → System Settings → Services → set 'windowed = ON'. Press Back to save.
 2) Reboot Batocera.
-3) Press F1 → open PCManFM → run SMBR (Ports). Drag your SMB (NES) ROM into the game window.
-4) After it verifies, set 'windowed = OFF' in Services and reboot.
-5) Refresh your gamelist in EmulationStation so 'SMBR' appears in Ports.
+3) Press F1 → open PCManFM → run SMBR (Ports). Drag your SMB world  (.nes file -- NOT the .zip) ROM into the game window.
+4) After it verifies and runs, exit F1/close, set 'windowed = OFF' in Services and reboot.
 
 Press OK to finish." 20 80
   clear
