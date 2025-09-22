@@ -147,4 +147,4 @@ NEXT STEPS (for first-time verification via drag-drop):
 Enjoy!
 MSG
 echo "this message will close in 30 seconds"
-sleeo 30
+sleep 30
