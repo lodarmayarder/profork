@@ -156,7 +156,6 @@ https://www.youtube.com/watch?v=C_-Ij5ADUPw
 | **TELEGRAM**                          | Messaging app                                              |
 | **TOTAL-COMMANDER**                   | File manager with advanced features                        |
 | **UNLEASHED-RECOMP**                  | Sonic Unleashed engine for PC                               |
-| **VIBER**                             | Messaging and calling app                                  |
 | **VIVALDI**                           | Customizable web browser                                   |
 | **VLC**                               | Open-source media player                                   |
 | **WHATSAPP**                          | Messaging app                                              |
