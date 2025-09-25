@@ -1,7 +1,7 @@
 
 🚀Recents:
 
-* SMB remastered installer added to standalone x86_64 
+* SMB Remastered (Linux x86_64) added to Standalone app section
 * Minor Bugfixes
 * Spaghettikart Installer added to x86_64 Standalone app section (aarch64 can use portmaster)
 * Changed Youtube-TV to Vacuumtube (Adblock+more options - x86-64/aarch64)
@@ -30,8 +30,7 @@ curl -L bit.ly/profork0 | bash
 
 
 
-| Application        
-| Description                                |
+| Application                    | Description                                |
 |--------------------------------|--------------------------------------------|
 | **Boilr**                      | Steam third-party app add tool            |
 | **Bottles**                    | Wine/Proton GUI Launcher                  |
