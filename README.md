@@ -151,7 +151,7 @@ https://www.youtube.com/watch?v=C_-Ij5ADUPw
 | **SUBLIME-TEXT**                      | Text editor for code, markup, and prose                    |
 | **SUNSHINE** (flatpak ver in tools menu)      | Open-source game streaming software                        |
 | **TABBY**                             | Modern, highly configurable terminal emulator              |
-| **SUPER MARIO BROS. REMASTERED        | Open source Remastered version of SMB                      |
+| **SUPER MARIO BROS. REMASTERED **       | Open source Remastered version of SMB                      |
 | **TELEGRAM**                          | Messaging app                                              |
 | **TOTAL-COMMANDER**                   | File manager with advanced features                        |
 | **UNLEASHED-RECOMP**                  | Sonic Unleashed engine for PC                               |
