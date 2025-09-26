@@ -1,4 +1,4 @@
-## For ROCNKIX-Apps -- go to https://github.com/profork/ROCKNIX-apps
+## For ROCKNIX-Apps -- go to https://github.com/profork/ROCKNIX-apps
 
 
 🚀Recents:
