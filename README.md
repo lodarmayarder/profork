@@ -1,6 +1,7 @@
 
 🚀Recents:
 
+* PCSX2-Custom Latest build added for All versions of Batocera (x86_64) 
 * SMB Remastered (Linux x86_64) added to Standalone app section
 * Minor Bugfixes
 * Spaghettikart Installer added to x86_64 Standalone app section (aarch64 can use portmaster)
@@ -132,6 +133,7 @@ https://www.youtube.com/watch?v=C_-Ij5ADUPw
 | **OPENGOAL Launcher**                 | PC Engine for Jax n' Daxter/Jak2/Jak3   
 | **OPERA**                             | Web browser with integrated VPN and ad blocker              |
 | **PARSEC**                            | Parsec Streaming
+| **PCSX2 CUSTOM**                      | Latest version of PCSX2 for All versions of Batocera x86_64 |
 | **PEAZIP**                            | File archiver and compression utility                       |
 | **PLEXAMP**                           | Music player for Plex users                                 |
 | **PRISM-LAUNCHER**                    | Custom Minecraft launcher for mod versions                  |
