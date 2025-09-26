@@ -14,7 +14,7 @@ appname=pcsx2 # directory name in /userdata/system/pro/...
 AppName=$appname # App.AppImage name
 APPPATH=/userdata/system/pro/$appname/$appname.AppImage
 #APPLINK=http://PROFORK/app/$appname.AppImage
-APPLINK=https://github.com/PCSX2/pcsx2/releases/download/v2.4.0/pcsx2-v2.4.0-linux-appimage-x64-Qt.AppImagee
+APPLINK=https://github.com/PCSX2/pcsx2/releases/download/v2.4.0/pcsx2-v2.4.0-linux-appimage-x64-Qt.AppImage
 ORIGIN="pcsx2.net" # credit & info
 # --------------------------------------------------------------------
 # --------------------------------------------------------------------
