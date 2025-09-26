@@ -280,19 +280,19 @@ mkdir -p "$PS2_ROM_DIR"
 
 # Download ES config files with progress bar
 echo -e "${G}⬇️ Downloading EmulationStation configuration files...${X}"
-curl -# -o "$ES_CONFIG_DIR/es_features_aethersx2.cfg" "https://raw.githubusercontent.com/profork/profork/master/aethersx2/es_features_aethersx2.cfg"
-echo -e "${GREEN}✅ Downloaded: es_features_aethersx2.cfg${X}"
+curl -# -o "$ES_CONFIG_DIR/es_features_pcsx2.cfg" "https://raw.githubusercontent.com/profork/profork/refs/heads/master/pcsx2/es_features_pcsx2.cfg"
+echo -e "${GREEN}✅ Downloaded: es_features_pcsx2.cfg${X}"
 
-curl -# -o "$ES_CONFIG_DIR/es_systems_aethersx2.cfg" "https://raw.githubusercontent.com/profork/profork/master/aethersx2/es_systems_aethersx2.cfg"
-echo -e "${GREEN}✅ Downloaded: es_systems_aethersx2.cfg${X}"
+curl -# -o "$ES_CONFIG_DIR/es_systems_pcsx2.cfg" "https://raw.githubusercontent.com/profork/profork/refs/heads/master/pcsx2/es_systems_pcsx2.cfg"
+echo -e "${GREEN}✅ Downloaded: es_systems_pcsx2.cfg${X}"
 
 # Download PS2 Parser
-wget -q --tries=50 --no-check-certificate --no-cache --no-cookies -O /userdata/roms/ps2/+UPDATE-PS2-SHORTCUTS.sh https://github.com/profork/profork/raw/master/aethersx2/%2BUPDATE-PS2-SHORTCUTS.sh
+wget -q --tries=50 --no-check-certificate --no-cache --no-cookies -O /userdata/roms/ps2/+UPDATE-PS2-SHORTCUTS.sh https://raw.githubusercontent.com/profork/profork/refs/heads/master/pcsx2/%2BUPDATE-PS2-SHORTCUTS.sh
   dos2unix /userdata/roms/PS2/+UPDATE-PS2-SHORTCUTS.sh 2>/dev/null
   chmod 777 /userdata/roms/PS2/+UPDATE-PS2-SHORTCUTS.sh 2>/dev/null
 
 # Show final dialog message
-dialog --msgbox "✅ AetherSX2 installation nearly complete!\n\n⚙️ Configure AetherSX2 via its GUI including controller mappings.\n📜 After configuring, generate launch shortcuts by running:\n\n🕹️ UPDATE-PS2-SHORTCUTS parser in the AetherSX2 PS2 menu in EmulationStation." 20 50
+dialog --msgbox "✅ PCSX2 installation nearly complete!\n\n⚙️ Configure PCSX2 via its GUI including controller mappings achivements, and BIOS.\n📜 After configuring, generate launch shortcuts by running:\n\n🕹️ UPDATE-PS2-SHORTCUTS parser in the PCSX2 PS2 menu in EmulationStation." 20 50
 
 
 
@@ -319,7 +319,7 @@ echo 'export DISPLAY=:0.0; batocera-mouse show' >> $launcher
 ######################################################################
 ######################################################################
 #echo 'mkdir /userdata/system/pro/'$appname'/home 2>/dev/null; mkdir /userdata/system/pro/'$appname'/config 2>/dev/null; DISPLAY=:0.0 HOME=/userdata/system/pro/'$appname'/home XDG_CONFIG_HOME=/userdata/system/pro/'$appname'/config /userdata/system/pro/'$appname'/'$AppName'.AppImage --no-sandbox --disable-gpu --test-type "$1" "$2" "$3" "$4" "$5" "$6" "$7" "$8" "$9"' >> $launcher
-echo '/userdata/system/pro/aethersx2/aethersx2.AppImage --appimage-extract-and-run' >> $launcher
+echo '/userdata/system/pro/pcsx2/pcsx2.AppImage' >> $launcher
 ######################################################################
 ######################################################################
 ######################################################################
@@ -388,7 +388,7 @@ export -f batocera-pro-installer 2>/dev/null
 # |
   batocera-pro-installer "$APPNAME" "$appname" "$AppName" "$APPPATH" "$APPLINK" "$ORIGIN"
 # --------------------------------------------------------------------
-# PROFORK/AETHERSX2 INSTALLER //
+# PROFORK/PCSX2 INSTALLER //
 #################################
 function autostart() {
   csh="/userdata/system/custom.sh"
