@@ -14,7 +14,15 @@ appname=pcsx2 # directory name in /userdata/system/pro/...
 AppName=$appname # App.AppImage name
 APPPATH=/userdata/system/pro/$appname/$appname.AppImage
 #APPLINK=http://PROFORK/app/$appname.AppImage
-APPLINK=https://github.com/PCSX2/pcsx2/releases/download/v2.4.0/pcsx2-v2.4.0-linux-appimage-x64-Qt.AppImage
+APPLINK=$(curl -fsSL "https://api.github.com/repos/PCSX2/pcsx2/releases?per_page=50" \
+  | jq -r '
+      map(select(.prerelease == true))            # only pre-releases (nightlies)
+      | sort_by(.published_at)                    # oldest -> newest
+      | last                                      # newest nightly
+      | .assets[]
+      | select(.name|endswith("-linux-appimage-x64-Qt.AppImage"))
+      | .browser_download_url' \
+  | head -n1)
 ORIGIN="pcsx2.net" # credit & info
 # --------------------------------------------------------------------
 # --------------------------------------------------------------------
