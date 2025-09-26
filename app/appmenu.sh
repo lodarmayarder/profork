@@ -291,7 +291,7 @@ for app in $(printf "%s\n" "${!apps[@]}" | sort); do
 done
 
 # Adjust dialog command for wider output
-cmd=(dialog --separate-output --checklist "Select applications to install or update:" 22 90 25) # Adjust width and height here
+cmd=(dialog --separate-output --checklist "Select applications to install or update:" 30 120 25) # Adjust width and height here
 choices=$("${cmd[@]}" "${app_list[@]}" 2>&1 >/dev/tty)
 
 # Check if Cancel was pressed
