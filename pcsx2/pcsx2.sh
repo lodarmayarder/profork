@@ -68,7 +68,7 @@ mkdir $pro/$appname/extra 2>/dev/null
 # --------------------------------------------------------------------
 # -- prepare dependencies for this app and the installer: 
 mkdir -p ~/pro/.dep 2>/dev/null && cd ~/pro/.dep && wget --tries=10 --no-check-certificate --no-cache --no-cookies -q -O ~/pro/.dep/dep.zip https://github.com/profork/profork/raw/master/.dep/dep.zip && yes "y" | unzip -oq ~/pro/.dep/dep.zip && cd ~/
-wget --tries=10 --no-check-certificate --no-cache --no-cookies -q -O $pro/$appname/extra/icon.png https://github.com/profork/profork/raw/master/aethersx2/extra/aethersx2.png; chmod a+x $dep/* 2>/dev/null; cd ~/
+wget --tries=10 --no-check-certificate --no-cache --no-cookies -q -O $pro/$appname/extra/icon.png https://github.com/profork/profork/raw/master/pcsx2/pcsx2.png?raw=true; chmod a+x $dep/* 2>/dev/null; cd ~/
 chmod 777 ~/pro/.dep/* && for file in /userdata/system/pro/.dep/lib*; do sudo ln -s "$file" "/usr/lib/$(basename $file)"; done
 # --------------------------------------------------------------------
 # // end of dependencies 
@@ -340,7 +340,7 @@ cp $launcher /userdata/system/pro/$appname/Launcher 2>/dev/null
 # //
 # -- get icon for shortcut,
 icon=/userdata/system/pro/$appname/extra/icon.png
-wget -q -O $icon https://github.com/profork/profork/raw/master/aethersx2/extra/aethersx2.png
+wget -q -O $icon https://github.com/profork/profork/raw/master/pcsx2/pcsx2.png?raw=true
 # //
 # -- prepare f1 - applications - app shortcut, 
 shortcut=/userdata/system/pro/$appname/extra/$appname.desktop
@@ -352,7 +352,7 @@ echo "Exec=/userdata/system/pro/$appname/$appname %U" >> $shortcut
 echo "Terminal=false" >> $shortcut
 echo "Type=Application" >> $shortcut
 echo "Categories=Game;batocera.linux;" >> $shortcut
-echo "Name=$appname" >> $shortcut
+echo "Name=PCSX2-CUSTOM" >> $shortcut
 f1shortcut=/usr/share/applications/$appname.desktop
 cp $shortcut $f1shortcut 2>/dev/null
 # //
