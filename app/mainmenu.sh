@@ -12,6 +12,13 @@
 #exit 0
 #fi
 
+# --- Rocknix Detection ---
+if [ -d "/storage/roms" ]; then
+    echo "Rocknix detected. Loading Rocknix menu..."
+    sleep 2
+    curl -Ls https://github.com/profork/ROCKNIX-apps/raw/main/app/menu.sh | bash
+    exit 0
+fi
    
 # Detect system architecture
 ARCH=$(uname -m)
