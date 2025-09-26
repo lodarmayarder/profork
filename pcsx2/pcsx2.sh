@@ -300,7 +300,7 @@ wget -q --tries=50 --no-check-certificate --no-cache --no-cookies -O /userdata/r
   chmod 777 /userdata/roms/PS2/+UPDATE-PS2-SHORTCUTS.sh 2>/dev/null
 
 # Show final dialog message
-dialog --msgbox "✅ PCSX2 installation nearly complete!\n\n⚙️ Configure PCSX2 via its GUI including controller mappings achivements, and BIOS.\n📜 After configuring, generate launch shortcuts by running:\n\n🕹️ UPDATE-PS2-SHORTCUTS parser in the PCSX2 PS2 menu in EmulationStation." 20 50
+dialog --msgbox "✅ PCSX2 installation nearly complete!\n\n⚙️ Configure PCSX2 via its GUI including controller mappings achivements, and BIOS.\n📜 After configuring, generate launch shortcuts by running:\n\n🕹️ UPDATE-PS2-SHORTCUTS parser in the PCSX2 PS2 menu in EmulationStation.  You should update PCSX2 by rerunning this script. If you use the built in updter, the Launchers may not work" 20 50
 
 
 
