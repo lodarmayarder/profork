@@ -41,7 +41,7 @@ find "$roms_dir" -type f \( -iname "*.iso" -o -iname "*.mdf" -o -iname "*.nrg" -
     cat << EOF > "$script_path"
 #!/bin/bash
 batocera-mouse show
-DISPLAY=:0.0 "/userdata/system/pro/aethersx2/aethersx2.AppImage" --appimage-extract-and-run "$file_path"
+DISPLAY=:0.0 "/userdata/system/pro/pcsx2/pcsx2.AppImage" "$file_path"
 batocera-mouse hide
 EOF
 
