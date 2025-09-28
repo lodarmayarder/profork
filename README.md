@@ -138,7 +138,6 @@ https://www.youtube.com/watch?v=C_-Ij5ADUPw
 | **PCSX2 CUSTOM**                      | Latest version of PCSX2 for All versions of Batocera x86_64 |
 | **PEAZIP**                            | File archiver and compression utility                       |
 | **PLEXAMP**                           | Music player for Plex users                                 |
-| **PRISM-LAUNCHER**                    | Custom Minecraft launcher for mod versions                  |
 | **PROTONUP-QT**                       | Manage Proton-GE builds for Linux gaming                    |
 | **PS2MINUS/Works Up to v40**          | Older v1.6 (wx) version of the PCSX2 emulator for older machines  |
 | **PS2PLUS/Works Up to v40**           | Latest version of the PCSX2 emulator                        |
