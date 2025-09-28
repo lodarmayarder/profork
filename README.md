@@ -3,6 +3,7 @@
 
 🚀Recents:
 
+* Added Java 21 to Jave runtime installer
 * PCSX2-Custom Latest build added for All versions of Batocera (x86_64)--Note: The other PS2plus entry is the legacy version from Batocera.pro that only works on v40 and lower before python rewrites
 * SMB Remastered (Linux x86_64) added to Standalone app section
 * Minor Bugfixes
