@@ -32,7 +32,6 @@ sh_files=(
 "PCSX2.sh"
 "pcem.sh"
 "Peazip.sh"
-"Prismlauncher.sh"
 "Protonup-Qt.sh"
 "Retroarch.sh"
 "RPCS3.sh"
