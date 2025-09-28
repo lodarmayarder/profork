@@ -140,7 +140,7 @@ echo
 sleep 0.33
 echo -e "${X}THIS WILL INSTALL JAVA RUNTIMES FOR BATOCERA" 
 echo -e "${X}USING $ORIGIN JAVA JRE PACKAGES" 
-echo -e "${X}VERSIONS: 19, 17, 15, 13, 11, 8"  
+echo -e "${X}VERSIONS: 21, 19, 17, 15, 13, 11, 8"  
 echo
 echo -e "${X}$APPNAME RUNTIMES WILL BE INSTALLED IN:"
 echo -e "${X}/USERDATA/SYSTEM/PRO/$APPNAME" 
@@ -237,7 +237,7 @@ echo
 sleep 0.33
 echo -e "${W}THIS WILL INSTALL JAVA RUNTIMES FOR BATOCERA" 
 echo -e "${W}USING $ORIGIN JAVA JRE PACKAGES" 
-echo -e "${W}VERSIONS: ${G}19, 17, 15, 13, 11, 8${W}"  
+echo -e "${W}VERSIONS: ${G}21,19, 17, 15, 13, 11, 8${W}"  
 echo
 echo -e "${W}$APPNAME RUNTIMES WILL BE INSTALLED IN:"
 echo -e "${W}/USERDATA/SYSTEM/PRO/$APPNAME"
@@ -267,6 +267,7 @@ echo
 echo -e "${G}DOWNLOADING${W} [6] JAVA RUNTIME PACKAGES . . ."
 url=https://github.com/profork/profork/raw/master/
 cd $temp
+curl --progress-bar --remote-name --location "$url/$appname/extra/java21.tar.gz"
 curl --progress-bar --remote-name --location "$url/$appname/extra/java19.tar.gz"
 curl --progress-bar --remote-name --location "$url/$appname/extra/java17.tar.gz"
 curl --progress-bar --remote-name --location "$url/$appname/extra/java15.tar.gz"
@@ -284,6 +285,11 @@ echo -e "${G}INSTALLING${W} . . ."
 # get tar 
 wget -q -O $pro/.dep/tar $url/.dep/tar 2>/dev/null
 chmod a+x $pro/.dep/tar
+# --------------------------------------------------------------------
+# java21
+$pro/.dep/tar -xf $temp/java21.tar.gz 2>/dev/null
+mv $temp/java21 $pro/$appname/ 2>/dev/null
+# --------------------------------------------------------------------
 # --------------------------------------------------------------------
 # java19
 $pro/.dep/tar -xf $temp/java19.tar.gz 2>/dev/null
@@ -381,6 +387,11 @@ echo 'G="\033[1;32m" ' >> $launcher
 echo 'java=/userdata/system/pro/java/bin/java' >> $launcher
 echo 'if [[ -e "$java" ]]; then echo -e "${G}> DEFAULT JAVA RUNTIME${W}"; $java --version | grep openjdk; sleep 0.33; echo; echo' >> $launcher
 echo 'else echo -e "${W}DEFAULT JAVA RUNTIME NOT FOUND"; sleep 0.33; echo; echo; fi' >> $launcher
+
+echo 'java21=/userdata/system/pro/java/java21/bin/java' >> $launcher
+echo 'if [[ -e "$java21" ]]; then echo -e "${G}~/pro/java/java19${W}"; $java21 --version | grep openjdk; sleep 0.33; echo' >> $launcher
+echo 'else echo -e "${W}JAVA 21 NOT FOUND"; echo; sleep 0.33; echo; fi' >> $launcher
+
 echo 'java19=/userdata/system/pro/java/java19/bin/java' >> $launcher
 echo 'if [[ -e "$java19" ]]; then echo -e "${G}~/pro/java/java19${W}"; $java19 --version | grep openjdk; sleep 0.33; echo' >> $launcher
 echo 'else echo -e "${W}JAVA 19 NOT FOUND"; echo; sleep 0.33; echo; fi' >> $launcher
@@ -491,7 +502,7 @@ export -f PROFORK-installer 2>/dev/null
 # profork INSTALLER //
 ##########################
 clear
-if [[ -e "/userdata/pro/java/java19/bin/java" ]] && [[ -e "/userdata/pro/java/java17/bin/java" ]] && [[ -e "/userdata/pro/java/java15/bin/java" ]] && [[ -e "/userdata/pro/java/java13/bin/java" ]] && [[ -e "/userdata/pro/java/java11/bin/java" ]] && [[ -e "/userdata/pro/java/java8/bin/java" ]]; then
+if  [[ -e "/userdata/pro/java/java21/bin/java" ]] && [[ -e "/userdata/pro/java/java19/bin/java" ]] && [[ -e "/userdata/pro/java/java17/bin/java" ]] && [[ -e "/userdata/pro/java/java15/bin/java" ]] && [[ -e "/userdata/pro/java/java13/bin/java" ]] && [[ -e "/userdata/pro/java/java11/bin/java" ]] && [[ -e "/userdata/pro/java/java8/bin/java" ]]; then
 echo
 echo
 echo -e "${W}> $APPNAME INSTALLED ${G}OK${W}"
