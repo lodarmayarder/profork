@@ -237,7 +237,7 @@ echo
 sleep 0.33
 echo -e "${W}THIS WILL INSTALL JAVA RUNTIMES FOR BATOCERA" 
 echo -e "${W}USING $ORIGIN JAVA JRE PACKAGES" 
-echo -e "${W}VERSIONS: ${G}21,19, 17, 15, 13, 11, 8${W}"  
+echo -e "${W}VERSIONS: ${G}21, 19, 17, 15, 13, 11, 8${W}"  
 echo
 echo -e "${W}$APPNAME RUNTIMES WILL BE INSTALLED IN:"
 echo -e "${W}/USERDATA/SYSTEM/PRO/$APPNAME"
@@ -264,10 +264,10 @@ rm -rf $temp 2>/dev/null
 mkdir -p $temp 2>/dev/null
 # --------------------------------------------------------------------
 echo
-echo -e "${G}DOWNLOADING${W} [6] JAVA RUNTIME PACKAGES . . ."
+echo -e "${G}DOWNLOADING${W} [7] JAVA RUNTIME PACKAGES . . ."
 url=https://github.com/profork/profork/raw/master/
 cd $temp
-curl --progress-bar --remote-name --location "$url/$appname/extra/java21.tar.gz"
+curl --progress-bar --remote-name --location "https://download.oracle.com/java/21/archive/jdk-21.0.7_linux-x64_bin.tar.gz"
 curl --progress-bar --remote-name --location "$url/$appname/extra/java19.tar.gz"
 curl --progress-bar --remote-name --location "$url/$appname/extra/java17.tar.gz"
 curl --progress-bar --remote-name --location "$url/$appname/extra/java15.tar.gz"
@@ -320,6 +320,7 @@ $pro/.dep/tar -xf $temp/java8.tar.gz 2>/dev/null
 mv $temp/java8 $pro/$appname/ 2>/dev/null
 # --------------------------------------------------------------------
 chmod a+x $pro/java/bin/* 2>/dev/null
+chmod a+x $pro/java21/bin/* 2>/dev/null
 chmod a+x $pro/java19/bin/* 2>/dev/null
 chmod a+x $pro/java17/bin/* 2>/dev/null
 chmod a+x $pro/java15/bin/* 2>/dev/null
