@@ -122,10 +122,10 @@ case $CHOICE in
  12)    echo "GFN 4k Installer..."
         clear
         echo "This is a third party addon maintained by"
-        echo "https://github.com/titooo7/gfn-installer-linux-amd"
+        echo "https://gitlab.com/anthrgk/gfn-installer-linux-amd/-/tree/main/batocera"
         sleep 7
         clear
-        curl -sL https://raw.githubusercontent.com/titooo7/gfn-installer-linux-amd/main/batocera/run-gfn-installer-for-batocera.sh | bash
+       curl -sL https://gitlab.com/anthrgk/gfn-installer-linux-amd/-/raw/main/batocera/run-gfn-installer-for-batocera.sh | bash
         ;;
     
      99)
