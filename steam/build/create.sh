@@ -65,7 +65,7 @@ libretro-gambatte libretro-melonds libretro-mgba libretro-nestopia libretro-para
 libretro-retrodream libretro-yabause pcsx2-git cemu-git citron-git ryujinx shadps4-git 86box \
 screenfetch glances discord jre8-openjdk gcc13 python-pip xfce4 xfce4-goodies obs-studio-git lua53 youtube-music-bin"
 # If you want to install AUR packages, specify them in this variable
-export aur_packagelist="geforcenow-electron mcpelauncher-appimage parsec-bin protonup-qt azahar-appimage rpcs3-bin 86box-roms 86box-manager-bin sgdboop-bin winegui-bin  icu66-bin  \
+export aur_packagelist="geforcenow-electron mcpelauncher-appimage parsec-bin protonup-qt azahar-appimage rpcs3-bin 86box-roms 86box-manager-bin sgdboop-bin  icu66-bin  \
  zoom sunshine-bin multimc-bin polymc-qt5-bin winboat-bin"
 
 # ALHP is a repository containing packages from the official Arch Linux
