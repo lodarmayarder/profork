@@ -25,6 +25,10 @@ fix for nvidia lutris
 			  wget -q --tries=30 --no-check-certificate --no-cache --no-cookies -O /usr/bin/lutris https://github.com/profork/profork/raw/master/steam/build/lutris.sh
 				  dos2unix /usr/bin/lutris 2>/dev/null
 #--------------------------------------------------------------------------------------------
+# add root label to docker group for winboat
+usermod -aG docker root
+#--------------------------------------------------------------------------------------------
+
 # add ~/.bashrc&profile env
 	echo -e "\n\n\nfixing .bashrc and .profile"
 		rm ~/.bashrc
