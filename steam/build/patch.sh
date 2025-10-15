@@ -27,6 +27,16 @@ fix for nvidia lutris
 #--------------------------------------------------------------------------------------------
 # add root label to docker group for winboat
 usermod -aG docker root
+# run inside the chroot BEFORE mksquashfs / final pack
+getent group docker >/dev/null || groupadd -r docker
+
+# idempotent: add root to docker in /etc/group directly
+awk -F: 'BEGIN{OFS=":"}
+  $1=="docker" {
+    if ($4=="") $4="root";
+    else if ($4!~/(^|,)root(,|$)/) $4=$4",root"
+  }1' /etc/group > /etc/group.new && mv /etc/group.new /etc/group
+
 #--------------------------------------------------------------------------------------------
 
 # add ~/.bashrc&profile env
