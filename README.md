@@ -1,8 +1,14 @@
 ## For ROCKNIX-Apps -- go to https://github.com/profork/ROCKNIX-apps
 
 
-🚀Recents:
 
+
+NOTE for V42 -- Due to python rewrites by batocera devs Custom ES system launchers need a video mode resolution manually set in system settings as blank values are no longer tolerated via the python configgen launchers for custom settings running .sh files.
+E.G.: set like below to your resolution instead of using "auto"
+<img width="1431" height="123" alt="image" src="https://github.com/user-attachments/assets/4b8af628-11ec-47c4-8fd5-6861147559a1" />
+
+🚀Recents:
+* PolyMC Launcher added to Arch Container
 * Added Java 21 to Java runtime installer
 * PCSX2-Custom Latest build added for All versions of Batocera (x86_64)--Note: The other PS2plus entry is the legacy version from Batocera.pro that only works on v40 and lower before python rewrites
 * SMB Remastered (Linux x86_64) added to Standalone app section
@@ -17,7 +23,6 @@
 * Added Emudeck Store Homebrew and Reg-Linux Homebrew Rom installer (x86_64 and aarch64)
 * Arch XFCE desktop (runimage) -- Launches from ports -- Added to Standalone apps (x86_64 and aarch64) -- Pacman, Chaotic-AUR work fine inside. No Overlay mods. Not a vnc/remote docker session.
    <img width="1916" height="1048" alt="image" src="https://github.com/user-attachments/assets/045079b1-bc09-4c95-ab8f-e4beab0c67bc" />
-* Switched Standalone Steam Installer to Ivan-HC's build
 
 
 # Installer/Menu via Terminal/SSH
