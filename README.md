@@ -3,9 +3,16 @@
 
 
 
-NOTE for V42 -- Due to python rewrites by batocera devs Custom ES system launchers need a video mode resolution manually set in system settings as blank values are no longer tolerated via the python configgen launchers for custom systems running .sh files.
+NOTE for V42 -- Due to python rewrites by batocera devs, Custom ES system launchers need a video mode resolution manually set in system settings as blank values are no longer tolerated via the python configgen launchers for custom systems running .sh files.
 E.G.: set like below to your resolution instead of using "auto"
 <img width="1431" height="123" alt="image" src="https://github.com/user-attachments/assets/4b8af628-11ec-47c4-8fd5-6861147559a1" />
+
+This may affect and need to be toggled for:
+* Arch Container Launchers including add-ons
+* PCX2 Custom
+* Aethersx2
+* Shad PS4
+
 
 🚀Recents:
 * PolyMC Launcher added to Arch Container
