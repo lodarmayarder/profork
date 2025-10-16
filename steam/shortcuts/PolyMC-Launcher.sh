@@ -17,7 +17,7 @@ batocera-mouse show
           --bind /userdata /userdata \
           --bind /newroot /newroot \
           --bind / /batocera \
-  bash -c 'prepare && source /opt/env ulimit -S -n 819200 && sysctl -w fs.inotify.max_user_watches=8192000 vm.max_map_count=2147483642 fs.file-max=8192000 >/dev/null 2>&1 && dbus-run-session prismlauncher '"${@}"''
+  bash -c 'prepare && source /opt/env ulimit -S -n 819200 && sysctl -w fs.inotify.max_user_watches=8192000 vm.max_map_count=2147483642 fs.file-max=8192000 >/dev/null 2>&1 && dbus-run-session polymc '"${@}"''
 #------------------------------------------------
 # batocera-mouse hide
 #------------------------------------------------
