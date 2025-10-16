@@ -64,7 +64,7 @@ case $CHOICE in
         ;;
     4)  
         echo "Update EmulationStation Arch Container Launcher Shortcuts..."
-        curl -Ls https://github.com/profork/profork/raw/master/steam/addon_ps4.sh | bash
+        curl -Ls https://github.com/profork/profork/raw/master/steam/update_shortcuts.sh | bash
         ;;    
      5)  
         echo "Installing Desktop/Windowed Mode..."
