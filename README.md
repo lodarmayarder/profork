@@ -9,7 +9,7 @@ E.G.: set like below to your resolution instead of using "auto"
 
 This may affect and need to be toggled for:
 * Arch Container Launchers including add-ons menus like Heroic Games Launcher, Steam, Lutris Menus
-* PCX2 Custom
+* PCSX2 Custom
 * Aethersx2
 * Shad PS4
 
