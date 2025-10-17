@@ -122,11 +122,11 @@ else
   # <= v42 - custom.sh still runs, avoid double-run
   if [ -f "${SERV_PATH}" ]; then
     ensure_conf_key "system.${SERV_NAME}.enabled" "0"
-    infodelay "Batocera v${VERSION} detected.\n\nThe 'legacy_custom_sh' service is already present and DISABLED (to avoid running custom.sh twice).\n\nIt is READY for v43—when you upgrade, just enable it." 5
+    infodelay "Batocera v${VERSION} detected.\n\nThe 'legacy_custom_sh' service is already present and DISABLED (to avoid running custom.sh twice).\n\nIt is READY for v43—when you upgrade, just enable it." 8
   else
     create_service_if_missing
     ensure_conf_key "system.${SERV_NAME}.enabled" "0"
-    infodelay "Batocera v${VERSION} detected.\n\nThe 'legacy_custom_sh' service has been INSTALLED and DISABLED (Batocera already runs custom.sh natively).\n\nIt is now READY for v43—when you upgrade, enable it to keep Profork working." 5
+    infodelay "Batocera v${VERSION} detected.\n\nThe 'legacy_custom_sh' service has been INSTALLED and DISABLED (Batocera already runs custom.sh natively).\n\nIt is now READY for v43—when you upgrade, enable it to keep Profork working." 8
   fi
 fi
 
