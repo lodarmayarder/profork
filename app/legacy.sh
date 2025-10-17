@@ -115,7 +115,7 @@ if [ "${VERSION}" -ge 43 ]; then
   # v43+ - custom.sh removed, so service must be active
   create_service_if_missing
   ensure_conf_key "system.${SERV_NAME}.enabled" "1"
-  infodelay "Batocera v43 detected.\n\nStarting with v43, Batocera no longer runs /userdata/system/custom.sh automatically.\n\nThe 'legacy_custom_sh' service has been INSTALLED and ENABLED so that Profork and other scripts continue to work.\n\nPlease open System Settings → Services and verify that 'legacy_custom_sh' is enabled." 10
+  infodelay "Batocera v43 detected.\n\nStarting with v43, Batocera no longer runs /userdata/system/custom.sh automatically.\n\nThe 'legacy_custom_sh' service has been INSTALLED and ENABLED so that Profork and other scripts continue to work.\n\nPlease open System Settings → Services and verify that 'legacy_custom_sh' is enabled." 20
 
 else
   # <= v42 - custom.sh still runs, avoid double-run
