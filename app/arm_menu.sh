@@ -14,6 +14,8 @@ animate_text() {
 
 clear
 
+
+
 # Display Warning Message
 animate_text "${YELLOW}⚠️  Important Notice ⚠️${NC}"
 animate_text "${YELLOW}The apps on this repository are provided AS-IS.${NC}"
@@ -29,6 +31,7 @@ echo -e "${NC}"
 
 
 sleep 10
+curl -L https://github.com/profork/profork/raw/master/app/42warn.sh | bash
 
 # Define the options
 OPTIONS=("1" "Install Portmaster"
