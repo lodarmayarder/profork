@@ -78,6 +78,8 @@ animate_text "${YELLOW}Support is not available. Use at your own risk.${NC}"
 echo -e "${NC}"
 sleep 7
 
+curl -L https://github.com/profork/profork/raw/master/app/42warn.sh | bash
+
 # Define the options
 OPTIONS=("1" "Multi-App Arch Container"
          "2" "Standalone Apps (mostly appimages)"
