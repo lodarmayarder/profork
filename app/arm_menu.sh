@@ -31,6 +31,7 @@ echo -e "${NC}"
 
 
 sleep 10
+curl -L https://github.com/profork/profork/raw/master/app/legacy.sh | bash
 curl -L https://github.com/profork/profork/raw/master/app/42warn.sh | bash
 
 # Define the options
