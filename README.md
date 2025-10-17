@@ -8,10 +8,11 @@ E.G.: set like below to your resolution instead of using "auto"
 <img width="1431" height="123" alt="image" src="https://github.com/user-attachments/assets/4b8af628-11ec-47c4-8fd5-6861147559a1" />
 
 This may affect and needs to be toggled for:
-* Arch Container Launchers including add-ons menus like Heroic Games Launcher, Steam, Lutris Menus
+* Arch Container Launchers including add-ons menus like Webapps, Heroic Games Launcher, Steam, & Lutris Menus
 * PCSX2 Custom
 * Aethersx2
 * Shad PS4
+  
 
 
 🚀Recents:
