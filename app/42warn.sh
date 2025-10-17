@@ -51,11 +51,11 @@ infodelay "See the Profork README for recent updates:\n$README_URL" 5
 if echo "${VERSION}" | grep -qE '^[0-9]+$' && [ "${VERSION}" -eq 42 ]; then
   infodelay "README WARNING for V42:\n\n\"Due to python rewrites by Batocera devs, custom ES system launchers\nneed a video mode resolution manually set … blank values are no longer tolerated … set your resolution instead of using 'auto'\"\n\n(Excerpt from Profork README)" 10
 
-  say "Action required for v42:\n\nGo to System Settings → Video Mode and select a specific resolution (e.g. 1920x1080) rather than leaving it on \"auto\".\n\nThen reboot and test your custom systems. See README for more context:\n$README_URL"
+  say "If using custom ES menus from Profork, Action required for v42:\n\nGo to System Settings → Video Mode and select a specific resolution (e.g. 1920x1080) rather than leaving it on \"auto\".\n\nThen reboot and test your custom systems. See README for more context:\n$README_URL"
 
 else
   # non-42 or v43+ generic tip
-  say "Tip:\n\nIf you ever run Batocera v42 with Profork and custom .sh launchers, you must set a fixed Video Mode (not \"auto\") in System Settings.\n\nFull instructions in the Profork README:\n$README_URL"
+  say "Tip:\n\nIf you ever run Batocera v42 with Profork and custom es launchers, you must set a fixed Video Mode (not \"auto\") in System Settings.\n\nFull instructions in the Profork README:\n$README_URL"
 fi
 
 exit 0
