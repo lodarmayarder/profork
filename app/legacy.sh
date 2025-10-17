@@ -79,7 +79,6 @@ case "$1" in
     fi
     ;;
   stop)
-    pkill -f "/userdata/system/custom.sh" >/dev/null 2>&1 || true
     ;;
   restart)
     "$0" stop
