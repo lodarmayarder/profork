@@ -15,6 +15,7 @@ This may affect and needs to be toggled for:
 
 
 🚀Recents:
+* Added legacy custom.sh enabler service for v43+ -- Installs automatically
 * PolyMC Launcher added to Arch Container
 * Added Java 21 to Java runtime installer
 * PCSX2-Custom Latest build added for All versions of Batocera (x86_64)--Note: The other PS2plus entry is the legacy version from Batocera.pro that only works on v40 and lower before python rewrites
