@@ -2,6 +2,11 @@
 # Batocera legacy_custom_sh compatibility installer
 # - v43+: custom.sh is removed -> ensure a service runs /userdata/system/custom.sh
 # - <=v42: install service if missing (disabled) so it’s ready for an upgrade
+# SPDX-License-Identifier: GPL-3.0-only
+# SPDX-FileCopyrightText: 2024 foclabroc
+# SPDX-FileCopyrightText: 2025 profork
+#
+# Portions of this script are based on code by foclabroc, used under GPLv3.
 
 set -u
 
