@@ -1,4 +1,9 @@
 #!/bin/bash
+# SPDX-License-Identifier: GPL-3.0-only
+# SPDX-FileCopyrightText: 2024 foclabroc
+# SPDX-FileCopyrightText: 2025 profork
+#
+# Portions of this script are based on code by foclabroc, used under GPLv3.
 # Profork README / Video Mode Notice for Batocera v42+
 
 set -u
